@@ -1,0 +1,125 @@
+/* index page code start from here */
+.img-cover{
+    width: 100%;
+}
+
+.navbar{
+    background-color: #186600;
+    overflow: hidden !important;
+}
+
+.navbar a{
+    color: #fff;
+    display: flex !important;
+    margin-left: 120px;
+}
+
+.navbar a:hover{
+    color: #00ff15 !important;
+}
+
+.card-search{
+    height: 300px;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #186600;
+    border-radius: 30px 0px 30px 0px !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px !important;
+}
+
+.card-search {
+    width: 50rem;
+    height: 350px;
+}
+
+.searchword{
+    margin-left: 30px;
+    margin-top: 40px;
+}
+
+.searchsecond{
+    margin-right: 50px !important;
+    margin-top: 40px;
+}
+
+.searcharea {
+    border-radius: 30px !important;
+    width: 80% !important;
+    max-width: 300px;
+    border-radius: 30px 0px 30px 0px !important;
+}
+
+.searchinput{
+    margin-left: 20px !important;
+}
+
+.searchinputsec{
+    margin-right: 20px !important;
+}
+
+.searchbtn{
+    width: 150px !important;
+    height: 40px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    background-color: #80E55D !important;
+    color: #fff;
+    border-radius: 30px 0px 30px 0px !important;
+    margin-top: 20px !important;
+    font-size: 18px;
+}
+
+.card-prop{
+    width: 270px;
+    height: 550px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border: 0px !important;
+    border-radius: 30px 0px 30px 0px !important;
+}
+
+.marginpa{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.cardmar{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 90px;
+}
+
+/* index page code stop from here */
+
+/* footer code start from here */
+.backgroundcolo{
+    background-color: #186600;
+    color: #fff;
+    height: 200px;
+    margin-top: 100px;
+}
+
+.backgroundco{
+    background-color: #186600;
+}
+
+.margintext{
+    margin-top: 20px !important;
+}
+
+/* footer code stop from here */
+
+
+/* responsive codes start from here */
+@media (max-width: 768px) {
+    
+  }
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* CSS for medium-sized screens goes here */
+  }
+  
+  /* Desktops */
+@media (min-width: 1025px) {
+    /* CSS for larger screens goes here */
+  }
+/* responsive codes stop from here */
