@@ -108,10 +108,97 @@
 
 /* footer code stop from here */
 
+/* form codes start from here */
+.form-control {
+    border: 1px solid #000000;
+  }
+  
+  .group {
+    position: relative;
+   }
+   
+   
+.group{
+    margin-top: 40px;
+}
+
+/* Style for the date input */
+input[type="date"] {
+    width: 300px;
+    height: 40px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #b7aeae;
+    border-radius: 30px 0px 30px 0px;
+    font-size: 16px;
+  }
+
+  .datepicker{
+    margin-top: 40px;
+  }
+
+  .formlabel{
+    border-color: #fff;
+    border-radius: 30px 0px 30px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 300px 8px 230px -8px !important;
+  }
+
+  .searchlbl{
+    width: 400px;
+    border-color: #fff;
+    border-radius: 30px 0px 30px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 300px 8px 230px -8px !important;
+  }
+  
+  .tblsearch{
+    margin-top: 40px;
+  }
+
+  .btnadd{
+    color: #fff;
+    background-color: #80E55D;
+  }
+
+  .marginbtn{
+    margin-top: 30px;
+    border-radius: 30px 0px 30px 0px;
+  }
+
+  label{
+    font-size: 15px !important;
+  }
+
+  .sellproductcard{
+    margin-top: 80px;
+  }
+
+  .fileupdload{
+    border-color: #fff;
+    border-radius: 30px 0px 30px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 300px 8px 230px -8px !important;
+  }
+
+/* form codes stop from here */
+
 
 /* responsive codes start from here */
 @media (max-width: 768px) {
+
+    .card-search{
+        width: 350px;
+        height: 440px;
+    }
+
+    .searcharea{
+        margin-left: 18px !important;
+        margin-top: 10px !important;
+    }
     
+    /* .cardmar{
+       margin-left: 30px !important;
+    } */
+
   }
 /* Tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
