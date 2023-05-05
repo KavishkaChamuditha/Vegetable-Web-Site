@@ -60,29 +60,42 @@
                 <div class="card-body ">
                     <h1 class="text-dark font-weight-bold">Add Products</h1>
 
-                    <form action="sellproduct_add_2.html" method="post" enctype="multipart/form-data">
+                    <form action="sellvegetables_add_2.php" method="post" enctype="multipart/form-data">
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label text-dark">Vegetable Name</label>
-                            <input type="email" class="form-control formlabel" name="" id="exampleInputEmail1">
+                            <input type="text" class="form-control formlabel" name="veg_name">
                         </div>
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label text-dark">Price</label>
-                            <input type="email" class="form-control formlabel" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <input type="number" class="form-control formlabel" name="veg_price">
                         </div>
 
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label text-dark">Availability</label>
-                            <input type="email" class="form-control formlabel" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                        </div>
+                        <label for="">Availability</label>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="availability" id="flexRadioDefault">
+                            <label class="form-check-label" for="flexRadioDefault">
+                                Default radio
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="availability" id="flexRadioChecked" checked>
+                            <label class="form-check-label" for="flexRadioChecked">
+                                Checked radio
+                        </label>
+                            </div>
+
+
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label text-dark">Quantity</label>
-                            <input type="email" class="form-control formlabel" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <input type="text" class="form-control formlabel" name="available_quntity">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Contact</label>
+                            <input type="email" class="form-control formlabel" name="contact">
                         </div>
 
                         <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
@@ -93,10 +106,8 @@
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label text-dark">Image</label>
-                            <input type="file" class="form-control formlabel" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <input type="file" class="form-control formlabel" name="image">
                         </div>
-
 
                         <div type="submit" class="btn btnadd marginbtn" name="submit" value="ADD NOW">Add Vegetable
                         </div>

@@ -40,27 +40,27 @@ $date                = $_REQUEST ['date'];
     if($x>0){
       //echo "record successfully added";
       //upload code start here
-        if(($_FILES['picture']['error'] == 0) && ($_FILES['picture']['type']=="image/jpeg")) {
+        if(($_FILES['image']['error'] == 0) && ($_FILES['image']['type']=="image/jpeg")) {
             echo "error not found";
 
           // //can  upload
            $last_id     = $mysqli->insert_id;
-           $filename    = $_FILES['picture']['tmp_name'];
+           $filename    = $_FILES['image']['tmp_name'];
            $destination = $last_id . "_".rand().rand().rand().".jpg";
           //
-           $y = move_uploaded_file($filename,"product/large/".$destination);
+           $y = move_uploaded_file($filename,"sellveg/sellvegetable/large/".$destination);
           //
            if($y>0){
            //lets update the product table's picture column with the generated file name
-            $sql2 = "update tblproduct set picture='$destination' where pro_id=$last_id";
+            $sql2 = "update sellingvegetables set image='$destination' where veg_id=$veg_id";
             //execute the sql command
             $z = $mysqli->query($sql2);
             //lets copy the image to thumb folder then resize it to a smaller size
 
-            copy("product/large/".$destination,"product/thumbs/".$destination);
+            copy("sellveg/vegetable/large/".$destination,"sellveg/vegetable/thumbs/".$destination);
 
             // //lets resize it
-          resizeThumbPicture("product/thumbs/",$destination);
+          resizeThumbPicture("sellveg/vegetable/thumbs/",$destination);
 
             }
 
