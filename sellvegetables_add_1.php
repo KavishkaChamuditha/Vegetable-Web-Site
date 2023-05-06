@@ -72,21 +72,16 @@
                             <input type="number" class="form-control formlabel" name="veg_price">
                         </div>
 
-                        <label for="">Availability</label>
+                        <label class="form-check-label" for="flexCheckDefault">
+                                Availability
+                         </label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="availability" id="flexRadioDefault">
-                            <label class="form-check-label" for="flexRadioDefault">
-                                Default radio
-                            </label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Default checkbox
+                         </label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="availability" id="flexRadioChecked"
-                                checked>
-                            <label class="form-check-label" for="flexRadioChecked">
-                                Checked radio
-                            </label>
-                        </div>
-
+                    
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label text-dark">Quantity</label>
                             <input type="text" class="form-control formlabel" name="available_quntity">
