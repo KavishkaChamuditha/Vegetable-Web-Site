@@ -1,6 +1,3 @@
-<?php
-require("validate_employee.php");
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

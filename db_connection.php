@@ -5,7 +5,7 @@
   $password = "";
   $db_name = "vegetable_website";
 
-  // $mysqli = new mysqli($server, $username, $password, $db_name);
+   $mysqli = new mysqli($server, $username, $password, $db_name);
   
   // if ($mysqli -> connect_error){
   //   echo "<pre>";
