@@ -75,11 +75,18 @@
                         <label class="form-check-label" for="flexCheckDefault">
                                 Availability
                          </label>
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="myCheckbox" value="ON" name="availability" >
+                            <label class="form-check-label" for="myCheckbox">
+                                Available 
+                            </label>
+                        </div>
+
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Default checkbox
-                         </label>
+                            <input class="form-check-input" type="checkbox" id="myCheckbox" value="OFF" name="availability" >
+                            <label class="form-check-label" for="myCheckbox">
+                               Not Available 
+                            </label>
                         </div>
                     
                         <div class="mb-3">
@@ -92,10 +99,9 @@
                             <input type="text" class="form-control formlabel" name="contact">
                         </div>
 
-                        <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
-                            inline="true">
+                        <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
                             <label for="example">Date</label>
-                            <input type="date" id="date" name="date">
+                            <input type="date" id="date" name="dateofveg">
                         </div>
 
                         <div class="mb-3">
@@ -116,16 +122,6 @@
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
-
-        <script>
-            // Get the date input element
-            const dateInput = document.getElementById('date');
-
-            // Set the minimum and maximum date (optional)
-            const today = new Date().toISOString().split('T')[0];
-            dateInput.setAttribute('min', today);
-            dateInput.setAttribute('max', '2025-12-31');
-        </script>
 
 </body>
 

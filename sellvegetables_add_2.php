@@ -12,22 +12,22 @@ require("db_connection.php");
 //   print_r($_FILES);
 // echo "</pre>";
   //store the form field values to variables
-$veg_name            = $_REQUEST ['veg_name'];
-$veg_price           = $_REQUEST ['veg_price'];
-$available_quntity   = $_REQUEST ['available_quntity'];
-$availability        = $_REQUEST ['availability'];
-$contact             = $_REQUEST ['contact'];
-$date                = $_REQUEST ['date'];
-
-  //building a dynamic sql comman
+  $veg_name = $_REQUEST['veg_name'];
+  $veg_price = $_REQUEST['veg_price'];
+  $available_quntity = $_REQUEST['available_quntity'];
+  $availability = $_REQUEST['availability'];
+  $contact = $_REQUEST['contact'];
+  $dateofveg = date('Y-m-d', strtotime($_REQUEST['dateofveg']));
   
-     $sql  = "insert into sellingvegetables (veg_name,veg_price,available_quntity,availability,contact,date) values(";
-     $sql .= "'$veg_name',";
-     $sql .= "'$veg_price',";
-     $sql .= "'$available_quntity',";
-     $sql .= "'$availability',";
-     $sql .= "'$contact',";
-     $sql .= "$date)";
+  //building a dynamic sql command
+  $sql = "INSERT INTO sellingvegetables (veg_name, veg_price, available_quntity, availability, contact, dateofveg) VALUES (";
+  $sql .= "'$veg_name',";
+  $sql .= "'$veg_price',";
+  $sql .= "'$available_quntity',";
+  $sql .= "'$availability',";
+  $sql .= "'$contact',";
+  $sql .= "'$dateofveg')";
+  
     
     //lets display the sql command
     //echo $sql;

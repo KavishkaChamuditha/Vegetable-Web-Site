@@ -50,9 +50,9 @@ function resizeThumbPicture($path, $image_name)	{
 
 
  //get the picture name from product table via pid
- function getProductPicture($pro_id){
+ function getProductPicture($veg_id){
    global $mysqli;
-   $sql = "select picture from tblproduct where pro_id=$pro_id";
+   $sql = "select picture from sellingvegetables where veg_id=$veg_id";
    $rs  = $mysqli->query($sql);
    $row = mysqli_fetch_assoc($rs);
    return $row['picture'];
