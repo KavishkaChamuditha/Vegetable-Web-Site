@@ -45,7 +45,7 @@
         <div class="card-body ">
             <h1 class="text-dark font-weight-bold">Edit Vegetable</h1>
 
-            <form action="sellvegetables_edit_3.php" method="post" enctype="multipart/form-data">
+            <form action="sellvegetables_delete_3.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="veg_id" value="<?php echo $row ['veg_id']; ?>">
                 <div class="form-group">
                     <label for="veg_name" class="form-label text-dark">Vegetable Name</label>
@@ -100,9 +100,8 @@
                     <img src="sellvegetables/large/<?php echo $veg_image;?>" style="width:400px; margin-top:30px;">
                 </div>
 
-                <input type="submit" class="btn btn-danger"  name="submit" id="submit" value="Confirm Delete">
-                <input type="reset"  class="btn btn-warning" name="reset"  id="reset" value="Clear">
-
+                <input type="submit" class=" btn btn-danger"  name="submit" id="submit" value="Confirm Delete">
+                <input type="reset"  class=" btn btn-warning" name="reset"  id="reset" value="Clear">
             </form>
         </div>
     </div>

@@ -61,12 +61,12 @@ $x = $mysqli->query($sql);
       }
 
     //file upload code ends here 
-    echo "Successfully updated";
-    // header("location:edit_product_4.php?status=pass");
+    //echo "Successfully updated";
+    header("location:sellvegetables_edit_4.php?status=pass");
   }
   else{
-     echo "saving changes failed";
-    // header("location:edit_product_4.php?status=fail");
+     //echo "saving changes failed";
+    header("location:sellvegetables_edit_4.php?status=fail");
   }
 
 
