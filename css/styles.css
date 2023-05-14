@@ -203,6 +203,19 @@ input[type="date"] {
 /* search pages code stop from here */
 
 
+/* available vegetables codes start from here  */
+.inlinelbl{
+  margin-left: 20;
+  margin-top: 20px;
+}
+
+.inlinelblprt{
+  margin-left: 20px;
+}
+
+/* available vegetables codes start from here  */
+
+
 
 /* responsive codes start from here */
 @media (max-width: 768px) {

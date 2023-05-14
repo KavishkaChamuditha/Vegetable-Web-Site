@@ -1,8 +1,6 @@
 <?php
 
 require("db_connection.php");
-
-
   //get the values from the form (add_product_1.php) and display
 //   echo "<pre>";
 //   print_r($_REQUEST);
@@ -12,12 +10,12 @@ require("db_connection.php");
 //   print_r($_FILES);
 // echo "</pre>";
   //store the form field values to variables
-  $veg_name = $_REQUEST['veg_name'];
-  $veg_price = $_REQUEST['veg_price'];
-  $available_quntity = $_REQUEST['available_quntity'];
-  $availability = $_REQUEST['availability'];
-  $contact = $_REQUEST['contact'];
-  $dateofveg = date('Y-m-d', strtotime($_REQUEST['dateofveg']));
+  $veg_name           = $_REQUEST['veg_name'];
+  $veg_price          = $_REQUEST['veg_price'];
+  $available_quntity  = $_REQUEST['available_quntity'];
+  $availability       = $_REQUEST['availability'];
+  $contact            = $_REQUEST['contact'];
+  $dateofveg          = date('Y-m-d', strtotime($_REQUEST['dateofveg']));
   
   //building a dynamic sql command
   $sql = "INSERT INTO sellingvegetables (veg_name, veg_price, available_quntity, availability, contact, dateofveg) VALUES (";
@@ -57,12 +55,15 @@ require("db_connection.php");
             }
             
       //upload code ends here
-       header("location:sellvegetables_add_3.php?status=pass");
+       //header("location:sellvegetables_add_3.php?status=pass");
+       echo"<script>alert('Vegetable Successfully Add ')</script>";
+       echo"<script>window.location='availablevegetables_add_1.php'</script>";
      }
    else{
        //echo "adding new record failed";
-   header("location:sellvegetables_add_3.php?status=fail");
-
+  // header("location:sellvegetables_add_3.php?status=fail");
+      echo"<script>alert('Vegetable Adding Failed Try Again')</script>";
+      echo"<script>window.location='availablevegetables_add_1.php'</script>";
 }
   }
 

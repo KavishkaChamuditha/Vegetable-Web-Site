@@ -142,20 +142,17 @@ if (isset($_POST['search'])) {
           <a class="btn btn-small btn-danger"  href="delete_product_2.php?pro_id=<?php echo $row['veg_id']; ?>">Delete</a>
         </td>
       </tr>
-<?php
-    }
-  } else {
-    
-?>
-<div class="alert alert-danger" role="alert">
-  <h4 class="alert-heading">No Records Were Found</h4>
-  <?php
-  }
-}
-    ?>
-
-
-
+      <?php
+          }
+        } else {
+          
+      ?>
+      <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">No Records Were Found</h4>
+        <?php
+        }
+      }
+          ?>
 
  </table>
     </div> <!-- end of container -->

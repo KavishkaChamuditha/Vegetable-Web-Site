@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/sidebar_style.css">
     <link rel="stylesheet" href="css/styles.css">
-
-
 </head>
 
 <body>
@@ -62,38 +60,56 @@
                 <div class="card-body ">
                     <h1 class="text-dark font-weight-bold">Add Products</h1>
 
-                    <form action="sellvegetables_add_2.php" method="post" enctype="multipart/form-data">
+                    <form action="availablevegetables_add_2.php" method="post" enctype="multipart/form-data">
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label text-dark">Vegetable Name</label>
-                            <input type="text" class="form-control formlabel" name="veg_name">
+                            <input type="text" class="form-control formlabel" name="buyveg_name">
+                        </div>
+
+                        <label for="exampleInputEmail1" class="form-label text-dark">Prices</label>
+                        <div class="mb-3">
+                            <div class="d-inline-flex inlinelbl">
+                                <label for="exampleInputEmail1" class="form-label text-dark">A</label>
+                                <input type="text" class="form-control formlabel inlinelblprt" name="catoA">
+                            </div>
+                            <br>
+                            <div class="d-inline-flex inlinelbl">
+                                <label for="exampleInputEmail1" class="form-label text-dark">B</label>
+                                <input type="text" class="form-control formlabel inlinelblprt" name="catoB">
+                            </div>
+                            <br>
+                            <div class="d-inline-flex inlinelbl">
+                                <label for="exampleInputEmail1" class="form-label text-dark">C</label>
+                                <input type="text" class="form-control formlabel inlinelblprt" name="catoC">
+                            </div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label text-dark">Price</label>
-                            <input type="number" class="form-control formlabel" name="veg_price">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Available Quantity</label>
+                            <input type="number" class="form-control formlabel" name="availablequntity">
                         </div>
 
-                    <label class="form-check-label" for="flexCheckDefault">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label text-dark">Need Quantity</label>
+                            <input type="number" class="form-control formlabel" name="needquntity">
+                        </div>
+
+                        <label class="form-check-label" for="flexCheckDefault">
                                 Availability
-                    </label>
-                   <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="availableCheckbox" value="ON" name="availability">
-                        <label class="form-check-label" for="availableCheckbox">
-                            Available
                         </label>
-                        </div>
-
                         <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="notAvailableCheckbox" value="OFF" name="availability">
-                        <label class="form-check-label" for="notAvailableCheckbox">
-                            Not Available
-                        </label>
-                    </div>
+                            <input class="form-check-input" type="checkbox" id="availableCheckbox" value="ON" name="availability">
+                            <label class="form-check-label" for="availableCheckbox">
+                                Available
+                            </label>
+                            </div>
 
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label text-dark">Quantity</label>
-                            <input type="text" class="form-control formlabel" name="available_quntity">
+                            <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="notAvailableCheckbox" value="OFF" name="availability">
+                            <label class="form-check-label" for="notAvailableCheckbox">
+                                Not Available
+                            </label>
                         </div>
 
                         <div class="mb-3">
@@ -107,7 +123,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label  class="form-label text-dark">Image</label>
+                            <label class="form-label text-dark">Image</label>
                             <input type="file" class="form-control formlabel" name="picture" id="picture">
                         </div>
 
@@ -124,7 +140,9 @@
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
-            
+
+        <!-- selling and sold -->
+
         <script>
             $(document).ready(function() {
                 $('#availableCheckbox').click(function() {
@@ -136,6 +154,7 @@
                 });
             });
         </script> 
+
 
 </body>
 

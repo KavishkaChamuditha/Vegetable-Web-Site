@@ -61,14 +61,14 @@
                     Availability
                 </label>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availability" <?php if($availability == 'on') echo 'checked'; ?>>
+                    <input class="form-check-input" type="checkbox" id="myCheckbox" value="ON" name="availability" <?php if($availability == 'on') echo 'checked'; ?>>
                     <label class="form-check-label" for="myCheckbox">
                     Available
                     </label>
                 </div>
 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availability" <?php if($availability == 'OFF') echo 'checked'; ?>>
+                    <input class="form-check-input" type="checkbox" id="myCheckbox" value="OFF" name="availability" <?php if($availability == 'OFF') echo 'checked'; ?>>
                     <label class="form-check-label" for="myCheckbox">
                     Not Available
                     </label>
