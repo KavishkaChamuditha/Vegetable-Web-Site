@@ -106,9 +106,9 @@
                     <input type="text" class="form-control formlabel" name="contact" value="<?php echo $row ['contact']; ?>"> 
                 </div>
 
-                <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                    <label for="example">Date</label>
-                    <input type="date" id="date" name="dateofveg" value="<?php echo $row ['contact']; ?>">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label text-dark">Date</label>
+                    <input type="text" class="form-control formlabel" name="dateofveg" value="<?php echo $row ['dateofveg']; ?>"> 
                 </div>
 
                 <div class="form-group">

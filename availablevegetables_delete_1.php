@@ -27,7 +27,7 @@
     <div class="row">
         <div class="container">
 
-            <form class="product-margin" action="sellvegetables_delete_2.php" method="post" enctype="multipart/form-data">
+            <form class="product-margin" action="availablevegetables_delete_2.php" method="post" enctype="multipart/form-data">
 
                 <h2>Delete Vegetables</h2>
                 <div class="mb-3">

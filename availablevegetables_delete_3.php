@@ -2,11 +2,11 @@
   // connecting the database
   require("db_connection.php");
 
-  $veg_id = $_REQUEST['veg_id'];
+  $buyveg_id = $_REQUEST['buyveg_id'];
 
   // lets build a dynamic sql command to delete the record permanatly
 
-  $sql = "DELETE FROM sellingvegetables where veg_id=$veg_id";
+  $sql = "DELETE FROM buyvegetables where buyveg_id=$buyveg_id";
 
   // excecute the sql command
   $x = $mysqli->query($sql);
@@ -17,10 +17,12 @@
       unlink("sellvegetables/large/$old_picture_name");
     }
     //echo "succefully delete";
-    header("location:sellvegetables_delete_4.php?status=pass");
+    echo"<script>alert('Vegetable Delete Successfully Done')</script>";
+    echo"<script>window.location='availablevegetables_delete_1.php'</script>";
   }else {
      //echo "succefully not delete";
-    header("location:sellvegetables_delete_4.php?status=fail");
+     echo"<script>alert('Vegetable Delete Not Successful')</script>";
+     echo"<script>window.location='availablevegetables_delete_1.php'</script>";
   }
 
  ?>
