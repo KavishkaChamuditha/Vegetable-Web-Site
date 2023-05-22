@@ -1,3 +1,11 @@
+<?php
+    require('cardscodebank.php');
+    require('create_db.php');
+
+    $database = new CreateDb("vegetable_website", "sellingvegetables");
+
+?>
+
 <html lang="en">
 
 <head>
@@ -53,7 +61,7 @@
     <!-- nav bar code stop from here -->
 
     <!-- banner code start from here -->
-    <d1iv id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="img-cover" src="images/cover image.png" class="d-block w-100" alt="...">
@@ -107,48 +115,16 @@
                 </div>
             </div>
         </div>
+    
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-mg-4 cardmar">
-                    <div class="card card-prop">
-                        <h2 class="marginpa">Raslan Products</h2>
-                        <img src="images/fresh (2) 1.png" alt="">
-                        <p class="marginpa">Sri Lanka Tomato</p>
-                        <p class="marginpa">Available Quntity 100kg</p>
-                        <p class="marginpa">Price per kg Rs.100.00</p>
-                        <p class="marginpa">Date: 00/00/0000</p>
-                        <p class="marginpa">Contact: 081-2123329</p>
-                        <div class="btn searchbtn">Search</div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-mg-4 cardmar">
-                    <div class="card card-prop">
-                        <h2 class="marginpa">Raslan Products</h2>
-                        <img src="images/fresh (2) 1.png" alt="">
-                        <p class="marginpa">Sri Lanka Tomato</p>
-                        <p class="marginpa">Available Quntity 100kg</p>
-                        <p class="marginpa">Price per kg Rs.100.00</p>
-                        <p class="marginpa">Date: 00/00/0000</p>
-                        <p class="marginpa">Contact: 081-2123329</p>
-                        <div class="btn searchbtn">Search</div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-mg-4 cardmar">
-                    <div class="card card-prop">
-                        <h2 class="marginpa">Raslan Products</h2>
-                        <img src="images/fresh (2) 1.png" alt="">
-                        <p class="marginpa">Sri Lanka Tomato</p>
-                        <p class="marginpa">Available Quntity 100kg</p>
-                        <p class="marginpa">Price per kg Rs.100.00</p>
-                        <p class="marginpa">Date: 00/00/0000</p>
-                        <p class="marginpa">Contact: 081-2123329</p>
-                        <div class="btn searchbtn">Search</div>
-                    </div>
-                </div>
-
+              <?php
+               $result = $database->getData();
+               while ($row = mysqli_fetch_assoc($result)){
+                   component($row['veg_id'],$row['veg_name'],$row['veg_price'],$row['availability'],$row['available_quntity'],$row['contact'],$row['dateofveg'],$row['picture']);
+               }
+              ?>
             </div> <!-- container stop from here -->
         </div><!-- row stop from here -->
 
