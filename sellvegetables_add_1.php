@@ -78,14 +78,14 @@
                                 Availability
                     </label>
                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="availableCheckbox" value="ON" name="availability">
+                        <input class="form-check-input" type="checkbox" id="availableCheckbox" value="ON" name="availablesta">
                         <label class="form-check-label" for="availableCheckbox">
                             Available
                         </label>
                         </div>
 
                         <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="notAvailableCheckbox" value="OFF" name="availability">
+                        <input class="form-check-input" type="checkbox" id="notAvailableCheckbox" value="OFF" name="availablesta">
                         <label class="form-check-label" for="notAvailableCheckbox">
                             Not Available
                         </label>

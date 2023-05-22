@@ -11,7 +11,7 @@ $veg_id              = $_REQUEST ['veg_id'];
 $veg_name            = $_REQUEST ['veg_name'];
 $veg_price           = $_REQUEST ['veg_price'];
 $available_quntity   = $_REQUEST ['available_quntity'];
-$availability        = $_REQUEST ['availability'];
+$availablesta        = $_REQUEST ['availablesta'];
 $contact             = $_REQUEST ['contact'];
 $dateofveg           = date('Y-m-d', strtotime($_REQUEST['dateofveg']));
 
@@ -20,7 +20,7 @@ $sql = "UPDATE sellingvegetables SET ";
 $sql .= "veg_name='$veg_name', ";
 $sql .= "veg_price='$veg_price', ";
 $sql .= "available_quntity='$available_quntity', ";
-$sql .= "availability='$availability', ";
+$sql .= "availablesta='$availablesta', ";
 $sql .= "contact='$contact', ";
 $sql .= "dateofveg='$dateofveg' ";
 $sql .= "WHERE veg_id=$veg_id";

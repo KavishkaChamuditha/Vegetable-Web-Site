@@ -25,7 +25,7 @@
  
 <div class="row">
 <div class="container">
-<form class="product-margin" action="sellvegetables_search_2.php" method="post" enctype="multipart/form-data">
+<form class="product-margin" action="sellvegetables_search.php" method="post" enctype="multipart/form-data">
     <div class="form-row align-item-left">
       <div class="form-group col-lg-4 col-md-4">
         <label class="label mx-1 border-primary" for="name"> Search By </label>
@@ -36,7 +36,7 @@
             <option value="veg_id">Vegetable ID</option>
             <option value="veg_name">Vegetable Name</option>
             <option value="veg_price">Vegetable Price</option>
-            <option value="availability">Availability</option>
+            <option value="availablesta">Availability</option>
             <option value="available_quantity">Available Quantity</option>
             <option value="contact">Contact</option>
             <option value="dateofveg">Date</option>
@@ -92,8 +92,8 @@ if (isset($_POST['search'])) {
     case 'veg_price':
       $sql = "select * from sellingvegetables where veg_price='$keywords' or veg_price like '%$keywords%'";
       break;
-    case 'availability':
-      $sql = "select * from sellingvegetables where availability='$keywords' or availability like '%$keywords%'";
+    case 'availablesta':
+      $sql = "select * from sellingvegetables where availablesta='$keywords' or availablesta like '%$keywords%'";
       break;
     case 'available_quntity':
       $sql = "select * from sellingvegetables where available_quntity='$keywords'";
@@ -117,17 +117,17 @@ if (isset($_POST['search'])) {
         <td><?php echo $row['veg_price']; ?></td>
         <td>
           <?php 
-          $availability = $row['availability']; 
+          $availablesta = $row['availablesta']; 
           ?>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availability" <?php if($availability == 'on') echo 'checked'; ?>>
+            <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" <?php if($availablesta == 'on') echo 'checked'; ?>>
             <label class="form-check-label" for="myCheckbox">
               Available
             </label>
           </div>
 
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availability" <?php if($availability == 'OFF') echo 'checked'; ?>>
+            <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" <?php if($availablesta == 'OFF') echo 'checked'; ?>>
             <label class="form-check-label" for="myCheckbox">
               Not Available
             </label>

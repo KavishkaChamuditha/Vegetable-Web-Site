@@ -33,7 +33,7 @@
         if ($row) {
             $veg_name           = $row['veg_name'];
             $veg_price          = $row['veg_price'];
-            $availability       = $row['availability'];
+            $availablesta       = $row['availablesta'];
             $available_quntity  = $row['available_quntity'];
             $contact            = $row['contact'];
             $dateofveg          = $row['dateofveg'];
@@ -61,14 +61,14 @@
                     Availability
                 </label>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availability" <?php if($availability == 'on') echo 'checked'; ?>>
+                    <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" <?php if($availablesta == 'on') echo 'checked'; ?>>
                     <label class="form-check-label" for="myCheckbox">
                     Available
                     </label>
                 </div>
 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availability" <?php if($availability == 'OFF') echo 'checked'; ?>>
+                    <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" <?php if($availablesta == 'OFF') echo 'checked'; ?>>
                     <label class="form-check-label" for="myCheckbox">
                     Not Available
                     </label>
