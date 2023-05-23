@@ -1,5 +1,5 @@
 <?php   
-function component($veg_id, $veg_name, $veg_price, $availability, $available_quntity, $contact, $dateofveg, $picture)
+function component($veg_id, $veg_name, $veg_price, $availablesta, $available_quntity, $contact, $dateofveg, $picture)
 {
     $element =
     '<div class="col-lg-3 col-mg-4 cardmar">
@@ -9,6 +9,7 @@ function component($veg_id, $veg_name, $veg_price, $availability, $available_qun
             <p class="marginpa">' . $veg_name . '</p>
             <p class="marginpa">' . $available_quntity . '</p>
             <p class="marginpa">Price per kg: ' . $veg_price . '</p>
+            <p class="marginpa">Available: ' . $availablesta . '</p>
             <p class="marginpa">Date: ' . $dateofveg . '</p>
             <p class="marginpa">Contact: ' . $contact . '</p>
             <div class="btn searchbtn">Search</div>

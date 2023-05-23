@@ -120,7 +120,7 @@ if (isset($_POST['search'])) {
           $availablesta = $row['availablesta']; 
           ?>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" <?php if($availablesta == 'on') echo 'checked'; ?>>
+            <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" <?php if($availablesta == 'ON') echo 'checked'; ?>>
             <label class="form-check-label" for="myCheckbox">
               Available
             </label>

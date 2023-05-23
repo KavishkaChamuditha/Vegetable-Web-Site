@@ -41,7 +41,7 @@ class CreateDb
                             veg_name           VARCHAR (25) NOT NULL,
                             veg_price          VARCHAR (150),
                             available_quntity  VARCHAR (150),
-                            availability       VARCHAR (50),                           
+                            availablesta       VARCHAR (50),                           
                             contact            VARCHAR (200),
                             dateofveg          VARCHAR (200),
                             picture            VARCHAR (200)
