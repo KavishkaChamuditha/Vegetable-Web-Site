@@ -87,6 +87,7 @@
                         <label class="form-check-label" for="flexCheckDefault">
                     Availability
                 </label>
+
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="availableCheckbox" value="ON" name="vegstatus" <?php if($vegstatus == 'ON') echo 'checked'; ?>>
                     <label class="form-check-label" for="myCheckbox">
@@ -100,7 +101,7 @@
                     Not Available
                     </label>
                 </div>
-
+                
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label text-dark">Contact</label>
                             <input type="text" class="form-control formlabel" name="contact" value="<?php echo $row ['contact']; ?>"> 
