@@ -29,6 +29,7 @@
 }
 
 .card-search{
+    margin-left: -70px !important;
     height: 300px;
     margin-top: 20px;
     color: #fff;
@@ -80,7 +81,7 @@
 }
 
 .btncard{
-    width: 150px !important;
+    width: 170px !important;
     height: 40px !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -88,7 +89,14 @@
     color: #fff;
     border-radius: 30px 0px 30px 0px !important;
     font-size: 18px;
+   
 }
+
+.btncard:hover{
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  color: #003110;
+}
+
 
 .availablestatus{
   margin-left: 20px;
@@ -108,25 +116,32 @@
   border-radius: 100px !important; /* Change the value to your desired border radius */
 }
 
-
 .card-prop{
     width: 270px;
-    height: 650px;
+    height: 570px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     border: 0px !important;
     border-radius: 30px 0px 30px 0px !important;
 }
 
 .marginpa{
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     margin-left: auto !important;
     margin-right: auto !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+.marginpadeta{
+    margin-bottom: 15px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-family: 'Roboto', sans-serif;
 }
 
 .cardmar{
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-top: 90px;
+    margin-top: 70px;
 }
 
 /* index page code stop from here */
@@ -180,10 +195,19 @@ input[type="date"] {
   }
 
   .formlabel{
+    width: 900px !important;
     border-color: #fff;
     border-radius: 30px 0px 30px 0px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 300px 8px 230px -8px !important;
   }
+
+  .formlabelcat{
+    width: 200px !important;
+    border-color: #fff;
+    border-radius: 30px 0px 30px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 300px 8px 230px -8px !important;
+  }
+
 
   .searchlbl{
     width: 400px;

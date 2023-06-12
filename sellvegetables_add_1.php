@@ -58,7 +58,7 @@
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
-            <div class="card btncard sellproductcard">
+            <div class="card sellproductcard">
                 <div class="card-body ">
                     <h1 class="text-dark font-weight-bold">Add Products</h1>
 

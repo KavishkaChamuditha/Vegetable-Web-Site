@@ -56,8 +56,8 @@
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
-            <div class="card btncard sellproductcard">
-                <div class="card-body ">
+            <div class="card sellproductcard">
+                <div class="card-body">
                     <h1 class="text-dark font-weight-bold">Add Products</h1>
 
                     <form action="availablevegetables_add_2.php" method="post" enctype="multipart/form-data">
@@ -71,17 +71,17 @@
                         <div class="mb-3">
                             <div class="d-inline-flex inlinelbl">
                                 <label for="exampleInputEmail1" class="form-label text-dark">A</label>
-                                <input type="text" class="form-control formlabel inlinelblprt" name="catoA">
+                                <input type="text" class="form-control formlabelcat inlinelblprt" name="catoA">
                             </div>
                             <br>
                             <div class="d-inline-flex inlinelbl">
                                 <label for="exampleInputEmail1" class="form-label text-dark">B</label>
-                                <input type="text" class="form-control formlabel inlinelblprt" name="catoB">
+                                <input type="text" class="form-control formlabelcat inlinelblprt" name="catoB">
                             </div>
                             <br>
                             <div class="d-inline-flex inlinelbl">
                                 <label for="exampleInputEmail1" class="form-label text-dark">C</label>
-                                <input type="text" class="form-control formlabel inlinelblprt" name="catoC">
+                                <input type="text" class="form-control formlabelcat inlinelblprt" name="catoC">
                             </div>
                         </div>
 
@@ -96,17 +96,19 @@
                         </div>
 
                         <label class="form-check-label" for="flexCheckDefault">
-                                Availability
+                            Availability
                         </label>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="availableCheckbox" value="ON" name="availability">
+                            <input class="form-check-input" type="checkbox" id="availableCheckbox" value="ON"
+                                name="availability">
                             <label class="form-check-label" for="availableCheckbox">
                                 Available
                             </label>
-                            </div>
+                        </div>
 
-                            <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="notAvailableCheckbox" value="OFF" name="availability">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="notAvailableCheckbox" value="OFF"
+                                name="availability">
                             <label class="form-check-label" for="notAvailableCheckbox">
                                 Not Available
                             </label>
@@ -117,7 +119,8 @@
                             <input type="text" class="form-control formlabel" name="contact">
                         </div>
 
-                        <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+                        <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
+                            inline="true">
                             <label for="example">Date</label>
                             <input type="date" id="date" name="dateofveg">
                         </div>
@@ -144,16 +147,16 @@
         <!-- selling and sold -->
 
         <script>
-            $(document).ready(function() {
-                $('#availableCheckbox').click(function() {
-                $('#notAvailableCheckbox').prop('checked', !$(this).prop('checked'));
+            $(document).ready(function () {
+                $('#availableCheckbox').click(function () {
+                    $('#notAvailableCheckbox').prop('checked', !$(this).prop('checked'));
                 });
 
-                $('#notAvailableCheckbox').click(function() {
-                $('#availableCheckbox').prop('checked', !$(this).prop('checked'));
+                $('#notAvailableCheckbox').click(function () {
+                    $('#availableCheckbox').prop('checked', !$(this).prop('checked'));
                 });
             });
-        </script> 
+        </script>
 
 
 </body>
