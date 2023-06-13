@@ -31,66 +31,155 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+<style>
+    .nav-link img {
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        margin: -8px 0;
+        float: left;
+        margin-right: 10px;
+    }
 
-    <!-- nav bar code start from here -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <img src="images/logo.png" width="100" class="d-inline-block align-top" alt="">
-            <a class="navbar-brand" href="#">Vegetable Market</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ">Disabled</a>
-                    </li>
-                </ul>
-                <li class="navbar-nav position-absolute top-50 end-0 translate-middle">
-                    <a class="nav-link text-end">Sign Up</a>
+    .img-cover {
+        width: 100%;
+    }
+
+    .navbar {
+        background-color: #186600;
+        overflow: visible !important;
+    }
+
+    .navbar a {
+        color: #fff;
+        display: flex !important;
+        margin-left: 120px;
+        
+    }
+
+    .navbar a:hover {
+        color: #00ff15 !important;
+    }
+
+    .dropdown-menu {
+        background-color: #186600;
+        border-color: #186600 !important;
+        position: absolute;
+        z-index: 9999;
+    }
+
+    .navbar .dropdown-menu {
+            border-radius: 1px;
+            border-color: #e5e5e5;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+        }
+
+        .navbar .dropdown-menu a {
+            color: #fff'
+            line-height: normal;
+            margin-left: -10px;
+        }
+
+        .navbar .dropdown-menu a:hover,
+        .navbar .dropdown-menu a:active {
+            color: #333;
+        }
+
+        .navbar .dropdown-item .material-icons {
+            font-size: 21px;
+            line-height: 16px;
+            vertical-align: middle;
+            margin-top: -2px;
+        }
+
+
+
+</style>
+
+<!-- nav bar code start from here -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <img src="images/logo.png" width="100" class="d-inline-block align-top" alt="">
+        <a class="navbar-brand" href="#">Vegetable Market</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
                 </li>
-            </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Disabled</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link">Sign Up</a>
+                </li>
+            </ul>
+            <div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
+        <img src="images/girl2.png" class="avatar" alt="Avatar">
+        Paula Wilson
+        <b class="caret"></b>
+    </a>
+    <div class="dropdown-menu">
+        <div class="dropdown-container">
+            <a href="#" class="dropdown-item text-dark"><i class="fa fa-user-o"></i> Profile</a>
+            <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
+            <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
         </div>
-    </nav>
-    <!-- nav bar code stop from here -->
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
+    </div>
+</div>
 
-    <!-- banner code start from here -->
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="img-cover" src="images/cover image.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img class="img-cover" src="images/2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img class="img-cover" src="images/1.jpg" class="d-block w-100" alt="...">
-            </div>
+
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+    </div>
+</nav>
+<!-- nav bar code stop from here -->
+
+<!-- banner code start from here -->
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="img-cover" src="images/cover image.png" class="d-block w-100" alt="...">
         </div>
-        <!-- banner code stop from here -->
+        <div class="carousel-item">
+            <img class="img-cover" src="images/2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img class="img-cover" src="images/1.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- banner code stop from here -->
+
+
 
         <div class="container">
             <div class="row">
