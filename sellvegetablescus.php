@@ -39,66 +39,92 @@
 
 <body>
 <style>
-    .nav-link img {
-        border-radius: 50%;
-        width: 36px;
-        height: 36px;
-        margin: -8px 0;
-        float: left;
-        margin-right: 10px;
-    }
 
-    .img-cover {
-        width: 100%;
-    }
+.nav-link img {
+ border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  margin: -8px 0;
+  float: left;
+  margin-right: 10px;
+}
+    
+.img-cover {
+    width: 100%;
+}
 
-    .navbar {
-        background-color: #186600;
-        overflow: visible !important;
-    }
+.navbar {
+    background-color: #186600;
+    overflow: visible !important;
+}
 
-    .navbar a {
-        color: #fff;
-        display: flex !important;
-        margin-left: 120px;
-        
-    }
+.navbar a {
+    color: #fff;
+    display: flex !important;
+    margin-left: 120px;     
+}
 
-    .navbar a:hover {
-        color: #00ff15 !important;
-    }
+.navbar a{
+    color: #fff !important;
+}
 
-    .dropdown-menu {
-        background-color: #186600;
-        border-color: #186600 !important;
-        position: absolute;
-        z-index: 9999;
-    }
+.navbar a:hover {
+    color: #fff !important;
+    background-color: transparent !important;
+}
 
-    .navbar .dropdown-menu {
-            border-radius: 1px;
-            border-color: #e5e5e5;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
-        }
+.dropdown-menu a{
+    margin-left:20px !important;    
+}
 
-        .navbar .dropdown-menu a {
-            color: #fff'
-            line-height: normal;
-            margin-left: -10px;
-        }
+.dropdown-menu a:hover{
+    color:#fff !important; 
+}
 
-        .navbar .dropdown-menu a:hover,
-        .navbar .dropdown-menu a:active {
-            color: #333;
-        }
+.dropdown-menu {
+    margin-top:20px;
+    background-color: #186600;
+    border-color: #186600 !important;
+    position: absolute;
+    z-index: 9999;
+}
 
-        .navbar .dropdown-item .material-icons {
-            font-size: 21px;
-            line-height: 16px;
-            vertical-align: middle;
-            margin-top: -2px;
-        }
+.dropdown-menu i{
+    margin-left: -20px;
+}
 
+.navbar .dropdown-menu {
+    margin-left: 100px;
+    border-radius: 1px;
+    border-color: #e5e5e5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+}
+
+.navbar .dropdown-menu a {
+     color: #fff'
+     line-height: normal;
+}
+
+.navbar .dropdown-menu a:hover,
+.navbar .dropdown-menu a:active {
+     color: #blue;
+}
+
+.navbar .dropdown-item .material-icons {
+    font-size: 21px;
+    line-height: 16px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.iconmargin{
+    margin-top: 4px;
+}
+
+.dropdown-item i.iconmargin {
+    margin-right: 2px;
+    margin-top:4px !important;
+}
 
 
 </style>
@@ -132,23 +158,22 @@
                     <a class="nav-link">Sign Up</a>
                 </li>
             </ul>
+            
             <div class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
-        <img src="images/girl2.png" class="avatar" alt="Avatar">
-        Paula Wilson
-        <b class="caret"></b>
-    </a>
-    <div class="dropdown-menu">
-        <div class="dropdown-container">
-            <a href="#" class="dropdown-item text-dark"><i class="fa fa-user-o"></i> Profile</a>
-            <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
-            <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
-        </div>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
-    </div>
-</div>
-
+                <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
+                    <img src="images/girl2.png" class="avatar" alt="Avatar">
+                    Paula Wilson
+                </a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-container">
+                        <a href="#" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i> Profile</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i> Calendar</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i> Settings</a>
+                        <a href="#" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i> Logout</a>
+                    </div>
+                    
+                </div>
+            </div>
 
         </div>
     </div>
