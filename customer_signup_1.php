@@ -30,22 +30,22 @@
     <!-- <div class="row"> -->
 
     <section class="ftco-section">
-        <div class="">
-            <div class="row justify-content-center">
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-12 col-lg-10">
-                    <div class="wrap d-md-flex">
-                        <div class="img" style="background-image: url(images/log_in.png);">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="wrap d-md-flex">
+                <div class="backclrsignup" style=" width: 500px !important;
+  background-color: #186600 !important;">
+                        <div class="imgsignup" style="background-image: url(images/log_in.png);">
                         </div>
-                        <div class="login-wrap p-4 p-md-5" style="width: 700px;">
-                            <div class="d-flex">
-                                <div class="w-100">
-                                    <h2 class="mb-4" style="font-weight: bold;">Customer SignUp</h2>
-                                </div>
-                                <div class="w-100">
-                                </div>
+                    </div>
+                    <div class="login-wrap p-4 p-md-5" style="width: 500px; margin-left: 180px;">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h2 class="mb-4" style="font-weight: bold;">Customer Sign</h2>
                             </div>
+                            <div class="w-100">
+                            </div>
+                        </div>
                             <form action="customer_signup_2.php" method="post" enctype="multipart/form-data" class="signin-form">
                                 <div class="form-group mb-3">
                                     <label class="label" for="name">Your Name</label>
@@ -72,15 +72,20 @@
                                     <input type="file" name="custmerimage" class="form-control formlabelcat" placeholder=""
                                         required>
                                 </div>
+                                <div class="d-flex inline">
                                 <div class="form-group">
                                     <button type="submit" class="form-control btn signupbtn submit px-3">Sign
                                         Up</button>
                                 </div>
-
-                            </form>
-                            <a class="style=" color: #80E55D !important;"">
-                                <p class="text-center">Already a Member? <a data-toggle="tab" href="#signup">Log In</a>
-                                </p>
+                                <div class="form-group">
+                                    <button type="cancel" class="form-control btn signinbtn submit px-3">Cancle</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="d-flex justify-content-center">
+                        <a class="" style="margin-left: 80px;">
+                            <p class="text-center">Not a Member?<a data-toggle="tab" href="#signup">  Sign Up</a>
+                            </p> 
                         </div>
                     </div>
                 </div>

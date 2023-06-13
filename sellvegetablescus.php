@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     require('cardscodebank.php');
     require('create_db.php');
 
@@ -162,7 +164,7 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
                     <img src="images/girl2.png" class="avatar" alt="Avatar">
-                    Paula Wilson
+                    <?php echo $_SESSION['cus_name']; ?>
                 </a>
                 <div class="dropdown-menu">
                     <div class="dropdown-container">

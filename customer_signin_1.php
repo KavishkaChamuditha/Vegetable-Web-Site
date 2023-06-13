@@ -7,7 +7,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -18,7 +17,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
-
 
     <link rel="stylesheet" href="css/customer_style.css">
 
@@ -45,7 +43,7 @@
                             <div class="w-100">
                             </div>
                         </div>
-                        <form action="customer_signup_2.php" method="post" enctype="multipart/form-data"
+                        <form action="customer_signin_2.php" method="post" enctype="multipart/form-data"
                             class="signin-form">
                             <div class="form-group mb-3">
                                 <label class="label" for="password">E-Mail Address</label>

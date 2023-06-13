@@ -5,6 +5,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+.backclrsignup{
+ 
+}
+
  .backclr{
   width: 500px;
   background-color: #186600;
@@ -38,6 +42,16 @@
   top: 185px;
 }
 
+.imgsignup{
+  margin-left: -10px;
+  background-repeat: no-repeat !important;
+  width: 801px !important;
+  height: 811px !important;
+  left: 49px !important;
+  top: 185px !important;
+}
+
+
  .formlabelcat{
   width: 500px !important;
   border-color: #fff !important;
@@ -46,13 +60,12 @@
 }
 
 .img {
-  width: 800px !important;
-  background-color: #186600;
-  height: 800px;
   background-repeat: no-repeat;
-  background-position: center center;
+  width: 801px;
+  height: 811px;
+  left: 49px;
+  top: 185px;
  }
-
 
  .login-wrap {
   position: relative;
