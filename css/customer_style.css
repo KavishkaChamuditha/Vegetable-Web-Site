@@ -5,9 +5,16 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-.backclrsignup{
- 
+/* whole seller page code start from here */
+.sellermgsignup{
+  margin-top: 190px;
+  margin-left: -10px;
+  background-repeat: no-repeat !important;
+  width: 801px !important;
+  height: 811px !important;
+  left: 49px !important;
 }
+/* whole seller page code end here */
 
  .backclr{
   width: 500px;

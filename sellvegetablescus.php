@@ -163,7 +163,7 @@
             
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
-                    <img src="images/girl2.png" class="avatar" alt="Avatar">
+                    <img src="customer/large/<?php echo $_SESSION['custmerimage']; ?>" class="avatar" alt="Avatar">
                     <?php echo $_SESSION['cus_name']; ?>
                 </a>
                 <div class="dropdown-menu">

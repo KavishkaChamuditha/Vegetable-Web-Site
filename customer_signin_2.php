@@ -16,10 +16,11 @@ if ($result->num_rows === 1) {
         $row = $result->fetch_assoc();
 
         session_start();
-        $_SESSION['mailaddress'] = $mailaddress;
-        $_SESSION['role'] = 'customer';
-        $_SESSION['cus_id'] = $row['cus_id'];
-        $_SESSION['cus_name'] = $row['cus_name'];
+        $_SESSION['mailaddress']  = $mailaddress;
+        $_SESSION['role']         = 'customer';
+        $_SESSION['cus_id']       = $row['cus_id'];
+        $_SESSION['cus_name']     = $row['cus_name'];
+        $_SESSION['custmerimage'] = $row['custmerimage'];
         header('Location: sellvegetablescus.php');
         // Add more session variables for other details you want to store
 // } else {
