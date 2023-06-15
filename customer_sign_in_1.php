@@ -43,7 +43,7 @@
                             <div class="w-100">
                             </div>
                         </div>
-                        <form action="customer_signin_2.php" method="post" enctype="multipart/form-data"
+                        <form action="customer_sign_in_2.php" method="post" enctype="multipart/form-data"
                             class="signin-form">
                             <div class="form-group mb-3">
                                 <label class="label" for="password">E-Mail Address</label>

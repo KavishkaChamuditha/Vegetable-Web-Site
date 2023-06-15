@@ -14,6 +14,21 @@
   height: 811px !important;
   left: 49px !important;
 }
+
+.sellerimgsignin{
+  margin-bottom: -45px;
+  margin-left: -10px;
+  background-repeat: no-repeat !important;
+  width: 701px !important;
+  height: 811px !important;
+  left: 49px !important;
+}
+
+.siginbackclr{
+  width: 600px;
+  background-color: #186600;
+}
+
 /* whole seller page code end here */
 
  .backclr{

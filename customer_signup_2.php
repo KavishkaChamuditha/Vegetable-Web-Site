@@ -6,9 +6,16 @@ require("db_connection.php");
 //   print_r($_REQUEST);
 //   echo "</pre>";
 
-echo "<pre>";
-print_r($_FILES);
-echo "</pre>";
+if ($result->num_rows > 0) {
+  // User already exists, redirect to signup page
+  echo "<script>alert('User with the same email address already exists. Please try again.')</script>";
+  echo "<script>window.location='customer_signup_1.php'</script>";
+  exit;
+}
+
+// echo "<pre>";
+// print_r($_FILES);
+// echo "</pre>";
   //store the form field values to variables
   $cus_name      = $_REQUEST['cus_name'];
   $mailaddress   = $_REQUEST['mailaddress'];
