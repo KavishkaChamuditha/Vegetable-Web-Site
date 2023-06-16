@@ -23,7 +23,7 @@ if ($result->num_rows === 1) {
     $_SESSION['seller_id'] = $row['seller_id'];
     $_SESSION['sellername'] = $row['sellername'];
     $_SESSION['sellerimage'] = $row['sellerimage'];
-    header('Location: availablevegetables_add_1.php');
+    header('Location: wholesellermain_dashboard.php');
     exit;
 } else {
     // If the username/password are incorrect or don't exist.

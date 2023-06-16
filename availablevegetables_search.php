@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require("db_connection.php");
 ?>
 
@@ -22,7 +23,10 @@
 </head>
 
   <body>
- 
+  <?php 
+        require_once('sidebar.php');
+    ?>
+    
 <div class="row">
 <div class="container">
 <form class="product-margin" action="availablevegetables_search.php" method="post" enctype="multipart/form-data">

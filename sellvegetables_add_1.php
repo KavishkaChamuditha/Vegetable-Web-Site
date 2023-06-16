@@ -1,3 +1,6 @@
+><?php
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -16,45 +19,9 @@
 </head>
 
 <body>
-
-    <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar" class="active">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-dark">
-                    <i class="fa fa-bars"></i>
-                    <span class="sr-only">Toggle Menu</span>
-                </button>
-            </div>
-            <div class="p-4">
-                <img class="profile-img" src="images/girl2.png" alt="">
-                <h6 class=" text-dark text-center">Name: Raslan</h6>
-                <ul class="list-unstyled components mb-5">
-                    <li class="active">
-                        <a href="#"><span class="fa fa-home mr-3"></span>Add Products</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-user mr-3"></span>Update Products</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-briefcase mr-3"></span>View Products</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-sticky-note mr-3"></span>Delete Products</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contact</a>
-                    </li>
-                </ul>
-
-                <div class="footer">
-                    <p class="text-dark">
-                        Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> <i class="icon-heart"
-                            aria-hidden="true"></i> by <a href="" target="_blank">VegetableMarket.com</a>
-                    </p>
-                </div>
-            </div>
-        </nav>
+    <?php 
+        require_once('sidebar.php');
+    ?>
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">

@@ -4,6 +4,18 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+/* farmer sign up page code start from here */
+.farmergsignup{
+  margin-top: 35px;
+  margin-left: -10px;
+  background-repeat: no-repeat !important;
+  width: 801px !important;
+  height: 780px !important;
+  left: 49px !important;
+}
+/* farmer sign up page code stop from here */
+
+
 
 /* whole seller page code start from here */
 .sellermgsignup{

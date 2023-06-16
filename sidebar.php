@@ -2,16 +2,22 @@
 <html lang="en">
 
 <head>
-    <title>Sell Products</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <head>
+        <title>Sell Products</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/sidebar_style.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/sidebar_style.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/admin_side.css">
+    </head>
 
 <body>
 
@@ -24,8 +30,8 @@
                 </button>
             </div>
             <div class="p-4">
-                <img class="profile-img" src="images/girl2.png" alt="">
-                <h6 class=" text-dark text-center">Name: Raslan</h6>
+                <img class="profile-img" src="wholseller/large/<?php echo $_SESSION['sellerimage']; ?>" alt="">
+                <h6 class=" text-dark text-center"> <?php echo $_SESSION['sellername']; ?></h6>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         <a href="#"><span class="fa fa-home mr-3"></span>Add Products</a>
@@ -54,12 +60,20 @@
             </div>
         </nav>
 
-
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
 
-</body>
+        <script>
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+            });
+        </script>
+
+    </body>
 
 </html>
+            

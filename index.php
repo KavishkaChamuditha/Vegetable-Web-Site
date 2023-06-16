@@ -94,7 +94,7 @@
                     <div class="col-xl-4 col-md-5" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon-box">
                             <img src="images/index_page (1).png" alt="" style="width: 300px;">
-                            <h4 class="title"><a href="sellvegetable_dashboard.php" class="stretched-link">Whole Seller</a></h4>
+                            <h4 class="title"><a href="wholeseller_signin_1.php" class="stretched-link">Whole Seller</a></h4>
                         </div>
                     </div><!--End Icon Box -->
 

@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+?>
+
+
 <html lang="en">
 
 <head>
@@ -19,6 +24,7 @@
     </head>
 
 <body>
+
     <?php 
         require_once('sidebar.php');
     ?>
@@ -33,43 +39,19 @@
                         <div class="row">
 
                             <div class="col-3 col-md-4">
-                                <a href="availablevegetables_add_1.php">
+                                <a href="sellvegetable_dashboard.php">
                                     <div class="btn btn-success btnadprdct font-weight-bold" style="font-size: 25px;">
-                                        Add
-                                        Product</div>
+                                       Sell Vegetables</div>
                                 </a>
                             </div>
 
                             <div class="col-3 col-md-4">
-                                <a href="availablevegetables_edit_1.php">
+                                <a href="buyvegetabeldashboard.php">
                                     <div class="btn btn-success btnadprdct font-weight-bold" style="font-size: 25px;">
-                                        Update
-                                        Products</div>
+                                        Buy Vegetables</div>
                                 </a>
                             </div>
 
-                            <div class="col-4 col-md-5">
-                                <a href="availablevegetables_search.php">
-                                    <div class="btn btn-success btnadprdct font-weight-bold"
-                                        style="font-size: 25px; margin-top: 20px;">View
-                                        Products </div>
-                                </a>
-                            </div>
-
-                            <div class="col-3 col-md-4">
-                                <a href="availablevegetables_delete_1.php">
-                                    <div class="btn btn-success btnadprdct font-weight-bold"
-                                        style="margin-top: 25px; font-size: 25px; margin-left: -100px;">
-                                        Delete Products </div>
-                                </a>
-                            </div>
-
-                            <div class="col-3 col-md-4">
-                                <div class="btn btn-success btnadprdct font-weight-bold"
-                                    style="margin-top: 25px; font-size: 25px; margin-left: 200px;">
-                                    Orders
-                                </div>
-                            </div>
                         </div>
                     </div>
 

@@ -1,4 +1,5 @@
 <!-- <?php
+ session_start();
     require('cardscodebank.php');
     require('create_db_farmer.php');
 
@@ -35,7 +36,96 @@
 </head>
 
 <body>
+<style>
 
+.nav-link img {
+ border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  margin: -8px 0;
+  float: left;
+  margin-right: 10px;
+}
+    
+.img-cover {
+    width: 100%;
+}
+
+.navbar {
+    background-color: #186600;
+    overflow: visible !important;
+}
+
+.navbar a {
+    color: #fff;
+    display: flex !important;
+    margin-left: 120px;     
+}
+
+.navbar a{
+    color: #fff !important;
+}
+
+.navbar a:hover {
+    color: #fff !important;
+    background-color: transparent !important;
+}
+
+.dropdown-menu a{
+    margin-left:20px !important;    
+}
+
+.dropdown-menu a:hover{
+    color:#fff !important; 
+}
+
+.dropdown-menu {
+    margin-top:20px;
+    background-color: #186600;
+    border-color: #186600 !important;
+    position: absolute;
+    z-index: 9999;
+}
+
+.dropdown-menu i{
+    margin-left: -20px;
+}
+
+.navbar .dropdown-menu {
+    margin-left: 100px;
+    border-radius: 1px;
+    border-color: #e5e5e5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+}
+
+.navbar .dropdown-menu a {
+     color: #fff'
+     line-height: normal;
+}
+
+.navbar .dropdown-menu a:hover,
+.navbar .dropdown-menu a:active {
+     color: #blue;
+}
+
+.navbar .dropdown-item .material-icons {
+    font-size: 21px;
+    line-height: 16px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.iconmargin{
+    margin-top: 4px;
+}
+
+.dropdown-item i.iconmargin {
+    margin-right: 2px;
+    margin-top:4px !important;
+}
+
+
+</style>
     <!-- nav bar code start from here -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -60,9 +150,28 @@
                         <a class="nav-link ">Disabled</a>
                     </li>
                 </ul>
-                <li class="navbar-nav position-absolute top-50 end-0 translate-middle">
-                    <a class="nav-link text-end">Sign Up</a>
+                <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link">Sign Up</a>
                 </li>
+            </ul>
+            
+
+                <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
+                    <img src="farmer/large/<?php echo $_SESSION['farmerimage']; ?>" class="avatar" alt="Avatar">
+                    <?php echo $_SESSION['farmername']; ?>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-container">
+                        <a href="#" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i> Profile</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i> Calendar</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i> Settings</a>
+                        <a href="#" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i> Logout</a>
+                    </div>                   
+                </div>
+            </div>
+
             </div>
         </div>
     </nav>

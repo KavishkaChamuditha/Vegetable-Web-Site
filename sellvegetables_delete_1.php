@@ -1,3 +1,7 @@
+<? 
+    session_start();
+?>
+
 <html lang="en">
 
 <head>
@@ -21,9 +25,8 @@
 <body>
 
     <?php 
-    include 'sidebar.php';
+        require_once('sidebar.php');
     ?>
-
     <div class="row">
         <div class="container">
 
