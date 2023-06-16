@@ -1,8 +1,8 @@
 <!-- <?php
     require('cardscodebank.php');
-    require('create_db.php');
+    require('create_db_farmer.php');
 
-    $database = new CreateDb("vegetable_website", "sellingvegetables");
+    $database = new CreatefarmerDb("vegetable_website", "buyvegetables");
 
 ?> -->
 
@@ -126,28 +126,59 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-2 col-mg-3 cardmar">
-                <div class="card card-prop">
-                    <div class="d-flex align-items-center" style="margin-top: 20px; margin-left: -5px;">
-                      
-                    
-                        <h3 class="marginpa fw-bold">Raslan Products</h3>
-                    </div>
 
-                    <img src="sellvegetables/large/'. $picture .'" alt="">
-                    <p class="marginpa fw-bold">' . $veg_name . '</p>
-                    <p class="marginpadeta">Dambulla Economic Center</p>
-                    <p class="marginpadeta" style="margin-top:10px;">Available Quantity: ' . $available_quntity . ' Kg
-                    </p>
-                    <p class="marginpadeta">Price per kg: ' . $veg_price . '.00 Rs</p>
-                    <p class="marginpadeta">Date: ' . $dateofveg . '</p>
-                    <p class="marginpadeta">Contact: ' . $contact . '</p>
-                    <div class="btn btncard">Place Order</div>
-                </div>
-            </div>
+            <?php
+               $result = $database->getData();
+               while ($row = mysqli_fetch_assoc($result)){
+                farmercomponnets($row['buyveg_id'],$row['buyveg_name'],$row['catoA'],$row['catoB'],$row['catoC'],$row['dateofveg'],$row['availablequntity'],$row['needquntity'],$row['vegstatus'], $row['contact'],$row['picture']);
+               }
+            ?>
 
         </div>
     </div>
+
+
+
+
+
+<!-- 
+
+    <div class="col-lg-2 col-mg-3 cardmar">
+                <div class="card card-prop" style="height: 650px; width: 280px;">
+                    <div class="d-flex align-items-center" style="margin-top: 20px; margin-left: -5px;">
+                        <div class="availablestatus"></div>
+                        <h3 class="marginpa fw-bold">Raslan Products</h3>
+                    </div>
+                    <img src="images/fresh (2) 1.png" alt="">
+                    <p class="marginpa fw-bold">Tommatto</p>
+                    <p class="marginpadeta">Dambulla Economic Center</p>
+                    <p class="marginpadeta" style="margin-top:10px;">Need Quantity: 100kg</p>
+                    <div class="" style="display: flex;">
+                        <div class="card text-center catogaris">
+                            A
+                        </div>
+                        <p class="marginpadeta">Price per kg: Rs 1200.00</p>
+                    </div>
+                    <div class="" style="display: flex;">
+                        <div class="card text-center catogaris">
+                            B
+                        </div>
+                        <p class="marginpadeta">Price per kg: Rs 1200.00</p>
+                    </div>
+                    <div class="" style="display: flex;">
+                        <div class="card text-center catogaris">
+                            C
+                        </div>
+                        <p class="marginpadeta">Price per kg: Rs 1200.00</p>
+                    </div>
+                    <p class="marginpadeta">Date: 2022/00/00</p>
+                    <p class="marginpadeta">Contact: 0771271727</p>
+                    <div class="btn btncard">Place Order</div>
+                </div>
+            </div> -->
+
+
+
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted ">
 

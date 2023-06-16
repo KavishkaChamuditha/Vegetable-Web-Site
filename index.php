@@ -70,10 +70,7 @@
                     <p>At Fresh Greens, we are passionate about providing you with the freshest, highest-quality
                         vegetables that are not only delicious but also packed with essential nutrients. </p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started">Get Started</a>
-                        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                            class="glightbox btn-watch-video d-flex align-items-center"><i
-                                class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                        <a href="#section1" class="btn-get-started">Get Started</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
@@ -88,22 +85,22 @@
                 <div class="row gy-4 mt-5">
 
                     <div class="col-xl-4 col-md-5" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bi bi-easel"></i></div>
-                            <h4 class="title"><a href="" class="stretched-link">Farmer</a></h4>
+                        <div class="icon-box" id="section1">
+                            <img src="images/index_page (2).png" alt="" style="width: 300px;">
+                            <h4 class="title"><a href="buyvegetablesfrmfarmrs.php" class="stretched-link">Farmer</a></h4>
                         </div>
                     </div><!--End Icon Box -->
 
                     <div class="col-xl-4 col-md-5" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon-box">
-                            <div class="icon"><i class="bi bi-gem"></i></div>
-                            <h4 class="title"><a href="" class="stretched-link">Whole Seller</a></h4>
+                            <img src="images/index_page (1).png" alt="" style="width: 300px;">
+                            <h4 class="title"><a href="sellvegetable_dashboard.php" class="stretched-link">Whole Seller</a></h4>
                         </div>
                     </div><!--End Icon Box -->
 
                     <div class="col-xl-4 col-md-5" data-aos="fade-up" data-aos-delay="300">
                         <div class="icon-box">
-                            <div class="icon"><i class="bi bi-geo-alt"></i></div>
+                            <img src="images/index_page (3).png" alt="" style="width: 300px;">
                             <h4 class="title"><a href="sellvegetablescus.php" class="stretched-link">Customer</a></h4>
                         </div>
                     </div><!--End Icon Box -->
