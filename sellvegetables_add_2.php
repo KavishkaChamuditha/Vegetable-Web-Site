@@ -15,15 +15,21 @@ require("db_connection.php");
   $available_quntity  = $_REQUEST['available_quntity'];
   $availablesta       = $_REQUEST['availablesta'];
   $contact            = $_REQUEST['contact'];
+  $mailaddress        = $_REQUEST['mailaddress'];
+  $shopname           = $_REQUEST['shopname'];
+  $economiccenter     = $_REQUEST['economiccenter'];
   $dateofveg          = date('Y-m-d', strtotime($_REQUEST['dateofveg']));
   
   //building a dynamic sql command
-  $sql = "INSERT INTO sellingvegetables (veg_name, veg_price, available_quntity, availablesta, contact, dateofveg) VALUES (";
+  $sql = "INSERT INTO sellingvegetables (veg_name, veg_price, available_quntity, availablesta, contact, mailaddress, shopname, economiccenter, dateofveg) VALUES (";
   $sql .= "'$veg_name',";
   $sql .= "'$veg_price',";
   $sql .= "'$available_quntity',";
   $sql .= "'$availablesta',";
   $sql .= "'$contact',";
+  $sql .= "'$mailaddress',";
+  $sql .= "'$shopname',";
+  $sql .= "'$economiccenter',";
   $sql .= "'$dateofveg')";
   
     

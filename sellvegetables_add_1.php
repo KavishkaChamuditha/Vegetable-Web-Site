@@ -1,4 +1,4 @@
-><?php
+<?php
     session_start();
 ?>
 <!doctype html>
@@ -19,6 +19,7 @@
 </head>
 
 <body>
+
     <?php 
         require_once('sidebar.php');
     ?>
@@ -30,7 +31,10 @@
                     <h1 class="text-dark font-weight-bold">Add Products</h1>
 
                     <form action="sellvegetables_add_2.php" method="post" enctype="multipart/form-data">
-
+                    <input type="hidden" name="mailaddress" value="<?php echo $_SESSION['mailaddress']; ?>">
+                    <input type="hidden" name="shopname" value="<?php echo $_SESSION['shopname']; ?>">
+                    <input type="hidden" name="economiccenter" value="<?php echo $_SESSION['economiccenter']; ?>">
+                    
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label text-dark">Vegetable Name</label>
                             <input type="text" class="form-control formlabel" name="veg_name">

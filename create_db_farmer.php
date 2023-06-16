@@ -47,7 +47,11 @@ class CreatefarmerDb
                             needquntity        VARCHAR (200),
                             vegstatus          VARCHAR (200),
                             contact            VARCHAR (200),
-                            picture            VARCHAR (200)
+                            picture            VARCHAR (200),
+                            mailaddress        VARCHAR (200),
+                            shopname           VARCHAR (200),
+                            economiccenter     VARCHAR (200)
+                          
                             );";
 
             if (!mysqli_query($this->con, $sql)){

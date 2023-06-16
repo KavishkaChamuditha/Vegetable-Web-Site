@@ -77,27 +77,12 @@
                                 </a>
                             </div>
 
-                            <div class="col-3 col-md-4">
-                                <a href="availablevegetables_edit_1.php">
-                                    <div class="btn btn-success btnadprdct font-weight-bold" style="font-size: 25px;">
-                                        Update
-                                        Products</div>
-                                </a>
-                            </div>
 
                             <div class="col-4 col-md-5">
                                 <a href="availablevegetables_search.php">
                                     <div class="btn btn-success btnadprdct font-weight-bold"
                                         style="font-size: 25px; margin-top: 20px;">View
                                         Products </div>
-                                </a>
-                            </div>
-
-                            <div class="col-3 col-md-4">
-                                <a href="availablevegetables_delete_1.php">
-                                    <div class="btn btn-success btnadprdct font-weight-bold"
-                                        style="margin-top: 25px; font-size: 25px; margin-left: -100px;">
-                                        Delete Products </div>
                                 </a>
                             </div>
 

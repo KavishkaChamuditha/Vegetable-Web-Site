@@ -44,6 +44,9 @@ class CreateDb
                             availablesta       VARCHAR (50),                           
                             contact            VARCHAR (200),
                             dateofveg          VARCHAR (200),
+                            mailaddress        VARCHAR (200),
+                            shopname           VARCHAR (200),
+                            economiccenter     VARCHAR (200), 
                             picture            VARCHAR (200)
                             );";
 
@@ -51,7 +54,7 @@ class CreateDb
                 echo "Error creating table : " . mysqli_error($this->con);
             }
 
-        }else{
+        }else{ 
             return false;
         }
     }

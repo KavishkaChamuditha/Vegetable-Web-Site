@@ -248,12 +248,12 @@
              <?php
                $result = $database->getData();
                while ($row = mysqli_fetch_assoc($result)){
-                   component($row['veg_id'],$row['veg_name'],$row['veg_price'],$row['availablesta'],$row['available_quntity'],$row['contact'],$row['dateofveg'],$row['picture']);
+                   component($row['veg_id'],$row['veg_name'],$row['veg_price'],$row['availablesta'],$row['available_quntity'],$row['contact'],$row['dateofveg'], $row['shopname'], $row['economiccenter'], $row['picture']);
                }
               ?>
             </div> <!-- container stop from here -->
         </div><!-- row stop from here -->
-
+ 
 
         <!-- Footer -->
         <footer class="text-center text-lg-start bg-light text-muted ">

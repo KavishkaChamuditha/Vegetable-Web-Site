@@ -239,7 +239,7 @@
             <?php
                $result = $database->getData();
                while ($row = mysqli_fetch_assoc($result)){
-                farmercomponnets($row['buyveg_id'],$row['buyveg_name'],$row['catoA'],$row['catoB'],$row['catoC'],$row['dateofveg'],$row['availablequntity'],$row['needquntity'],$row['vegstatus'], $row['contact'],$row['picture']);
+                farmercomponnets($row['buyveg_id'],$row['buyveg_name'],$row['catoA'],$row['catoB'],$row['catoC'],$row['dateofveg'],$row['availablequntity'],$row['needquntity'],$row['vegstatus'], $row['contact'], $row['shopname'], $row['economiccenter'], $row['picture']);
                }
             ?>
 

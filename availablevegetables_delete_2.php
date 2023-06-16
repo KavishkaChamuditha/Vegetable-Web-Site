@@ -25,22 +25,25 @@
 ?>
 
 <?php 
-    if(isset($_POST['submit'])){
-        $buyveg_id = $_POST['buyveg_id'];
-        $sql = "SELECT * FROM `buyvegetables` WHERE `buyveg_id` = '$buyveg_id'";
-        $result = mysqli_query($mysqli, $sql);
-        $row = mysqli_fetch_assoc($result);
-        if ($row) {
-            $buyveg_name        = $row['buyveg_name'];
-            $catoA              = $row['catoA'];
-            $catoB              = $row['catoB'];
-            $catoC              = $row['catoC'];
-            $dateofveg          = $row['dateofveg'];
-            $availablequntity   = $row['availablequntity'];
-            $needquntity        = $row['needquntity'];
-            $vegstatus          = $row['vegstatus'];
-            $contact            = $row['contact'];
-            $picture            = $row['picture'];
+ if (isset($_GET['buyveg_id'])) {
+    $buyveg_id = $_GET['buyveg_id'];
+
+    // Fetch the record based on the buyveg_id
+    $sql = "SELECT * FROM buyvegetables WHERE buyveg_id = '$buyveg_id'";
+    $result = mysqli_query($mysqli, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    if ($row) {
+        $buyveg_name = $row['buyveg_name'];
+        $catoA = $row['catoA'];
+        $catoB = $row['catoB'];
+        $catoC = $row['catoC'];
+        $dateofveg = $row['dateofveg'];
+        $availablequntity = $row['availablequntity'];
+        $needquntity = $row['needquntity'];
+        $vegstatus = $row['vegstatus'];
+        $contact = $row['contact'];
+        $picture = $row['picture'];
 ?>
 
 <div id="content" class="p-4 p-md-5 pt-5">
@@ -168,5 +171,9 @@
             });
         </script> 
     
+    <script src="js/jquery.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

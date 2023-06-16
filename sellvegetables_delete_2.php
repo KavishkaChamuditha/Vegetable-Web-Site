@@ -1,3 +1,8 @@
+<?php 
+
+    session_start();
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,19 +30,22 @@
 ?>
 
 <?php 
-    if(isset($_POST['submit'])){
-        $veg_id = $_POST['veg_id'];
-        $sql = "SELECT * FROM `sellingvegetables` WHERE `veg_id` = '$veg_id'";
-        $result = mysqli_query($mysqli, $sql);
-        $row = mysqli_fetch_assoc($result);
-        if ($row) {
-            $veg_name           = $row['veg_name'];
-            $veg_price          = $row['veg_price'];
-            $availablesta       = $row['availablesta'];
-            $available_quntity  = $row['available_quntity'];
-            $contact            = $row['contact'];
-            $dateofveg          = $row['dateofveg'];
-            $veg_image          = $row['picture'];
+ if (isset($_GET['veg_id'])) {
+    $veg_id = $_GET['veg_id'];
+
+    // Fetch the record based on the buyveg_id
+    $sql = "SELECT * FROM sellingvegetables WHERE veg_id = '$veg_id'";
+    $result = mysqli_query($mysqli, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    if ($row) {
+        $veg_name          = $row['veg_name'];
+        $veg_price         = $row['veg_price'];
+        $availablesta      = $row['availablesta'];
+        $available_quntity = $row['available_quntity'];
+        $contact           = $row['contact'];
+        $dateofveg         = $row['dateofveg'];
+        $picture           = $row['picture'];
 ?>
 
 <div id="content" class="p-4 p-md-5 pt-5">
@@ -97,7 +105,7 @@
                 <div class="form-group">
                     <label for="picture" class="form-label text-dark">Image</label>
                     <input type="file" class="form-control formlabel" name="picture" id="picture">
-                    <img src="sellvegetables/large/<?php echo $veg_image;?>" style="width:400px; margin-top:30px;">
+                    <img src="sellvegetables/large/<?php echo $picture;?>" style="width:400px; margin-top:30px;">
                 </div>
 
                 <input type="submit" class=" btn btn-danger"  name="submit" id="submit" value="Confirm Delete">
@@ -137,7 +145,10 @@
         calendarInput.value = dateValue;
 
     </script>
-
+   <script src="js/jquery.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
     
     </body>
 </html>

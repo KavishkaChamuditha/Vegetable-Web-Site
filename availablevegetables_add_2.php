@@ -18,10 +18,13 @@ require("db_connection.php");
   $needquntity      = $_REQUEST['needquntity'];
   $vegstatus        = $_REQUEST['vegstatus'];
   $contact          = $_REQUEST['contact'];
+  $mailaddress      = $_REQUEST['mailaddress'];
+  $shopname         = $_REQUEST['shopname'];
+  $economiccenter   = $_REQUEST['economiccenter'];
   $dateofveg        = date('Y-m-d', strtotime($_REQUEST['dateofveg']));
   
   //building a dynamic sql command
-  $sql = "insert into buyvegetables (buyveg_name, catoA, catoB, catoC, availablequntity,needquntity,vegstatus,contact, dateofveg) values(";
+  $sql = "insert into buyvegetables (buyveg_name, catoA, catoB, catoC, availablequntity,needquntity,vegstatus,contact, mailaddress, shopname, economiccenter, dateofveg) values(";
   $sql .= "'$buyveg_name',";
   $sql .= "'$catoA',";
   $sql .= "'$catoB',";
@@ -30,6 +33,9 @@ require("db_connection.php");
   $sql .= "'$needquntity',";
   $sql .= "'$vegstatus',";
   $sql .= "'$contact',";
+  $sql .= "'$mailaddress',";
+  $sql .= "'$shopname',";
+  $sql .= "'$economiccenter',";
   $sql .= "'$dateofveg')";
 
     //lets display the sql command

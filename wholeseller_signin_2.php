@@ -18,11 +18,13 @@ if ($result->num_rows === 1) {
     $row = $result->fetch_assoc();
 
     session_start();
-    $_SESSION['mailaddress'] = $mailaddress;
-    $_SESSION['sellerpaswrd'] = $row['sellerpaswrd'];
-    $_SESSION['seller_id'] = $row['seller_id'];
-    $_SESSION['sellername'] = $row['sellername'];
-    $_SESSION['sellerimage'] = $row['sellerimage'];
+    $_SESSION['mailaddress']     = $mailaddress;
+    $_SESSION['sellerpaswrd']    = $row['sellerpaswrd'];
+    $_SESSION['seller_id']       = $row['seller_id'];
+    $_SESSION['sellername']      = $row['sellername'];
+    $_SESSION['shopname']        = $row['shopname'];
+    $_SESSION['economiccenter']  = $row['economiccenter'];
+    $_SESSION['sellerimage']     = $row['sellerimage'];
     header('Location: wholesellermain_dashboard.php');
     exit;
 } else {

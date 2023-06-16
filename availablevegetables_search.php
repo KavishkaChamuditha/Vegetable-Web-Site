@@ -27,8 +27,9 @@
         require_once('sidebar.php');
     ?>
     
-<div class="row">
+
 <div class="container">
+<div class="row">
 <form class="product-margin" action="availablevegetables_search.php" method="post" enctype="multipart/form-data">
     <div class="form-row align-item-left">
       <div class="form-group col-lg-4 col-md-4">
@@ -79,103 +80,85 @@
       <th scope="col">Need Quantity</th>
       <th scope="col">Vegetable Status</th>
       <th scope="col">Contact</th>
+      <th scope="col">Image</th>
       <th scope="col">Action</th>
     </tr>
 
     </thead>
 
     <?php
-if (isset($_POST['search'])) {
-  $searchBy = $_POST['searchBy'];
-  $keywords = $_POST['keywords'];
-
-  $sql = "";
-
-  switch($searchBy) {
-    case 'buyveg_id':
-      $sql = "select * from buyvegetables where buyveg_id=$keywords";
-      break;
-    case 'buyveg_name':
-      $sql = "select * from buyvegetables where buyveg_name='$keywords' or buyveg_name like '%$keywords%'";
-      break;
-    case 'catoA':
-      $sql = "SELECT * FROM buyvegetables WHERE catoA = $keywords";
-        break; 
-    case 'catoB':
-      $sql = "SELECT * FROM buyvegetables WHERE catoB = $keywords";
-        break; 
-    case 'catoC':
-      $sql = "SELECT * FROM buyvegetables WHERE catoC = $keywords";
-        break; 
-    case 'dateofveg':
-      $sql = "SELECT * FROM buyvegetables WHERE dateofveg = '$keywords'";
-        break; 
-    case 'availablequntity':
-          $sql = "select * from buyvegetables where availablequntity= '$keywords'";
-          break;
-    case 'vegstatus':
-          $sql = "select * from buyvegetables where vegstatus= '$keywords'";
-          break;
-    case 'needquntity':
-          $sql = "select * from buyvegetables where needquntity= '$keywords'";
-          break;
-    case 'contact':
-          $sql = "select * from buyvegetables where contact<=$keywords";
-      break;
-  }
-
-  $rs = $mysqli->query($sql);
-
-  if(mysqli_num_rows($rs)>0){
-    while ($row = mysqli_fetch_assoc($rs)) {
-?>
-      <tr>
-        <td><?php echo $row['buyveg_id']; ?></td>
-        <td><?php echo $row['buyveg_name']; ?></td>
-        <td><?php echo $row['catoA']; ?></td>
-        <td><?php echo $row['catoB']; ?></td>
-        <td><?php echo $row['catoC']; ?></td>
-        <td><?php echo $row['dateofveg']; ?></td>
-        <td><?php echo $row['availablequntity']; ?></td>
-        <td><?php echo $row['needquntity']; ?></td>
+// Function to display farmer components
+function farmercomponnets($buyveg_id, $buyveg_name, $catoA, $catoB, $catoC, $dateofveg, $availablequntity, $needquntity, $vegstatus, $contact, $picture)
+{
+    $element = '
+    <tr>
+        <td>' . $buyveg_id . '</td>
+        <td>' . $buyveg_name . '</td>
+        <td>' . $catoA . '</td>
+        <td>' . $catoB . '</td>
+        <td>' . $catoC . '</td>
+        <td>' . $dateofveg . '</td>
+        <td>' . $availablequntity . '</td>
+        <td>' . $needquntity . '</td>
         <td>
-          <?php 
-          $vegstatus = $row['vegstatus']; 
-          ?>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="vegstatus" <?php if($vegstatus == 'ON') echo 'checked'; ?>>
-            <label class="form-check-label" for="myCheckbox">
-              Available
-            </label>
-          </div>
-
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="vegstatus" <?php if($vegstatus == 'OFF') echo 'checked'; ?>>
-            <label class="form-check-label" for="myCheckbox">
-              Not Available
-            </label>
-          </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="vegstatus" ' . ($vegstatus == 'ON' ? 'checked' : '') . '>
+                <label class="form-check-label" for="myCheckbox">
+                    Available
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="vegstatus" ' . ($vegstatus == 'OFF' ? 'checked' : '') . '>
+                <label class="form-check-label" for="myCheckbox">
+                    Not Available
+                </label>
+            </div>
         </td>
-        <td><?php echo $row['contact']; ?></td>
-        <td><img src="buyvegetables/large/<?php echo $row['picture'];?>" style="max-width:200px; max-height:200px;"alt=""></td>
-        <td><?php echo $row['dateofveg']; ?></td>
+        <td>' . $contact . '</td>
+        <td><img src="buyvegetables/large/' . $picture . '" style="max-width:200px; max-height:200px;" alt=""></td>
+        <td>' . $dateofveg . '</td>
         <td>
-          <a class="btn btn-small btn-warning" href="availablevegetables_edit_1.php?buyveg_id=<?php echo $row['buyveg_id']; ?>">Edit</a>
-          <a class="btn btn-small btn-danger"  href="availablevegetables_delete_1.php?buyveg_id=<?php echo $row['buyveg_id']; ?>">Delete</a>
+            <a class="btn btn-small btn-warning" href="availablevegetables_edit_2.php?buyveg_id=' . $buyveg_id . '">Edit</a>
+            <a class="btn btn-small btn-danger" href="availablevegetables_delete_2.php?buyveg_id=' . $buyveg_id . '">Delete</a>
         </td>
-      </tr>
-      <?php
-          }
-        } else {
-          
-      ?>
-      <div class="alert alert-danger" role="alert">
-        <h4 class="alert-heading">No Records Were Found</h4>
-        <?php
+    </tr>';
+
+    echo $element;
+}
+
+// Fetch the logged-in user's email address from the session
+if (!empty($_SESSION['mailaddress'])) {
+    $mailaddress = $_SESSION['mailaddress'];
+
+    // Fetch records for the logged-in user
+    $sql = "SELECT * FROM buyvegetables WHERE mailaddress = '$mailaddress'";
+    $result = $mysqli->query($sql);
+
+    // Check if any records exist for the user
+    if ($result->num_rows > 0) {
+
+        // Display records for the user
+        while ($row = $result->fetch_assoc()) {
+            farmercomponnets($row['buyveg_id'], $row['buyveg_name'], $row['catoA'], $row['catoB'], $row['catoC'], $row['dateofveg'], $row['availablequntity'], $row['needquntity'], $row['vegstatus'], $row['contact'], $row['picture']);
         }
-      }
-          ?>
 
+        echo '
+            </tbody>
+        </table>';
+    } else {
+        echo '<div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">No Records Found for the User</h4>
+        </div>';
+    }
+} else {
+    echo '<div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">User Not Logged In</h4>
+    </div>';
+}
+
+// Close the database connection
+$mysqli->close();
+?>
  </table>
     </div> <!-- end of container -->
   </div> <!-- end of row -->

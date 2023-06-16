@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,33 +18,38 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/sidebar_style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 
 <?php 
     require("db_connection.php");
-    include 'sidebar.php';
+    require_once('sidebar.php');
 ?>
 
 <?php 
-    if(isset($_POST['submit'])){
-        $buyveg_id = $_POST['buyveg_id'];
-        $sql = "SELECT * FROM `buyvegetables` WHERE `buyveg_id` = '$buyveg_id'";
-        $result = mysqli_query($mysqli, $sql);
-        $row = mysqli_fetch_assoc($result);
-        if ($row) {
-            $buyveg_name        = $row['buyveg_name'];
-            $catoA              = $row['catoA'];
-            $catoB              = $row['catoB'];
-            $catoC              = $row['catoC'];
-            $dateofveg          = $row['dateofveg'];
-            $availablequntity   = $row['availablequntity'];
-            $needquntity        = $row['needquntity'];
-            $vegstatus          = $row['vegstatus'];
-            $contact            = $row['contact'];
-            $picture            = $row['picture'];
+ if (isset($_GET['buyveg_id'])) {
+    $buyveg_id = $_GET['buyveg_id'];
+
+    // Fetch the record based on the buyveg_id
+    $sql = "SELECT * FROM buyvegetables WHERE buyveg_id = '$buyveg_id'";
+    $result = mysqli_query($mysqli, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    if ($row) {
+        $buyveg_name = $row['buyveg_name'];
+        $catoA = $row['catoA'];
+        $catoB = $row['catoB'];
+        $catoC = $row['catoC'];
+        $dateofveg = $row['dateofveg'];
+        $availablequntity = $row['availablequntity'];
+        $needquntity = $row['needquntity'];
+        $vegstatus = $row['vegstatus'];
+        $contact = $row['contact'];
+        $picture = $row['picture'];
 ?>
 
 <div id="content" class="p-4 p-md-5 pt-5">
@@ -109,7 +118,7 @@
 
                         <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
                             <label for="example">Date</label>
-                            <input type="date" id="date" name="dateofveg" value="<?php echo $row ['contact']; ?>">
+                            <input type="date" id="date" name="dateofveg" value="">
                         </div>
 
                         <div class="form-group">
@@ -126,6 +135,13 @@
         </div>
     </div>
 </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+
+
     <?php
     }else {
         ?>

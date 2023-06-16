@@ -26,8 +26,9 @@
   <?php 
         require_once('sidebar.php');
     ?>
-<div class="row">
+
 <div class="container">
+<div class="row">
 <form class="product-margin" action="sellvegetables_search.php" method="post" enctype="multipart/form-data">
     <div class="form-row align-item-left">
       <div class="form-group col-lg-4 col-md-4">
@@ -68,94 +69,87 @@
       <th scope="col">Vegetable ID</th>
       <th scope="col">Vegetable Name</th>
       <th scope="col">Vegetable Price</th>
-      <th scope="col">Availability</th>
       <th scope="col">Available Quantity</th>
       <th scope="col">Contact</th>
-      <th scope="col">Picture</th>
+      <th scope="col">Availability</th>
       <th scope="col">Date</th>
+      <th scope="col">Picture</th>
+    
       <th scope="col">Action</th>
     </tr>
 
     </thead>
 
     <?php
-if (isset($_POST['search'])) {
-  $searchBy = $_POST['searchBy'];
-  $keywords = $_POST['keywords'];
-
-  $sql = "";
-
-  switch($searchBy) {
-    case 'veg_id':
-      $sql = "select * from sellingvegetables where veg_id=$keywords";
-      break;
-    case 'veg_name':
-      $sql = "select * from sellingvegetables where veg_name='$keywords' or veg_name like '%$keywords%'";
-      break;
-    case 'veg_price':
-      $sql = "select * from sellingvegetables where veg_price='$keywords' or veg_price like '%$keywords%'";
-      break;
-    case 'availablesta':
-      $sql = "select * from sellingvegetables where availablesta='$keywords' or availablesta like '%$keywords%'";
-      break;
-    case 'available_quntity':
-      $sql = "select * from sellingvegetables where available_quntity='$keywords'";
-      break;
-    case 'contact':
-      $sql = "select * from sellingvegetables where contact<=$keywords";
-      break;
-    case 'dateofveg':
-      $sql = "select * from sellingvegetables where dateofveg<=$keywords";
-      break;
-  }
-
-  $rs = $mysqli->query($sql);
-
-  if(mysqli_num_rows($rs)>0){
-    while ($row = mysqli_fetch_assoc($rs)) {
-?>
-      <tr>
-        <td><?php echo $row['veg_id']; ?></td>
-        <td><?php echo $row['veg_name']; ?></td>
-        <td><?php echo $row['veg_price']; ?></td>
+// Function to display farmer components
+function component($veg_id, $veg_name, $veg_price, $availablesta, $available_quntity, $contact, $dateofveg, $picture,)
+{
+    $element = '
+    <tr>
+        <td>' . $veg_id . '</td>
+        <td>' . $veg_name . '</td>
+        <td>' . $veg_price . '</td>
+        <td>' . $available_quntity . '</td>
+        <td>' . $contact . '</td>
         <td>
-          <?php 
-          $availablesta = $row['availablesta']; 
-          ?>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" <?php if($availablesta == 'ON') echo 'checked'; ?>>
-            <label class="form-check-label" for="myCheckbox">
-              Available
-            </label>
-          </div>
-
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" <?php if($availablesta == 'OFF') echo 'checked'; ?>>
-            <label class="form-check-label" for="myCheckbox">
-              Not Available
-            </label>
-          </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" ' . ($availablesta == 'ON' ? 'checked' : '') . '>
+                <label class="form-check-label" for="myCheckbox">
+                    Available
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" ' . ($availablesta == 'OFF' ? 'checked' : '') . '>
+                <label class="form-check-label" for="myCheckbox">
+                    Not Available
+                </label>
+            </div>
         </td>
-        <td><?php echo $row['available_quntity']; ?></td>
-        <td><?php echo $row['contact']; ?></td>
-        <td><img src="sellvegetables/large/<?php echo $row['picture'];?>" style="max-width:200px; max-height:200px;"alt=""></td>
-        <td><?php echo $row['dateofveg']; ?></td>
+        <td>' . $dateofveg . '</td>
+        <td><img src="sellvegetables/large/' . $picture . '" style="max-width:200px; max-height:200px;" alt=""></td>
+       
         <td>
-          <a class="btn btn-small btn-warning" href="edit_product_2.php?pro_id=<?php echo $row['veg_id']; ?>">Edit</a>
-          <a class="btn btn-small btn-danger"  href="delete_product_2.php?pro_id=<?php echo $row['veg_id']; ?>">Delete</a>
+            <a class="btn btn-small btn-warning" href="sellvegetables_edit_2.php?veg_id=' . $veg_id . '">Edit</a>
+            <a class="btn btn-small btn-danger" href="sellvegetables_delete_2.php?veg_id=' . $veg_id . '">Delete</a>
         </td>
-      </tr>
-      <?php
-          }
-        } else {
-          
-      ?>
-      <div class="alert alert-danger" role="alert">
-        <h4 class="alert-heading">No Records Were Found</h4>
-        <?php
+    </tr>';
+
+    echo $element;
+}
+
+// Fetch the logged-in user's email address from the session
+if (!empty($_SESSION['mailaddress'])) {
+    $mailaddress = $_SESSION['mailaddress'];
+
+    // Fetch records for the logged-in user
+    $sql = "SELECT * FROM sellingvegetables WHERE mailaddress = '$mailaddress'";
+    $result = $mysqli->query($sql);
+
+    // Check if any records exist for the user
+    if ($result->num_rows > 0) {
+
+        // Display records for the user
+        while ($row = $result->fetch_assoc()) {
+          component($row['veg_id'],$row['veg_name'],$row['veg_price'],$row['availablesta'],$row['available_quntity'],$row['contact'],$row['dateofveg'],  $row['picture']);
         }
-      }
-          ?>
+
+        echo '
+            </tbody>
+        </table>';
+    } else {
+        echo '<div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">No Records Found for the User</h4>
+        </div>';
+    }
+} else {
+    echo '<div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">User Not Logged In</h4>
+    </div>';
+}
+
+// Close the database connection
+$mysqli->close();
+?>
 
  </table>
     </div> <!-- end of container -->
