@@ -24,13 +24,12 @@
 
   <body>
   <?php 
-        require_once('sidebar.php');
+        require_once('sidebarsellvegetables.php');
     ?>
-    
 
 <div class="container">
 <div class="row">
-<form class="product-margin" action="availablevegetables_search.php" method="post" enctype="multipart/form-data">
+<form class="product-margin" action="sellvegetables_rud.php" method="post" enctype="multipart/form-data">
     <div class="form-row align-item-left">
       <div class="form-group col-lg-4 col-md-4">
         <label class="label mx-1 border-primary" for="name"> Search By </label>
@@ -38,16 +37,13 @@
           <div class="input-group-prepend">
           </div>
           <select class="form-control" name="searchBy" title="searchBy">
-            <option value="buyveg_id">Vegetable ID</option>
-            <option value="buyveg_name">Vegetable Name</option>
-            <option value="catoA">Category  A</option>
-            <option value="catoB">Category  B</option>
-            <option value="catoC">Category  B</option>
-            <option value="dateofveg">Date</option>
-            <option value="availablequntity">Available Quantity</option>
-            <option value="needquntity">Need Quantity</option>
-            <option value="vegstatus">Vegetable Status</option>
+            <option value="veg_id">Vegetable ID</option>
+            <option value="veg_name">Vegetable Name</option>
+            <option value="veg_price">Vegetable Price</option>
+            <option value="availablesta">Availability</option>
+            <option value="available_quantity">Available Quantity</option>
             <option value="contact">Contact</option>
+            <option value="dateofveg">Date</option>
           </select>
         </div>
       </div>
@@ -72,15 +68,13 @@
     <tr>
       <th scope="col">Vegetable ID</th>
       <th scope="col">Vegetable Name</th>
-      <th scope="col">Category  A</th>
-      <th scope="col">Category  B</th>
-      <th scope="col">Category  C</th>
-      <th scope="col">Date</th>
+      <th scope="col">Vegetable Price</th>
       <th scope="col">Available Quantity</th>
-      <th scope="col">Need Quantity</th>
-      <th scope="col">Vegetable Status</th>
       <th scope="col">Contact</th>
-      <th scope="col">Image</th>
+      <th scope="col">Availability</th>
+      <th scope="col">Date</th>
+      <th scope="col">Picture</th>
+    
       <th scope="col">Action</th>
     </tr>
 
@@ -88,38 +82,35 @@
 
     <?php
 // Function to display farmer components
-function farmercomponnets($buyveg_id, $buyveg_name, $catoA, $catoB, $catoC, $dateofveg, $availablequntity, $needquntity, $vegstatus, $contact, $picture)
+function component($veg_id, $veg_name, $veg_price, $availablesta, $available_quntity, $contact, $dateofveg, $picture,)
 {
     $element = '
     <tr>
-        <td>' . $buyveg_id . '</td>
-        <td>' . $buyveg_name . '</td>
-        <td>' . $catoA . '</td>
-        <td>' . $catoB . '</td>
-        <td>' . $catoC . '</td>
-        <td>' . $dateofveg . '</td>
-        <td>' . $availablequntity . '</td>
-        <td>' . $needquntity . '</td>
+        <td>' . $veg_id . '</td>
+        <td>' . $veg_name . '</td>
+        <td>' . $veg_price . '</td>
+        <td>' . $available_quntity . '</td>
+        <td>' . $contact . '</td>
         <td>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="vegstatus" ' . ($vegstatus == 'ON' ? 'checked' : '') . '>
+                <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" ' . ($availablesta == 'ON' ? 'checked' : '') . '>
                 <label class="form-check-label" for="myCheckbox">
                     Available
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="vegstatus" ' . ($vegstatus == 'OFF' ? 'checked' : '') . '>
+                <input class="form-check-input" type="checkbox" id="myCheckbox" value="on" name="availablesta" ' . ($availablesta == 'OFF' ? 'checked' : '') . '>
                 <label class="form-check-label" for="myCheckbox">
                     Not Available
                 </label>
             </div>
         </td>
-        <td>' . $contact . '</td>
-        <td><img src="buyvegetables/large/' . $picture . '" style="max-width:200px; max-height:200px;" alt=""></td>
         <td>' . $dateofveg . '</td>
+        <td><img src="sellvegetables/large/' . $picture . '" style="max-width:200px; max-height:200px;" alt=""></td>
+       
         <td>
-            <a class="btn btn-small btn-warning" href="availablevegetables_edit_2.php?buyveg_id=' . $buyveg_id . '">Edit</a>
-            <a class="btn btn-small btn-danger" href="availablevegetables_delete_2.php?buyveg_id=' . $buyveg_id . '">Delete</a>
+            <a class="btn btn-small btn-warning" href="sellvegetables_edit_2.php?veg_id=' . $veg_id . '">Edit</a>
+            <a class="btn btn-small btn-danger" href="sellvegetables_delete_2.php?veg_id=' . $veg_id . '">Delete</a>
         </td>
     </tr>';
 
@@ -131,7 +122,7 @@ if (!empty($_SESSION['mailaddress'])) {
     $mailaddress = $_SESSION['mailaddress'];
 
     // Fetch records for the logged-in user
-    $sql = "SELECT * FROM buyvegetables WHERE mailaddress = '$mailaddress'";
+    $sql = "SELECT * FROM sellingvegetables WHERE mailaddress = '$mailaddress'";
     $result = $mysqli->query($sql);
 
     // Check if any records exist for the user
@@ -139,7 +130,7 @@ if (!empty($_SESSION['mailaddress'])) {
 
         // Display records for the user
         while ($row = $result->fetch_assoc()) {
-            farmercomponnets($row['buyveg_id'], $row['buyveg_name'], $row['catoA'], $row['catoB'], $row['catoC'], $row['dateofveg'], $row['availablequntity'], $row['needquntity'], $row['vegstatus'], $row['contact'], $row['picture']);
+          component($row['veg_id'],$row['veg_name'],$row['veg_price'],$row['availablesta'],$row['available_quntity'],$row['contact'],$row['dateofveg'],  $row['picture']);
         }
 
         echo '
@@ -159,6 +150,7 @@ if (!empty($_SESSION['mailaddress'])) {
 // Close the database connection
 $mysqli->close();
 ?>
+
  </table>
     </div> <!-- end of container -->
   </div> <!-- end of row -->

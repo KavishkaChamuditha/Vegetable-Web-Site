@@ -25,21 +25,19 @@
 <body>
 
     <?php 
-        require_once('sidebar.php');
+        require_once('sidebarsellvegetables.php');
     ?>
-
-
         <div id="content" class="p-4 p-md-5 pt-5">
             <div class="card " style="background-color: #186600;">
                 <h1 class="text-light font-weight-bold text-center">Sell Vegetables</h1>
             </div>
             <div class="card sellproductcard crdcolor">
                 <div class="card-body">
-                    <div class="container" style="margin-left: 300px; ">
+                    <div class="container d-flex justify-content-center">
                         <div class="row">
-
-                            <div class="col-3 col-md-4">
-                                <a href="sellvegetables_add_1.php">
+                            
+                            <div class="col-3 col-md-4 mx-auto">
+                                <a href="sellvegetables_add_1.php ">
                                     <div class="btn btn-success btnadprdct font-weight-bold" style="font-size: 25px;">
                                         Add
                                         Product</div>
@@ -47,16 +45,16 @@
                             </div>
 
                             <div class="col-4 col-md-5">
-                                <a href="sellvegetables_search.php">
+                                <a href="sellvegetables_rud.php">
                                     <div class="btn btn-success btnadprdct font-weight-bold"
-                                        style="font-size: 25px; margin-top: 20px;">View
+                                        style="font-size: 25px;">View
                                         Products </div>
                                 </a>
                             </div>
 
-                            <div class="col-3 col-md-4">
+                            <div class="col-3 col-md-4 mx-auto">
                                 <div class="btn btn-success btnadprdct font-weight-bold"
-                                    style="margin-top: 25px; font-size: 25px; margin-left: 200px;">
+                                    style="margin-top: 25px; font-size: 25px;">
                                     Orders
                                 </div>
                             </div>
@@ -65,8 +63,6 @@
 
                 </div>
             </div>
-
-
 
             <script src="js/jquery.min.js"></script>
             <script src="js/popper.js"></script>

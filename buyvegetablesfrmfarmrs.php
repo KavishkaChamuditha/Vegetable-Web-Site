@@ -156,18 +156,31 @@
                 </li>
             </ul>
             
-
                 <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
-                    <img src="farmer/large/<?php echo $_SESSION['farmerimage']; ?>" class="avatar" alt="Avatar">
-                    <?php echo $_SESSION['farmername']; ?>
+                <?php 
+                    if(isset($_SESSION['farmerimage'])){
+                        echo '<img src="farmer/large/' . $_SESSION['farmerimage'] . '" class="avatar" alt="Avatar">';
+                    } else {
+                        echo '<img src="images/default_user.jpg" class="avatar" alt="Avatar">';
+                    }
+                    ?>
+
+                    <?php
+                    if (isset($_SESSION['farmername'])) {
+                        echo $_SESSION['farmername'];
+                    } else {
+                        echo "My Account";
+                    }
+                ?>
+
                 </a>
                 <div class="dropdown-menu">
                     <div class="dropdown-container">
-                        <a href="#" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i> Profile</a>
-                        <a href="#" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i> Calendar</a>
-                        <a href="#" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i> Settings</a>
-                        <a href="#" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i> Logout</a>
+                        <a href="farmer_accout.php" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i>Profile</a>
+                        <a href="farmer_signup_1.php" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i>Create an account</a>
+                        <a href="farmrer_user_edit.php" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
+                        <a href="farmer_login_1.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
                     </div>                   
                 </div>
             </div>

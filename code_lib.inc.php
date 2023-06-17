@@ -66,12 +66,12 @@ function resizeThumbPicture($path, $image_name)	{
   return $row['picture'];
 }
 
-function getUserPicture($user_id){
+function getfarmerPicture($farmer_id){
   global $mysqli;
-  $sql = "select picture from login where user_id='$user_id'";
+  $sql = "select farmerimage from farmertable where farmer_id='$farmer_id'";
   $rs  = $mysqli->query($sql);
   $row = mysqli_fetch_assoc($rs);
-  return $row['picture'];
+  return $row['farmerimage'];
 }
  
 
@@ -88,3 +88,13 @@ function myFunction() {
 }
 </script>
 
+<?php
+  session_start();
+
+  // validating the user
+  if($_SESSION['farmer_id']==''){
+    // redirect to invalid log in
+    header("location:farmer_login_1.php");
+  }
+
+ ?>

@@ -38,7 +38,7 @@
                     <div class="login-wrap p-4 p-md-5" style="width: 500px; margin-left: 100px;">
                         <div class="d-flex">
                             <div class="w-100">
-                                <h2 class="mb-4" style="font-weight: bold;">Whole Seller Sign</h2>
+                                <h2 class="mb-4" style="font-weight: bold;">Whole Seller Sign In</h2>
                             </div>
                             <div class="w-100">
                             </div>
@@ -69,7 +69,7 @@
                         </form>
                         <div class="d-flex justify-content-center">
                             <a class="" style="margin-left: 80px;">
-                                <p class="text-center">Not a Member?<a data-toggle="tab" href="#signup"> Sign Up</a>
+                                <p class="text-center">Not a Member?<a data-toggle="tab" href="wholeseller_signup_1.php"> Sign Up</a>
                                 </p>
                         </div>
                     </div>

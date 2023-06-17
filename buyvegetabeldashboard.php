@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <html lang="en">
 
 <head>
@@ -19,46 +22,10 @@
     </head>
 
 <body>
-
-    <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar" class="active">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-dark">
-                    <i class="fa fa-bars"></i>
-                    <span class="sr-only">Toggle Menu</span>
-                </button>
-            </div>
-            <div class="p-4">
-                <img class="profile-img" src="images/girl2.png" alt="">
-                <h6 class=" text-dark text-center">Name: Raslan</h6>
-                <ul class="list-unstyled components mb-5">
-                    <li class="active">
-                        <a href="#"><span class="fa fa-home mr-3"></span>Add Products</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-user mr-3"></span>Update Products</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-briefcase mr-3"></span>View Products</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-sticky-note mr-3"></span>Delete Products</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contact</a>
-                    </li>
-                </ul>
-
-                <div class="footer">
-                    <p class="text-dark">
-                        Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> <i class="icon-heart"
-                            aria-hidden="true"></i> by <a href="" target="_blank">VegetableMarket.com</a>
-                    </p>
-                </div>
-            </div>
-        </nav>
-
+ 
+    <?php 
+        require_once('sidebar.php');
+    ?>
 
         <div id="content" class="p-4 p-md-5 pt-5">
             <div class="card " style="background-color: #186600;">
@@ -66,7 +33,7 @@
             </div>
             <div class="card sellproductcard crdcolor">
                 <div class="card-body">
-                    <div class="container" style="margin-left: 300px; ">
+                    <div class="container d-flex justify-content-center" style="margin-left: 300px; ">
                         <div class="row">
 
                             <div class="col-3 col-md-4">
@@ -79,9 +46,9 @@
 
 
                             <div class="col-4 col-md-5">
-                                <a href="availablevegetables_search.php">
+                                <a href="availablevegetables_rud.php">
                                     <div class="btn btn-success btnadprdct font-weight-bold"
-                                        style="font-size: 25px; margin-top: 20px;">View
+                                        style="font-size: 25px;">View
                                         Products </div>
                                 </a>
                             </div>

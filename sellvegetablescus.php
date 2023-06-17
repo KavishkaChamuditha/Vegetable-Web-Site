@@ -163,15 +163,28 @@
             
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
-                    <img src="customer/large/<?php echo $_SESSION['custmerimage']; ?>" class="avatar" alt="Avatar">
-                    <?php echo $_SESSION['cus_name']; ?>
+                <?php 
+                    if(isset($_SESSION['custmerimage'])){
+                        echo '<img src="customer/large/' . $_SESSION['custmerimage'] . '" class="avatar" alt="Avatar">';
+                    } else {
+                        echo '<img src="images/default_user.jpg" class="avatar" alt="Avatar">';
+                    }
+                    ?>
+
+                    <?php
+                    if (isset($_SESSION['cus_name'])) {
+                        echo $_SESSION['cus_name'];
+                    } else {
+                        echo "My Account";
+                    }
+                ?>
                 </a>
                 <div class="dropdown-menu">
                     <div class="dropdown-container">
-                        <a href="#" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i> Profile</a>
-                        <a href="#" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i> Calendar</a>
-                        <a href="#" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i> Settings</a>
-                        <a href="#" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i> Logout</a>
+                        <a href="customer_account.php" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i>Profile</a>
+                        <a href="customer_signup_1.php" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i>Create an Account</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
+                        <a href="customer_sign_in_1.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
                     </div>
                     
                 </div>

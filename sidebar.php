@@ -34,19 +34,16 @@
                 <h6 class=" text-dark text-center"> <?php echo $_SESSION['sellername']; ?></h6>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#"><span class="fa fa-home mr-3"></span>Add Products</a>
+                        <a href="availablevegetables_add_1.php"><span class="fa fa-home mr-3"></span>Add Products</a>
                     </li>
                     <li>
-                        <a href="#"><span class="fa fa-user mr-3"></span>Update Products</a>
+                        <a href="availablevegetables_rud.php"><span class="fa fa-user mr-3"></span>Update Products</a>
                     </li>
                     <li>
-                        <a href="#"><span class="fa fa-briefcase mr-3"></span>View Products</a>
+                        <a href="availablevegetables_rud.php"><span class="fa fa-briefcase mr-3"></span>View Products</a>
                     </li>
                     <li>
-                        <a href="#"><span class="fa fa-sticky-note mr-3"></span>Delete Products</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contact</a>
+                        <a href="availablevegetables_rud.php"><span class="fa fa-sticky-note mr-3"></span>Delete Products</a>
                     </li>
                 </ul>
 

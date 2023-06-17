@@ -19,7 +19,9 @@ if ($result->num_rows === 1) {
         $_SESSION['mailaddress']  = $mailaddress;
         $_SESSION['role']         = 'customer';
         $_SESSION['cus_id']       = $row['cus_id'];
+        $_SESSION['cus_password'] = $row['cus_password'];
         $_SESSION['cus_name']     = $row['cus_name'];
+        $_SESSION['id_num']       = $row['id_num'];
         $_SESSION['custmerimage'] = $row['custmerimage'];
         header('Location: sellvegetablescus.php');
         // Add more session variables for other details you want to store

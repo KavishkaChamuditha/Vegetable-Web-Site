@@ -1,8 +1,4 @@
-<?php 
-    session_start();
-?>
-
-
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -25,7 +21,7 @@
 
 <body>
 
-<div class="wrapper d-flex align-items-stretch">
+    <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar" class="active">
             <div class="custom-menu">
                 <button type="button" id="sidebarCollapse" class="btn btn-dark">
@@ -38,10 +34,16 @@
                 <h6 class=" text-dark text-center"> <?php echo $_SESSION['sellername']; ?></h6>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#">Sell Vegetables</a>
+                        <a href="sellvegetables_add_1.php"><span class="fa fa-home mr-3"></span>Add Products</a>
                     </li>
                     <li>
-                        <a href="#">Buy Vegetables</a>
+                        <a href="sellvegetables_rud.php"><span class="fa fa-user mr-3"></span>Update Products</a>
+                    </li>
+                    <li>
+                        <a href="sellvegetables_rud.php"><span class="fa fa-briefcase mr-3"></span>View Products</a>
+                    </li>
+                    <li>
+                        <a href="sellvegetables_rud.php"><span class="fa fa-sticky-note mr-3"></span>Delete Products</a>
                     </li>
                 </ul>
 
@@ -55,50 +57,20 @@
             </div>
         </nav>
 
-        <div id="content" class="p-4 p-md-5 pt-5">
-            <div class="card " style="background-color: #186600;">
-                <h1 class="text-light font-weight-bold text-center">Dashboard</h1>
-            </div>
-            <div class="card sellproductcard crdcolor">
-                <div class="card-body">
-                    <div class="container" style="margin-left: 300px; ">
-                        <div class="row">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
 
-                            <div class="col-3 col-md-4">
-                                <a href="sellvegetable_dashboard.php">
-                                    <div class="btn btn-success btnadprdct font-weight-bold" style="font-size: 25px;">
-                                       Sell Vegetables</div>
-                                </a>
-                            </div>
-
-                            <div class="col-3 col-md-4">
-                                <a href="buyvegetabeldashboard.php">
-                                    <div class="btn btn-success btnadprdct font-weight-bold" style="font-size: 25px;">
-                                        Buy Vegetables</div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-            <script>
+        <script>
             $(document).ready(function () {
                 $('#sidebarCollapse').on('click', function () {
                     $('#sidebar').toggleClass('active');
                 });
             });
         </script>
-            <script src="js/jquery.min.js"></script>
-            <script src="js/popper.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/main.js"></script>
 
-            <!-- selling and sold -->
-</body>
+    </body>
 
 </html>
+            

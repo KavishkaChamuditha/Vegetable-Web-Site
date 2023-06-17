@@ -23,6 +23,7 @@ if ($result->num_rows === 1) {
     $_SESSION['farmer_id'] = $row['farmer_id'];
     $_SESSION['farmername'] = $row['farmername'];
     $_SESSION['farmerimage'] = $row['farmerimage'];
+    $_SESSION['farmeridnumber'] = $row['farmeridnumber'];
     header('Location: buyvegetablesfrmfarmrs.php');
     exit;
 } else {

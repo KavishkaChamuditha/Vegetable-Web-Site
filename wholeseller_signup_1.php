@@ -102,7 +102,7 @@
                         </form>
                         <div class="d-flex justify-content-center">
                         <a class="" style="margin-left: 80px;">
-                            <p class="text-center">Not a Member?<a data-toggle="tab" href="#signup">  Sign Up</a>
+                            <p class="text-center">Already a Member?<a data-toggle="tab" href="wholeseller_signin_1.php">Sign In</a>
                             </p> 
                         </div>
                     </div>
