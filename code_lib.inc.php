@@ -87,14 +87,3 @@ function myFunction() {
   }
 }
 </script>
-
-<?php
-  session_start();
-
-  // validating the user
-  if($_SESSION['farmer_id']==''){
-    // redirect to invalid log in
-    header("location:farmer_login_1.php");
-  }
-
- ?>

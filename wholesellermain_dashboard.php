@@ -38,10 +38,16 @@
                 <h6 class=" text-dark text-center"> <?php echo $_SESSION['sellername']; ?></h6>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#">Sell Vegetables</a>
+                        <a href="sellvegetable_dashboard.php">Sell Vegetables</a>
                     </li>
                     <li>
-                        <a href="#">Buy Vegetables</a>
+                        <a href="buyvegetabeldashboard.php">Buy Vegetables</a>
+                    </li>
+                    <li class="active">
+                        <a href="wholeseller_account.php">My Account</a>
+                    </li>
+                    <li class="active">
+                        <a href="wholeseller_account_edit.php">Edit Account</a>
                     </li>
                 </ul>
 

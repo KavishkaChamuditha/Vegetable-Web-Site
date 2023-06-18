@@ -14,8 +14,11 @@ $farmeridnumber    = $_REQUEST['farmeridnumber'];
 
 // let's build a dynamic SQL command
 $sql  = "UPDATE farmertable SET ";
-$sql .= "farmername = '$farmername', ";
-$sql .= "farpassword = '$farpassword' WHERE farmer_id = '$farmer_id'";
+$sql .= "farmername     = '$farmername', ";
+$sql .= "farmailaddress = '$farmailaddress', ";
+$sql .= "farpassword    = '$farpassword', ";
+$sql .= "farmeridnumber = '$farmeridnumber', ";
+$sql .= "farpassword    = '$farpassword' WHERE farmer_id = '$farmer_id'";
 
 // execute the SQL command
 $x = $mysqli->query($sql);

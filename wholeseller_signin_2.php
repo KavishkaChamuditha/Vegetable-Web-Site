@@ -24,6 +24,7 @@ if ($result->num_rows === 1) {
     $_SESSION['sellername']      = $row['sellername'];
     $_SESSION['shopname']        = $row['shopname'];
     $_SESSION['economiccenter']  = $row['economiccenter'];
+    $_SESSION['idnumber']        = $row['idnumber'];
     $_SESSION['sellerimage']     = $row['sellerimage'];
     header('Location: wholesellermain_dashboard.php');
     exit;

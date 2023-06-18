@@ -183,7 +183,7 @@
                     <div class="dropdown-container">
                         <a href="customer_account.php" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i>Profile</a>
                         <a href="customer_signup_1.php" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i>Create an Account</a>
-                        <a href="#" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
+                        <a href="customer_account_edit_1.php" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
                         <a href="customer_sign_in_1.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
                     </div>
                     

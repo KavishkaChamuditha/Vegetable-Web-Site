@@ -2,15 +2,14 @@
   session_start();
 
   // validating the user
-  if($_SESSION['farmer_id']==''){
+  if($_SESSION['cus_id']==''){
     // redirect to invalid log in
-    header("location:farmer_login_1.php");
+    header("location:customer_sign_in_1.php");
   }
 
  ?>
 
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,9 +29,7 @@
     crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="css/customer_style.css">
-
 </head>
-
 <body>
 
   <style>
@@ -123,51 +120,49 @@
             <div class="card-body p-5 text-center">
 
               <div class="mb-md-5 mt-md-4 pb-5">
-          <form action="farmeruser_edit_2.php" method="post" enctype="multipart/form-data">
-          <input type="hidden" name="farmer_id" value="<?php echo $_SESSION ['farmer_id']; ?>">
+          <form action="customer_account_edit_2.php" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="cus_id" value="<?php echo $_SESSION ['cus_id']; ?>">
 
                 <div class="avatar-upload">
                   <div class="avatar-edit">
-                    <input type='file' name="farmerimage" id="imageUpload" accept=".png, .jpg, .jpeg" />
+                  <input type='file' name="custmerimage" id="imageUpload" accept=".png, .jpg, .jpeg" />
                     <label for="imageUpload"></label>
                   </div>
                   <div class="avatar-preview">
                      <!-- <div id="imagePreview" style="background-image: url('images/default_user.jpg');"> -->
-                     <?php 
-                      if(isset($_SESSION['farmerimage'])){
-                          echo '<div id="imagePreview" style="background-image: url(\'farmer/large/' . $_SESSION['farmerimage'] . '\');">';
-                      } else {
-                          echo '<div id="imagePreview" style="background-image: url(\'images/default_user.jpg\');">';
-                      }
-                      ?>
+                    <?php 
+                        if(isset($_SESSION['custmerimage'])){
+                          echo '<div id="imagePreview" style="background-image: url(\'customer/large/' . $_SESSION['custmerimage'] . '\');">';
+                        } else {
+                            echo '<div id="imagePreview" style="background-image: url(\'images/default_user.jpg\');">';
+                        }
+                    ?>
                     </div>
                   </div>
                 </div>
 
                 <h2 class="fw-bold mb-2 text-uppercase text-light">Edit Your Account</h2>
-                <p class="text-white-50 mb-5">Please enter your new details</p>
+                <p class="text-white-50 mb-5">Please enter your new details</p> 
 
                 <div class="form-outline form-white mb-4">
-                  <input type="text" id="typeEmailX" class="form-control form-control-lg signinstyle text-dark" name="farmername" value="<?php echo $_SESSION['farmername']; ?>"  />
-                  <label class="form-label" for="typeEmailX">Your Name</label>
+                    <input type="text" name="cus_name" id="disabledTextInput" class="form-control form-control-lg signinstyle text-dark" value="<?php echo $_SESSION['cus_name']; ?>"/>
+                    <label class="form-label" for="typeEmailX">Your Name</label>
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                  <input type="email" id="typeEmailX" class="form-control form-control-lg signinstyle" name="farmailaddress" value="<?php echo $_SESSION['farmailaddress']; ?>" />
+                  <input type="email" name="mailaddress" id="disabledTextInput" class="form-control form-control-lg signinstyle" value="<?php echo $_SESSION['mailaddress']; ?>"/>
                   <label class="form-label" for="typeEmailX">Email</label>
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                  <input type="password" id="typePasswordX" class="form-control form-control-lg signinstyle" name="farpassword" value="<?php echo $_SESSION['farpassword']; ?>"/>
+                  <input type="passoword" name="cus_password" id="disabledTextInput" class="form-control form-control-lg signinstyle" value="<?php echo $_SESSION['cus_password']; ?>"/>
                   <label class="form-label" for="typePasswordX">Password</label>
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                  <input type="text" id="typeEmailX" class="form-control form-control-lg signinstyle" name="farmeridnumber" value="<?php echo $_SESSION['farmeridnumber']; ?>" />
-                  <label class="form-label" for="typeEmailX">Email</label>
-                </div> 
-
-
+                  <input type="text" name="id_num" id="disabledTextInput" class="form-control form-control-lg signinstyle" value="<?php echo $_SESSION['id_num']; ?>"/>
+                  <label class="form-label" for="typeEmailX">ID Number</label>
+                </div>
                 <button class="btn signupbtn px-5 text-dark" type="submit" style="margin-top: -20px !important;">Confirm</button>
           </form>
 
