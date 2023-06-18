@@ -183,7 +183,7 @@
                     <div class="dropdown-container">
                         <a href="customer_account.php" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i>Profile</a>
                         <a href="customer_signup_1.php" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i>Create an Account</a>
-                        <a href="customer_account_edit_1.php" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
                         <a href="customer_sign_in_1.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
                     </div>
                     
@@ -220,39 +220,63 @@
 <!-- banner code stop from here -->
 
 
+<style>
+    .form-control{
+        margin-top: 20px;
+        border-radius: 20px 0px 20px 0px!important;
+        margin-right: 300px;
+        border:none !important;
+    }
+
+    .searchtn{
+        margin-top: 40px; 
+        margin-left:400px;
+        width: 170px !important;
+        height: 40px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        border:none !important;
+        background-color: #80E55D !important;
+        color: #fff;
+        border-radius: 30px 0px 30px 0px !important;
+        font-size: 18px;
+    }
+
+</style>
 
         <div class="container">
             <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <div class="card card-search">
-                        <div class="input-group justify-content-between">
-                            <p class="searchword">Vegetable name</p>
-                            <p class="searchsecond">Economic Center</p>
-                        </div>
-                        <div class="input-group justify-content-between">
-                            <input type="text" class="form-control searcharea searchinput" placeholder="Vegetable Name"
-                                aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <input type="text" class="form-control searcharea searchinputsec"
-                                placeholder="Economic Center" aria-label="Recipient's username"
-                                aria-describedby="button-addon2">
-                        </div>
-                        <div class="input-group justify-content-between">
-                            <p class="searchword">Shope name</p>
-                            <p class="searchsecond">Date</p>
-                        </div>
-                        <div class="input-group justify-content-between">
-                            <input type="text" class="form-control searcharea searchinput" placeholder="Vegetable Name"
-                                aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <input type="text" class="form-control searcharea searchinputsec"
-                                placeholder="Vegetable Name" aria-label="Recipient's username"
-                                aria-describedby="button-addon2">
-                        </div>
-                        <div class="btn searchbtn">Search</div>
+            <div class="col-md-6 mx-auto">
+    <div class="card card-search">
+        <form class="product-margin" action="search_product_customerside.php" method="post" enctype="multipart/form-data">
+            <div class="input-group">
+                <h1 class="" style="margin-left:230px;">Search Vegetables</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <select class="form-control" name="searchBy">
+                            <option value="veg_name">Vegetable Name</option>
+                            <option value="economiccenter">Economic Center</option>
+                            <option value="shopname">Shop Name</option>
+                            <option value="dateofveg">Date</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Keywords" name="keywords">
                     </div>
                 </div>
+                <div class="input-group-append">
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary d-flex justify-content-center searchtn" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
             </div>
         </div>
-    
+
         <h1 class="text-center" style="margin-top:90px; font-family: 'Roboto', sans-serif;">Place Your Order Now</h1>
 
         <div class="container">
