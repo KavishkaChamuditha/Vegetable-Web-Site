@@ -40,6 +40,48 @@
 </head>
 
 <body>
+<?php if (isset($_POST['add_cart']))
+ {
+     //print_r($_POST['vegetable_id']);
+     if (isset($_POST['add_cart'])) {
+       // print_r($_POST['vegetable_id']);
+
+        if (isset($_SESSION['cart'])) {
+            $item_array_id = array_column($_SESSION['cart'], 'vegetable_id');
+            //print_r($item_array_id);
+            
+
+            if (in_array($_POST['vegetable_id'], $item_array_id)) {
+                echo "<script>alert('Vegetable is already in the cart')</script>";
+                echo "<script>window.location = 'sellvegetablescus.php'</script>";
+            } else {
+                $count = count($_SESSION['cart']);
+                $item_array = array('vegetable_id' => $_POST['vegetable_id']);
+
+                $_SESSION['cart'][$count] = $item_array;
+                print_r($_SESSION['cart']);
+
+            }
+        } else {
+            $item_array = array('vegetable_id' => $_POST['vegetable_id']);
+    
+            //create a new session variable 
+            $_SESSION['cart'][0] = $item_array;
+            print_r($_SESSION['cart']);
+        }
+    }
+    
+    }
+ 
+
+ ?>
+    
+<?php
+// $showLoadingScreen = true;
+// require_once('preloader.php');
+?>
+
+
 <style>
 
 .nav-link img {
@@ -96,7 +138,7 @@
 }
 
 .navbar .dropdown-menu {
-    margin-left: 30px;
+    
     border-radius: 1px;
     border-color: #e5e5e5;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
@@ -155,20 +197,30 @@
                     <a class="nav-link" href="#">Disabled</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link">Sign Up</a>
-                </li>
-            </ul>
-            
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
-                <?php 
-                    if(isset($_SESSION['custmerimage'])){
-                        echo '<img src="customer/large/' . $_SESSION['custmerimage'] . '" class="avatar" alt="Avatar">';
-                    } else {
-                        echo '<img src="images/default_user.jpg" class="avatar" alt="Avatar">';
-                    }
+           
+            <a href="cart_page.php" type="submit" name="submit" id="submit" value="ADD NOW"> <i class="fa fa-shopping-cart" style="font-size:28px;color:white; margin-right: 20px;"> </i> </a>
+
+                <?php
+
+                if(isset($_SESSION['cart']))
+                {                
+                    $count = count($_SESSION['cart']);
+                    echo" <span id=\"wishlist_count\" class=\"text-warning bg-light\" style=\"font-size:28px; padding: 0 0.9rem 0.1rem 0.9rem;  border-radius:3rem; \" >$count</span>";
+                }else
+                {
+                    echo" <span id=\"cart_count\" class=\"text-warning bg-light\" style=\"font-size:28px; padding: 0 0.9rem 0.1rem 0.9rem; border-radius:3rem; margin-right:-20px;\">0</span>";
+                }
+
+                ?>
+
+                <div class="nav-item dropdown" style="">
+                    <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
+                    <?php 
+                        if(isset($_SESSION['custmerimage'])){
+                            echo '<img src="customer/large/' . $_SESSION['custmerimage'] . '" class="avatar" alt="Avatar">';
+                        } else {
+                            echo '<img src="images/default_user.jpg" class="avatar" alt="Avatar">';
+                        }
                     ?>
 
                     <?php
@@ -177,18 +229,18 @@
                     } else {
                         echo "My Account";
                     }
-                ?>
-                </a>
-                <div class="dropdown-menu">
-                    <div class="dropdown-container">
-                        <a href="customer_account.php" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i>Profile</a>
-                        <a href="customer_signup_1.php" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i>Create an Account</a>
-                        <a href="customer_account_edit_1.php" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
-                        <a href="customer_sign_in_1.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
-                    </div>
-                    
-                </div>
-            </div>
+                    ?>
+    </a>
+    <div class="dropdown-menu">
+        <div class="dropdown-container">
+            <a href="customer_account.php" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i>Profile</a>
+            <a href="customer_signup_1.php" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i>Create an Account</a>
+            <a href="customer_account_edit_1.php" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
+            <a href="customer_sign_in_1.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
+        </div>
+    </div>
+</div>
+
 
         </div>
     </div>
@@ -243,10 +295,9 @@
     }
 
 </style>
-
-        <div class="container">
-            <div class="row">
-            <div class="col-md-6 mx-auto">
+<div class="container">
+<div class="row">
+    <div class="col-md-6 mx-auto">
     <div class="card card-search">
         <form class="product-margin" action="search_product_customerside.php" method="post" enctype="multipart/form-data">
             <div class="input-group">
@@ -285,7 +336,7 @@
              <?php
                $result = $database->getData();
                while ($row = mysqli_fetch_assoc($result)){
-                   component($row['veg_id'],$row['veg_name'],$row['veg_price'],$row['availablesta'],$row['available_quntity'],$row['contact'],$row['dateofveg'], $row['shopname'], $row['economiccenter'], $row['picture']);
+                   component($row['veg_id'],$row['veg_name'],$row['veg_price'],$row['availablesta'],$row['available_quntity'],$row['contact'],$row['dateofveg'], $row['shopname'], $row['economiccenter'], $row['picture'], $row['veg_id']);
                }
               ?>
             </div> <!-- container stop from here -->

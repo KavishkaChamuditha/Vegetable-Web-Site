@@ -42,7 +42,11 @@
   ======================================================== -->
 </head>
 
-<body>
+<body>    
+<?php
+$showLoadingScreen = true;
+require_once('preloader.php');
+?>
 
     <!-- ======= Header ======= -->
     <section id="topbar" class="topbar d-flex align-items-center">

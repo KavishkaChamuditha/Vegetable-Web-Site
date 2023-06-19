@@ -31,7 +31,11 @@
   <link rel="stylesheet" href="css/customer_style.css">
 </head>
 <body>
-
+    
+<?php
+$showLoadingScreen = true;
+require_once('preloader.php');
+?>
   <style>
     /* Image Upload code Starts here */
 

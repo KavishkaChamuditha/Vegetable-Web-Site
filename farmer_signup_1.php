@@ -25,7 +25,11 @@
 </head>
 
 <body>
-
+    
+<?php
+$showLoadingScreen = true;
+require_once('preloader.php');
+?>
     <!-- <div class="container"> -->
     <!-- <div class="row"> -->
 

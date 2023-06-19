@@ -31,7 +31,11 @@
   <link rel="stylesheet" href="css/customer_style.css">
 </head>
 <body>
-
+    
+<?php
+$showLoadingScreen = true;
+require_once('preloader.php');
+?>
   <style>
     /* Image Upload code Starts here */
 
@@ -128,7 +132,7 @@
                   <input type='file' name="sellerimage" id="imageUpload" accept=".png, .jpg, .jpeg" />
                     <label for="imageUpload"></label>
                   </div>
-                  <div class="avatar-preview">
+                   <div class="avatar-preview">
                      <!-- <div id="imagePreview" style="background-image: url('images/default_user.jpg');"> -->
                     <?php 
                         if(isset($_SESSION['sellerimage'])){

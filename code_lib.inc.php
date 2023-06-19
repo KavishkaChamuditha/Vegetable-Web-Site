@@ -74,6 +74,15 @@ function getfarmerPicture($farmer_id){
   return $row['farmerimage'];
 }
  
+function getsellerPicture($seller_id){
+  global $mysqli;
+  $sql = "select sellerimage from sellerimage where seller_id='$seller_id'";
+  $rs  = $mysqli->query($sql);
+  $row = mysqli_fetch_assoc($rs);
+  return $row['sellerimage'];
+}
+ 
+
 
  ?>
  <!-- password showing script -->

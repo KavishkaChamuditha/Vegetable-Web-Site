@@ -31,7 +31,11 @@
   <link rel="stylesheet" href="css/customer_style.css">
 </head>
 <body>
-
+    
+<?php
+$showLoadingScreen = true;
+require_once('preloader.php');
+?>
   <style>
     /* Image Upload code Starts here */
 
@@ -124,7 +128,7 @@
           <input type="hidden" name="cus_id" value="<?php echo $row ['cus_id']; ?>">
 
                 <div class="avatar-upload">
-                  <div class="avatar-edit">
+                   <div class="avatar-edit">
                   
                     <label for="imageUpload"></label>
                   </div>
