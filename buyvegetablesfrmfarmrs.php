@@ -35,7 +35,13 @@
 
 </head>
 
-<body>
+<body> 
+
+<?php
+$showLoadingScreen = true;
+require_once('preloader.php');
+?>
+
 <style>
 
 .nav-link img {
@@ -92,7 +98,7 @@
 }
 
 .navbar .dropdown-menu {
-    margin-left: 100px;
+    margin-left: 30px;
     border-radius: 1px;
     border-color: #e5e5e5;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
@@ -419,6 +425,8 @@
         <!-- Copyright -->
     </footer>
     <!-- Footer -->
+
+
 
 </body>
 
