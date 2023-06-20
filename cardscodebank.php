@@ -45,7 +45,7 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
 
 
 <?php 
-    function farmercomponnets($buyveg_id, $buyveg_name, $catoA, $catoB, $catoC, $dateofveg, $availablequntity, $needquntity, $vegstatus, $contact, $shopname, $economiccenter, $picture)
+    function farmercomponnets($veg_id, $veg_name, $veg_price, $availablesta, $available_quntity, $contact, $dateofveg, $shopname, $economiccenter, $picture, $vegtableid)
     {
         $element = '
         <div class="col-lg-2 col-mg-3 cardmar">
@@ -94,4 +94,69 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
     echo $element;
     }
 
+?>
+
+<?php
+
+function cartcard($veg_name, $veg_price, $contact, $dateofveg, $shopname, $economiccenter, $picture, $mailaddress) {
+    echo '
+        <div class="card rounded-3 mb-4" style="border-radius:40px 0px 40px 0px !important; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+        <div class="card-body p-4">
+          <div class="row d-flex justify-content-between align-items-center">
+            <div class="col-md-2 col-lg-2 col-xl-2">
+              <img
+                src="sellvegetables/large/'. $picture .'"
+                class="img-fluid rounded-3" alt="" style="width:900px !important;">
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-3">
+              <p class="lead fw-bold mb-2 text-dark">'.$veg_name.'</p>
+              <p class="text-dark"><span>Price per kg: </span> Rs. <span class="veg-price">'. $veg_price.'.00  </span> <br> Dates: </span>'.$dateofveg.'</p>
+              <p class="text-dark"><span>Economic Center:</span>'.$economiccenter.' <span> <br>Shop Name: </span>'.$shopname.'</p>
+              <p class=""><span">Contact: </span>'.$contact.'</p>
+            </div>
+            <div class="col-md-3 col-lg-4 col-xl-2 d-flex">
+
+              <button class="btn btn-link px-2"
+                onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown()">
+                <i class="fas fa-minus"></i>
+              </button>
+
+              <input id="form1" min="0" name="quantity" value="1" type="number"
+                class="form-control form-control-sm" />
+
+              <button class="btn btn-link px-2"
+                onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()">
+                <i class="fas fa-plus"></i>
+              </button>
+              
+                <input type="hidden" value="'.$mailaddress.'">
+
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+
+            <div class="btn btn-danger px-3 remove-btn" style="width:100px; border-radius:30px 0px 30px 0px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">Remove</div>
+
+            </div>
+            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+              <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>';
+      
+}
+?>
+<?php
+function checkout($veg_name, $veg_price, $shopname, $mailaddress) {
+    echo '
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+                <h6 class="my-0">' . $veg_name . '</h6>
+                <div class="btn btn-danger px-3 remove-btn" style="width:10px; height:10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19 13H5v-2h14v2Z"/> </div></svg>
+                <small class="text-muted">' . $shopname . '</small>
+            </div>
+            <span class="text-muted veg-price">' . $veg_price . '</span>
+        </li>
+    ';
+}
 ?>

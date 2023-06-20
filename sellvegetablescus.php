@@ -40,6 +40,7 @@
 </head>
 
 <body>
+    
 <?php if (isset($_POST['add_cart']))
  {
      //print_r($_POST['vegetable_id']);
@@ -75,7 +76,8 @@
  
 
  ?>
-    
+      
+
 <?php
 // $showLoadingScreen = true;
 // require_once('preloader.php');
@@ -198,7 +200,7 @@
                 </li>
             </ul>
            
-            <a href="cart_page.php" type="submit" name="submit" id="submit" value="ADD NOW"> <i class="fa fa-shopping-cart" style="font-size:28px;color:white; margin-right: 20px;"> </i> </a>
+            <a href="place_order_1.php" type="submit" name="submit" id="submit" value="ADD NOW"> <i class="fa fa-shopping-cart" style="font-size:28px;color:white; margin-right: 20px;"> </i> </a>
 
                 <?php
 
@@ -339,6 +341,7 @@
                    component($row['veg_id'],$row['veg_name'],$row['veg_price'],$row['availablesta'],$row['available_quntity'],$row['contact'],$row['dateofveg'], $row['shopname'], $row['economiccenter'], $row['picture'], $row['veg_id']);
                }
               ?>
+
             </div> <!-- container stop from here -->
         </div><!-- row stop from here -->
  
