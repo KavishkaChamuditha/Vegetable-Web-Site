@@ -1,11 +1,11 @@
-<!-- <?php
+<?php
  session_start();
     require('cardscodebank.php');
     require('create_db_farmer.php');
 
     $database = new CreatefarmerDb("vegetable_website", "buyvegetables");
 
-?> -->
+?> 
 
 <html lang="en">
 

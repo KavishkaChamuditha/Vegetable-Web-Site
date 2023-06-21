@@ -29,6 +29,7 @@
 
 </head> 
 <body>
+
 <form action="availablevegetables_add_1.php" method="post" enctype="multipart/form-data">
 <section class="h-100" style="background-color: #eee;">
   <div class="container h-100 py-5">
@@ -81,7 +82,9 @@ if (isset($_SESSION['cart'])) {
                         <h6> Rs. <span id="total"><?php echo $total; ?></span></h6>
                         <hr>
                         
-                   <a href="place_order_2.php"><div class="btn btn-danger"> Proceed</div></a>   
+                   <a href="place_order_2.php"><div class="btn text-light" style="background-color:green; width:200px; border-radius:30px 0px 30px 0px; "> Proceed</div></a>   
+
+                   <div class="" style="margin-top:30px;"></div>
 
                     </div>
                 </div>

@@ -32,7 +32,11 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
             <p class="marginpadeta">Price per kg: ' . $veg_price . '.00 Rs</p>
             <p class="marginpadeta">Date: ' . $dateofveg . '</p>
             <p class="marginpadeta">Contact: ' . $contact . '</p>
-            <div class="btn btncard">Place Order</div>
+           
+            <button type="submit" name="checkout" class="btn btn-light text-light btncard" formaction="check_outcus_1.php">Buy Now</button>
+            <input type="hidden" name="vegetable_id" value=" ' .$vegtableid. '?>">
+            
+
         </div>
       
     </div>
@@ -45,7 +49,7 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
 
 
 <?php 
-    function farmercomponnets($veg_id, $veg_name, $veg_price, $availablesta, $available_quntity, $contact, $dateofveg, $shopname, $economiccenter, $picture, $vegtableid)
+    function farmercomponnets($buyveg_id, $buyveg_name, $catoA, $catoB, $catoC, $dateofveg, $availablequntity, $needquntity, $vegstatus, $contact, $shopname, $economiccenter, $picture)
     {
         $element = '
         <div class="col-lg-2 col-mg-3 cardmar">
@@ -75,7 +79,7 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
             </div>
             <div class="" style="display: flex;">
                 <div class="card text-center catogaris">
-                    B
+                    B 
                 </div>
                 <p class="marginpadeta">Price per kg: ' . $catoB . '</p>
             </div>
@@ -87,7 +91,9 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
             </div>
             <p class="marginpadeta">Date: ' . $dateofveg . '</p>
             <p class="marginpadeta">Contact:' . $contact . '</p>
-            <div class="btn btncard">Place Order</div>
+
+            <div type=\"submit\" name=\"checkout\" class="btn btncard" formaction=\"checkout_page_1.php\">Place Order</div>
+            
         </div>
     </div>';
 
@@ -146,6 +152,7 @@ function cartcard($veg_name, $veg_price, $contact, $dateofveg, $shopname, $econo
       
 }
 ?>
+
 <?php
 function checkout($veg_name, $veg_price, $shopname, $mailaddress) {
     echo '
@@ -160,3 +167,4 @@ function checkout($veg_name, $veg_price, $shopname, $mailaddress) {
     ';
 }
 ?>
+ <!-- <div class="btn btncard">Place Order</div> -->

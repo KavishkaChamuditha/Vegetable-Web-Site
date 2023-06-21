@@ -7,7 +7,7 @@
     $database = new CreateDb("vegetable_website", "sellingvegetables");
 
 ?>
-
+ 
 <html lang="en">
 
 <head>
@@ -73,14 +73,12 @@
     }
     
     }
- 
-
  ?>
       
 
 <?php
-// $showLoadingScreen = true;
-// require_once('preloader.php');
+ $showLoadingScreen = true;
+ require_once('preloader.php');
 ?>
 
 
