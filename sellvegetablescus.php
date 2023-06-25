@@ -76,7 +76,11 @@ if (isset($_POST['add_cart']))
  ?>
       
 
-
+   
+      <?php
+$showLoadingScreen = true;
+require_once('preloader.php');
+?>
 <style>
 
 .nav-link img {

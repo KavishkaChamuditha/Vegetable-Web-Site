@@ -16,7 +16,7 @@ class CreatefarmerDb
         $server     = "localhost",
         $username   = "root",
         $password   = ""
-    )
+    ) 
     {
 
       // create connection

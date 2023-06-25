@@ -53,6 +53,7 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
     {
         $element = '
         <div class="col-lg-2 col-mg-3 cardmar">
+        <form method="post" enctype="multipart/form-data" >
         <div class="card card-prop" style="height: 670px; width: 280px;">
             <div class="d-flex align-items-center" style="margin-top: 20px; margin-left: -5px;">';
             if ($vegstatus == "ON") {
@@ -92,10 +93,12 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
             <p class="marginpadeta">Date: ' . $dateofveg . '</p>
             <p class="marginpadeta">Contact:' . $contact . '</p>
 
-            <div type=\"submit\" name=\"checkout\" class="btn btncard" formaction=\"checkout_page_1.php\">Place Order</div>
-            
+            <button type="submit" name="checkout" class="btn btn-light text-light btncard" formaction="checkoutfarmer_1.php">Place Order</button>
+            <input type="hidden" name="buyveg_id" value=" ' .$buyveg_id. '">
+
         </div>
-    </div>';
+    </div>
+    </form>';
 
     echo $element;
     }

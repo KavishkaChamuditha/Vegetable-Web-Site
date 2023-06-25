@@ -9,7 +9,7 @@
     $database = new CreateDb("vegetable_website", "sellingvegetables");
 
 ?>
-
+ 
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -98,13 +98,40 @@ if (mysqli_num_rows($rs) > 0) {
               <span><?php echo $row['veg_price']; ?></span>
             </li>
 
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0 fw-bold">Total</h6>
-              </div>
-              <span><?php echo $row['veg_price']; ?></span>
-            </li>
-          </ul>
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0 fw-bold">Price</h6>
+                </div>
+                <span><?php echo $row['veg_price']; ?></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0 fw-bold">Add Quantity in Kg</h6>
+                </div>
+                <span><input type="number" id="quantityInput" oninput="updateTotal()" /></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0 fw-bold">Total</h6>
+                </div>
+                <span id="totalValue"><?php echo $row['veg_price']; ?></span>
+              </li>
+            </ul>
+
+<script>
+  function updateTotal() {
+    var quantityInput = document.getElementById("quantityInput");
+    var totalElement = document.getElementById("totalValue");
+
+    var quantity = quantityInput.value;
+    var price = <?php echo $row['veg_price']; ?>;
+    var total = quantity * price;
+
+    totalElement.textContent = total;
+  }
+</script>
+
          
         </div>
         <div class="col-md-8 order-md-1">

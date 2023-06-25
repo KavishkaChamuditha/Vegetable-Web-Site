@@ -8,7 +8,7 @@
 ?> 
 
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -147,7 +147,7 @@ require_once('preloader.php');
                         <a class="nav-link" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                         <a class="nav-link" href="#">Features</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pricing</a>
@@ -292,10 +292,6 @@ require_once('preloader.php');
 
         </div>
     </div>
-
-
-
-
 
 <!-- 
 
