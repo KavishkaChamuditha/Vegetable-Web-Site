@@ -1,5 +1,12 @@
 <?php 
     session_start();
+    
+    require('cardscodebank.php');
+    require('create_db.php');
+
+    $database = new CreateDb("vegetable_website", "sellingvegetables");
+
+
 ?>
 
 <html lang="en">
@@ -133,7 +140,7 @@
 
             </form>
         </div>
-    </div>
+    </div> 
 </div>
 
         <script src="js/jquery.min.js"></script>

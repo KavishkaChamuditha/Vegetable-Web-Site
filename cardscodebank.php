@@ -1,12 +1,12 @@
 <?php   
-function component($veg_id, $veg_name, $veg_price, $availablesta, $available_quntity, $contact, $dateofveg, $shopname, $economiccenter, $picture, $vegtableid)
+function component($veg_id, $veg_name, $veg_price, $availablesta, $available_quntity, $contact, $dateofveg, $shopname, $economiccenter, $picture, $vegtableid, $mailaddress)
 { 
     $element = '
   
     <div class="col-lg-3 col-mg-4 cardmar">
     <form method="post" enctype="multipart/form-data" >
         <div class="card card-prop">
-       
+        <input type="hidden" name="mailaddress" value="'. $mailaddress .'">
             <div class="d-flex align-items-center" style="margin-top: 20px; margin-left: -5px;">';
     if ($availablesta == "ON") {
         $element .= '
@@ -33,8 +33,7 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
             <p class="marginpadeta">Date: ' . $dateofveg . '</p>
             <p class="marginpadeta">Contact: ' . $contact . '</p>
            
-            <button type="submit" name="checkout" class="btn btn-light text-light btncard" formaction="check_outcus_1.php">Buy Now</button>
-            <input type="hidden" name="vegetable_id" value=" ' .$vegtableid. '">
+            <a class="btn btn-light text-light btncard" href="check_outcus_1.php?veg_id=' . $veg_id . '">Edit</a>
             
 
         </div>
@@ -49,11 +48,12 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
 
 
 <?php 
-    function farmercomponnets($buyveg_id, $buyveg_name, $catoA, $catoB, $catoC, $dateofveg, $availablequntity, $needquntity, $vegstatus, $contact, $shopname, $economiccenter, $picture)
+    function farmercomponnets($buyveg_id, $buyveg_name, $catoA, $catoB, $catoC, $dateofveg, $availablequntity, $needquntity, $vegstatus, $contact, $shopname, $economiccenter, $picture, $mailaddress)
     {
         $element = '
         <div class="col-lg-2 col-mg-3 cardmar">
         <form method="post" enctype="multipart/form-data" >
+        <input type="hidden" name="mailaddress" value="'. $mailaddress .'">
         <div class="card card-prop" style="height: 670px; width: 280px;">
             <div class="d-flex align-items-center" style="margin-top: 20px; margin-left: -5px;">';
             if ($vegstatus == "ON") {

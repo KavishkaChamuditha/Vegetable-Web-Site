@@ -1,8 +1,6 @@
 <?php
-
-    require('db_connection.php');
-
     session_start();
+    require('db_connection.php');
     require('cardscodebank.php');
     require('create_db.php');
 
@@ -33,47 +31,25 @@
   integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
   crossorigin="anonymous"></script>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
-</head>
+   
+  
 <body>
+ 
+<?php 
+ if (isset($_GET['veg_id'])) {
+    $veg_id = $_GET['veg_id'];
 
-<?php
+    // Fetch the record based on the buyveg_id
+    $sql = "SELECT * FROM sellingvegetables WHERE veg_id = '$veg_id'";
+    $result = mysqli_query($mysqli, $sql);
+    $row = mysqli_fetch_assoc($result);
 
-//check the ID is coming to this page
-// echo "<pre>";
-// print_r($_REQUEST);
-// echo "<pre>";
+    if ($row) {
+        $veg_name          = $row['veg_name'];
+        $veg_price         = $row['veg_price'];
 
-$veg_id = $_REQUEST['vegetable_id'];
+?>
 
-$sql = "select * from sellingvegetables where veg_id='$veg_id'";
-
-// selecting the sql command
-$rs = $mysqli->query($sql);
-
-// count number of records that found
-// $record_count = mysqli_num_rows($rs);
-// echo "number of records found: $record_count";
-
-if (mysqli_num_rows($rs) > 0) {
-  // echo "Records are found";
-
-  // copy the records from resource
-
-  $row = mysqli_fetch_assoc($rs);
-  // check the record is coming
-  // echo "<pre>";
-  // print_r($row);
-  // echo "<pre>";
-
-  // showing the record
-  // echo "<h1>Vegetable Name: " . $row['veg_name'] . "</h1>"; 
-
-  ?>
   <body class="bg-light">
 
     <div class="container">
@@ -83,7 +59,10 @@ if (mysqli_num_rows($rs) > 0) {
         <p class="lead">Please complete all the required fields to finalize your purchase.</p>
       </div>
 
+      <form action="check_outcus_2.php" method="post" enctype="multipart/form-data">        
       <div class="row">
+        <input type="hidden" name="mailaddress" value="<?php echo $row['mailaddress']; ?>">
+
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="fw-bold">Product Detail</span>
@@ -93,9 +72,8 @@ if (mysqli_num_rows($rs) > 0) {
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0 fw-bold">Vegetable name</h6>
-                <span><?php echo $row['veg_name']; ?></span>
               </div>
-              <span><?php echo $row['veg_price']; ?></span>
+              <input type="text" name="veg_name" value="<?php echo $row['veg_name']; ?>" readonly style="border:none;">
             </li>
 
             <ul class="list-group mb-3">
@@ -103,19 +81,23 @@ if (mysqli_num_rows($rs) > 0) {
                 <div>
                   <h6 class="my-0 fw-bold">Price</h6>
                 </div>
-                <span><?php echo $row['veg_price']; ?></span>
+                <span ></span>  
+                <input type="text" name="veg_price"value="<?php echo $row['veg_price']; ?>" readonly style="border:none;">
               </li>
               <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
                   <h6 class="my-0 fw-bold">Add Quantity in Kg</h6>
                 </div>
-                <span><input type="number" id="quantityInput" oninput="updateTotal()" /></span>
+                <span><input type="number" name="quntity" id="quantityInput" oninput="updateTotal()" /></span>
               </li>
               <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
                   <h6 class="my-0 fw-bold">Total</h6>
                 </div>
-                <span id="totalValue"><?php echo $row['veg_price']; ?></span>
+
+                <span name="totalamount" id="totalValue"><?php echo $row['veg_price']; ?></span>
+                <input type="hidden" name="totalamount" value="<?php echo $row['veg_price']; ?>">
+
               </li>
             </ul>
 
@@ -139,36 +121,42 @@ if (mysqli_num_rows($rs) > 0) {
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <input type="text" class="form-control" id="firstName" name="firstname" placeholder="Enter your name" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <input type="text" class="form-control" id="lastName" name="lastname" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
               </div>
             </div>
-
+ 
             <div class="mb-3">
               <label for="username">Username</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">@</span>
                 </div>
-                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
                 <div class="invalid-feedback" style="width: 100%;">
                   Your username is required.
                 </div>
               </div>
             </div>
 
+            <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
+                            inline="true">
+                <label for="example">Date</label>
+                <input type="date" id="date" name="dateofveg">
+            </div>
+
             <div class="mb-3">
               <label for="email">Email <span class="text-muted">(Optional)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
               <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
               </div>
@@ -176,7 +164,7 @@ if (mysqli_num_rows($rs) > 0) {
 
             <div class="mb-3">
               <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+              <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
@@ -186,20 +174,21 @@ if (mysqli_num_rows($rs) > 0) {
 
             <div class="d-block my-3">
               <div class="custom-control custom-radio">
-                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                <input id="credit" type="radio" class="custom-control-input" checked required>
                 <label class="custom-control-label" for="credit">Credit card</label>
               </div>
               <div class="custom-control custom-radio">
-                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                <input id="debit" type="radio" class="custom-control-input" required>
                 <label class="custom-control-label" for="debit">Debit card</label>
               </div>
               <div class="custom-control custom-radio">
-                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                <input id="paypal" type="radio" class="custom-control-input" required>
                 <label class="custom-control-label" for="paypal">Paypal</label>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 mb-3">
+
                 <label for="cc-name">Name on card</label>
                 <input type="text" class="form-control" id="cc-name" placeholder="" required>
                 <small class="text-muted">Full name as displayed on card</small>
@@ -231,11 +220,31 @@ if (mysqli_num_rows($rs) > 0) {
                 </div>
               </div>
             </div>
+
             <hr class="mb-4">
-            <button class="btn btn-md btn-block text-light" type="submit" style="background-color:green; border-radius:20px 0px 20px 0px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">Continue to checkout</button>
-          </form>
+            <button class="btn btn-md btn-block text-light" type="submit" style="background-color:green; border-radius:20px 0px 20px 0px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">Continue to checkout</button>        
         </div>
       </div>
+      </form>
+
+      <?php
+    }else {
+        ?>
+        <br>
+        <br>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <h2>NO Records found</h2>
+          <strong>Sorry</strong> No record found. Pleas try again.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <br />
+          <a href="edit_product_1.php" class="btn btn-danger my-3">Try again</a>
+        </div>
+        <?php
+    }
+}
+?>
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">2023 Vegetable Web Site</p>
@@ -247,11 +256,9 @@ if (mysqli_num_rows($rs) > 0) {
       </footer>
     </div>
 
+    
 
-    <?php
-          }
 
-    ?>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -283,7 +290,6 @@ if (mysqli_num_rows($rs) > 0) {
     }, false);
   })();
 </script>
-
 
 </body>
 </html>

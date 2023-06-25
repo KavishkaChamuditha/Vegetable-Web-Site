@@ -7,7 +7,7 @@ require_once('db_connection.php');
 $database = new CreatefarmerDb("vegetable_website", "buyvegetables");
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -51,29 +51,30 @@ $database = new CreatefarmerDb("vegetable_website", "buyvegetables");
           <h2>Checkout form</h2>
           <p class="lead">Please complete all the required fields to finalize your purchase.</p>
         </div>
-
+ 
         <div class="row">
           <div class="col-md-4 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
               <span class="fw-bold">Product Detail</span>
-              <span class="badge badge-secondary badge-pill">3</span>
             </h4>
-            <ul class="list-group mb-3">
+            <form action="checkoutfarmer_2.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="mailaddress" value="<?php echo $row['mailaddress']; ?>">
+
               <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
                   <h6 class="my-0 fw-bold">Vegetable name</h6>
                   <span></span>
                 </div>
-                <span><?php  echo $row['buyveg_name']; ?></span>
+                <input type="text" name="buyveg_name" value="<?php  echo $row['buyveg_name']; ?>" readonly style="border:none;">
               </li>
 
                 <!-- Add the select element -->
                 <div class="mb-3">
                 <label for="categorySelect">Select Category</label>
-                <select class="form-select" id="categorySelect" onchange="updateTotal()">
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
+                <select class="form-select" id="categorySelect" name="catogary" onchange="updateTotal()">
+                    <option value="A" name="catogary">A</option>
+                    <option value="B" name="catogary">B</option>
+                    <option value="C" name="catogary">C</option>
                 </select>
                 </div>
 
@@ -96,42 +97,36 @@ $database = new CreatefarmerDb("vegetable_website", "buyvegetables");
                     }
                 }
                 </script>
-<li class="list-group-item d-flex justify-content-between lh-condensed">
-  <div>
-    <h6 class="my-0 fw-bold">Total</h6>
-  </div>
-  <span id="totalValue"></span>
-</li>
+                
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div
+                    <h6 class="my-0 fw-bold">Price</h6>
+                  </div>
+                  <span id="totalValue"></span>
+                  <input type="hidden" name="totalValue" id="hiddenTotalValue">
+                </li>
 
-<li class="list-group-item d-flex justify-content-between lh-condensed">
-  <div>
-    <h6 class="my-0 fw-bold">Add Quantity in Kg</h6>
-  </div>
-  <span><input type="number" id="quantityInput" oninput="updateTotal()" /></span>
-</li>
-
-<li class="list-group-item d-flex justify-content-between lh-condensed">
-  <div>
-    <h6 class="my-0 fw-bold">Full Total</h6>
-  </div>
-  <span id="fullTotalValue"></span>
-</li>
-
-
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div>
+                    <h6 class="my-0 fw-bold">Add Quantity in Kg</h6>
+                  </div>
+                  <span><input type="number" name="quantity" id="quantityInput" oninput="updateTotal()" /></span>
+                </li>
           </div>
+        
           <div class="col-md-8 order-md-1">
             <form class="needs-validation" novalidate>
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName">First name</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                  <input type="text" class="form-control" name="firstname" id="firstName" placeholder="" value="" required>
                   <div class="invalid-feedback">
                     Valid first name is required.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="lastName">Last name</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                  <input type="text" class="form-control" name="lastname" id="lastName" placeholder="" value="" required>
                   <div class="invalid-feedback">
                     Valid last name is required.
                   </div>
@@ -140,7 +135,7 @@ $database = new CreatefarmerDb("vegetable_website", "buyvegetables");
 
               <div class="mb-3">
                 <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
                 <div class="invalid-feedback">
                   Please enter a valid email address for shipping updates.
                 </div>
@@ -148,26 +143,22 @@ $database = new CreatefarmerDb("vegetable_website", "buyvegetables");
 
               <div class="mb-3">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required>
                 <div class="invalid-feedback">
-                  Please enter your shipping address.
+                  Please enter your  address.
                 </div>
               </div>
 
+              <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
+                            inline="true">
+                <label for="example">Date</label>
+                <input type="date" id="date" name="dateofveg">
+              </div>
+
               <div class="row">
-                <div class="col-md-5 mb-3">
-                  <label for="country">Country</label>
-                  <select class="custom-select d-block w-100" id="country" required>
-                    <option value="">Choose...</option>
-                    <option>United States</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Please select a valid country.
-                  </div>
-                </div>
                 <div class="col-md-4 mb-3">
                   <label for="state">State</label>
-                  <select class="custom-select d-block w-100" id="state" required>
+                  <select class="custom-select d-block w-100" name="state" id="state" required>
                     <option value="">Choose...</option>
                     <option>California</option>
                   </select>
@@ -175,13 +166,9 @@ $database = new CreatefarmerDb("vegetable_website", "buyvegetables");
                     Please provide a valid state.
                   </div>
                 </div>
-                <div class="col-md-3 mb-3">
-                  <label for="zip">Zip</label>
-                  <input type="text" class="form-control" id="zip" placeholder="" required>
-                  <div class="invalid-feedback">
-                    Zip code required.
+                
                   </div>
-                </div>
+                </div> 
               </div>
               
             <ul class="list-group mb-3">

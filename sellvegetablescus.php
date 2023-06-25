@@ -340,7 +340,7 @@ require_once('preloader.php');
              <?php
                $result = $database->getData();
                while ($row = mysqli_fetch_assoc($result)){
-                   component($row['veg_id'],$row['veg_name'],$row['veg_price'],$row['availablesta'],$row['available_quntity'],$row['contact'],$row['dateofveg'], $row['shopname'], $row['economiccenter'], $row['picture'], $row['veg_id']);
+                   component($row['veg_id'],$row['veg_name'],$row['veg_price'],$row['availablesta'],$row['available_quntity'],$row['contact'],$row['dateofveg'], $row['shopname'], $row['economiccenter'], $row['picture'], $row['veg_id'], $row['mailaddress']);
                }
               ?>
 

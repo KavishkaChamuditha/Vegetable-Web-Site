@@ -22,7 +22,7 @@
 
 </head>
 
-  <body>
+  <body> 
   <?php 
         require_once('sidebarsellvegetables.php');
     ?>
