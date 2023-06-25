@@ -17,7 +17,7 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
     }
     $element .= '
                 <h3 class="marginpa fw-bold">'.$shopname.'</h3>
-            </div>
+            </div> 
 
         <div id="mySidenav" class="sidenav">
             <button type="submit" name="add_cart" id="blog" class="cartstyle"><i class="fa fa-shopping-cart"
@@ -34,7 +34,7 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
             <p class="marginpadeta">Contact: ' . $contact . '</p>
            
             <button type="submit" name="checkout" class="btn btn-light text-light btncard" formaction="check_outcus_1.php">Buy Now</button>
-            <input type="hidden" name="vegetable_id" value=" ' .$vegtableid. '?>">
+            <input type="hidden" name="vegetable_id" value=" ' .$vegtableid. '">
             
 
         </div>
@@ -151,6 +151,7 @@ function cartcard($veg_name, $veg_price, $contact, $dateofveg, $shopname, $econo
       </div>';
       
 }
+
 ?>
 
 <?php

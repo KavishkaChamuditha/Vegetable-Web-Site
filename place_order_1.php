@@ -1,15 +1,15 @@
 <?php
 
     session_start();
-    require('cardscodebank.php');
-    require('create_db.php');
+    require_once('cardscodebank.php');
+    require_once ('create_db.php');
 
     $database = new CreateDb("vegetable_website", "sellingvegetables");
 
 ?>
 
 <html lang="en">
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -42,23 +42,23 @@
 
   
         <?php
-$total = 0;
+    $total = 0; 
 
-if (isset($_SESSION['cart'])) {
-    $vegetable_id = array_column($_SESSION['cart'], 'vegetable_id');
-    $result = $database->getData();
-    while ($row = mysqli_fetch_assoc($result)) {
-        foreach ($vegetable_id as $veg_id) {
-            if ($row['veg_id'] == $veg_id) {
-                cartcard($row['veg_name'], $row['veg_price'], $row['contact'], $row['dateofveg'], $row['shopname'], $row['economiccenter'], $row['picture'], $row['mailaddress']);
-                $total = $total + (int)$row['veg_price'];
+    if (isset($_SESSION['cart'])) {
+        $vegetable_id = array_column($_SESSION['cart'], 'vegetable_id');
+        $result = $database->getData();
+        while ($row = mysqli_fetch_assoc($result)) {
+            foreach ($vegetable_id as $veg_id) {
+                if ($row['veg_id'] == $veg_id) {
+                    cartcard($row['veg_name'], $row['veg_price'], $row['contact'], $row['dateofveg'], $row['shopname'], $row['economiccenter'], $row['picture'], $row[ 'mailaddress']);
+                    $total = $total + (int)$row['veg_price'];
+                }
             }
         }
+    } else {
+        echo "<h5>Cart is Empty</h5>";
     }
-} else {
-    echo "<h5>Cart is Empty</h5>";
-}
-?>
+        ?>
 
 <div class="card" style="border-radius: 30px 0px 30px 0px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; margin-bottom:90px;">
     <div class="col-md-4 offset-md-1 border-rounded mt-5 bg-green">
@@ -71,7 +71,7 @@ if (isset($_SESSION['cart'])) {
                     if (isset($_SESSION['cart'])) {
                         $count = count($_SESSION['cart']);
                         echo "<h6>Items ($count Items)</h6>";
-                    } else {
+                    } else { 
                         echo "<h6>Price (0 items)</h6>";
                     }
                     ?>

@@ -26,7 +26,7 @@ class CreateDb
       if (!$this->con){
           die("Connection failed : " . mysqli_connect_error());
       }
-
+ 
       // query
       $sql = "CREATE DATABASE IF NOT EXISTS $db_name";
 

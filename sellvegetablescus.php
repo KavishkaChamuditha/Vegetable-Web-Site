@@ -1,4 +1,5 @@
-<?php
+
+ <?php
 
     session_start();
     require('cardscodebank.php');
@@ -7,7 +8,6 @@
     $database = new CreateDb("vegetable_website", "sellingvegetables");
 
 ?>
- 
 <html lang="en">
 
 <head>
@@ -40,46 +40,41 @@
 </head>
 
 <body>
-    
-<?php if (isset($_POST['add_cart']))
+       
+<?php 
+if (isset($_POST['add_cart']))
  {
      //print_r($_POST['vegetable_id']);
-     if (isset($_POST['add_cart'])) {
+     //if (isset($_POST['add_cart'])) {
        // print_r($_POST['vegetable_id']);
 
         if (isset($_SESSION['cart'])) {
             $item_array_id = array_column($_SESSION['cart'], 'vegetable_id');
-            //print_r($item_array_id);
-            
-
+             //print_r($item_array_id); 
+            //print_r($_SESSION['cart']);  
             if (in_array($_POST['vegetable_id'], $item_array_id)) {
                 echo "<script>alert('Vegetable is already in the cart')</script>";
                 echo "<script>window.location = 'sellvegetablescus.php'</script>";
             } else {
-                $count = count($_SESSION['cart']);
-                $item_array = array('vegetable_id' => $_POST['vegetable_id']);
-
+                 $count = count($_SESSION['cart']);
+                $item_array = array('vegetable_id' => $_POST['vegetable_id']
+            );
                 $_SESSION['cart'][$count] = $item_array;
-                print_r($_SESSION['cart']);
-
-            }
-        } else {
-            $item_array = array('vegetable_id' => $_POST['vegetable_id']);
-    
+                //print_r($_SESSION['cart']);
             //create a new session variable 
-            $_SESSION['cart'][0] = $item_array;
-            print_r($_SESSION['cart']);
+           // $_SESSION['cart'][0] = $item_array;
+           // print_r($_SESSION['cart']);
         }
+     } else
+        {
+
+            $item_array = array('vegetable_id' => $_POST['vegetable_id']);
+        }
+   
     }
     
-    }
  ?>
       
-
-<?php
- $showLoadingScreen = true;
- require_once('preloader.php');
-?>
 
 
 <style>
@@ -203,7 +198,7 @@
                 <?php
 
                 if(isset($_SESSION['cart']))
-                {                
+                {                 
                     $count = count($_SESSION['cart']);
                     echo" <span id=\"wishlist_count\" class=\"text-warning bg-light\" style=\"font-size:28px; padding: 0 0.9rem 0.1rem 0.9rem;  border-radius:3rem; \" >$count</span>";
                 }else
@@ -216,20 +211,25 @@
                 <div class="nav-item dropdown" style="">
                     <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
                     <?php 
+                    
                         if(isset($_SESSION['custmerimage'])){
                             echo '<img src="customer/large/' . $_SESSION['custmerimage'] . '" class="avatar" alt="Avatar">';
                         } else {
                             echo '<img src="images/default_user.jpg" class="avatar" alt="Avatar">';
                         }
+
                     ?>
 
                     <?php
+
                     if (isset($_SESSION['cus_name'])) {
                         echo $_SESSION['cus_name'];
                     } else {
                         echo "My Account";
                     }
+
                     ?>
+
     </a>
     <div class="dropdown-menu">
         <div class="dropdown-container">
