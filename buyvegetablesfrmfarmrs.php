@@ -147,23 +147,14 @@ require_once('preloader.php');
                         <a class="nav-link" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                         <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ">Disabled</a>
+                         <a class="nav-link" href="#searchveg">Search </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link">Sign Up</a>
-                </li>
             </ul>
             
                 <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
+                <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown" >
                 <?php 
                     if(isset($_SESSION['farmerimage'])){
                         echo '<img src="farmer/large/' . $_SESSION['farmerimage'] . '" class="avatar" alt="Avatar">';
@@ -176,7 +167,7 @@ require_once('preloader.php');
                     if (isset($_SESSION['farmername'])) {
                         echo $_SESSION['farmername'];
                     } else {
-                        echo "My Account";
+                        echo "My Account" ;
                     }
                 ?>
 
@@ -186,6 +177,7 @@ require_once('preloader.php');
                         <a href="farmer_accout.php" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i>Profile</a>
                         <a href="farmer_signup_1.php" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i>Create an account</a>
                         <a href="farmrer_user_edit.php" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
+                        <a href="farmer_login_1.php" class="dropdown-item"><i class="material-icons iconmargin"></i>Sign In</a>
                         <a href="farmer_login_1.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
                     </div>                   
                 </div>
@@ -248,7 +240,7 @@ require_once('preloader.php');
 
 <div class="container">
 <div class="row">
- <div class="col-md-6 mx-auto">
+ <div class="col-md-6 mx-auto" id="searchveg">
     <div class="card card-search">
         <form class="product-margin" action="farmer_side_search.php" method="post" enctype="multipart/form-data">
             <div class="input-group">

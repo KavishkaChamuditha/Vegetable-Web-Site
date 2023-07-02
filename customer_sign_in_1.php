@@ -7,6 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
+    <!-- bootstrap importing -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,12 +18,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
+    <!-- bootstrap import stops from here -->
 
     <link rel="stylesheet" href="css/customer_style.css">
 
 </head>
 
-<body>
+<body> 
     
 <?php
 $showLoadingScreen = true;
@@ -40,9 +42,9 @@ require_once('preloader.php');
                         </div>
                     </div>
                     <div class="login-wrap p-4 p-md-5" style="width: 500px; margin-left: 180px;">
-                        <div class="d-flex">
-                            <div class="w-100">
-                                <h2 class="mb-4" style="font-weight: bold;">Customer Sign</h2>
+                        <div >
+                            <div>
+                                <h2 style="font-weight: bold;">Customer Sign</h2>
                             </div>
                             <div class="w-100">
                             </div>
@@ -63,7 +65,7 @@ require_once('preloader.php');
                             <div class="d-flex inline">
                                 <div class="form-group">
                                     <button type="submit" class="form-control btn signupbtn submit px-3">Sign
-                                        Up</button>
+                                        In</button>
                                 </div>
                                 <div class="form-group">
                                     <button type="cancel" class="form-control btn signinbtn submit px-3">Cancle</button>
@@ -72,7 +74,7 @@ require_once('preloader.php');
                         </form>
                         <div class="d-flex justify-content-center">
                         <a class="" style="margin-left: 80px;">
-                            <p class="text-center">Not a Member?<a data-toggle="tab" href="#signup">  Sign Up</a>
+                            <p class="text-center">Not a Member?<a data-toggle="tab" href="#signup">Sign Up</a>
                             </p> 
                          </div>
                     </div>

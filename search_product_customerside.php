@@ -8,7 +8,7 @@ require("db_connection.php");
     $database = new CreateDb("vegetable_website", "sellingvegetables");
 
 ?>
-<html lang="en">
+<html lang="en"> 
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -141,7 +141,7 @@ $rs = $mysqli->query($sql);
         <?php
         if ($rs && $rs->num_rows > 0) {
             while ($row = $rs->fetch_assoc()) {
-                component($row['veg_id'], $row['veg_name'], $row['veg_price'], $row['availablesta'], $row['available_quntity'], $row['contact'], $row['dateofveg'], $row['shopname'], $row['economiccenter'], $row['picture']);
+                component($row['veg_id'], $row['veg_name'], $row['veg_price'], $row['availablesta'], $row['available_quntity'], $row['contact'], $row['dateofveg'], $row['shopname'], $row['economiccenter'], $row['picture'],$row['veg_id'], $row['mailaddress']);
             }
         } else {
         ?>

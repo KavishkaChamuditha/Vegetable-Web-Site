@@ -23,7 +23,7 @@ require("db_connection.php");
   $economiccenter   = $_REQUEST['economiccenter'];
   $dateofveg        = date('Y-m-d', strtotime($_REQUEST['dateofveg']));
   
-  //building a dynamic sql command
+  //inserting data to table 
   $sql = "insert into buyvegetables (buyveg_name, catoA, catoB, catoC, availablequntity,needquntity,vegstatus,contact, mailaddress, shopname, economiccenter, dateofveg) values(";
   $sql .= "'$buyveg_name',";
   $sql .= "'$catoA',";

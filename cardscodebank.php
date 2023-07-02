@@ -1,8 +1,8 @@
 <?php   
-function component($veg_id, $veg_name, $veg_price, $availablesta, $available_quntity, $contact, $dateofveg, $shopname, $economiccenter, $picture, $vegtableid, $mailaddress)
+function component($veg_id, $veg_name, $veg_price, $availablesta, $available_quntity, $contact, $dateofveg, $shopname, $economiccenter, $picture, $vegtableid, $mailaddress) 
 { 
     $element = '
-  
+   
     <div class="col-lg-3 col-mg-4 cardmar">
     <form method="post" enctype="multipart/form-data" >
         <div class="card card-prop">
@@ -33,7 +33,7 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
             <p class="marginpadeta">Date: ' . $dateofveg . '</p>
             <p class="marginpadeta">Contact: ' . $contact . '</p>
            
-            <a class="btn btn-light text-light btncard" href="check_outcus_1.php?veg_id=' . $veg_id . '">Edit</a>
+            <a class="btn btn-light text-light btncard" href="check_outcus_1.php?veg_id=' . $veg_id . '">Buy Now</a>
             
 
         </div>
@@ -44,7 +44,6 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
     echo $element;
 }
 ?>
-
 
 
 <?php 

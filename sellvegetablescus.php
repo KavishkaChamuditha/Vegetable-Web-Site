@@ -26,7 +26,7 @@
 
     <link rel="stylesheet" href="css/styles.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
@@ -40,41 +40,39 @@
 </head>
 
 <body>
-       
+        
 <?php 
 if (isset($_POST['add_cart']))
  {
-     //print_r($_POST['vegetable_id']);
-     //if (isset($_POST['add_cart'])) {
-       // print_r($_POST['vegetable_id']);
 
         if (isset($_SESSION['cart'])) {
+
             $item_array_id = array_column($_SESSION['cart'], 'vegetable_id');
              //print_r($item_array_id); 
             //print_r($_SESSION['cart']);  
-            if (in_array($_POST['vegetable_id'], $item_array_id)) {
-                echo "<script>alert('Vegetable is already in the cart')</script>";
+            if(in_array($_POST['vegetable_id'], $item_array_id)){
+                echo "<script>alert('Vegetable is already in the cart') </script>";
                 echo "<script>window.location = 'sellvegetablescus.php'</script>";
-            } else {
-                 $count = count($_SESSION['cart']);
-                $item_array = array('vegetable_id' => $_POST['vegetable_id']
-            );
-                $_SESSION['cart'][$count] = $item_array;
-                //print_r($_SESSION['cart']);
-            //create a new session variable 
-           // $_SESSION['cart'][0] = $item_array;
-           // print_r($_SESSION['cart']);
-        }
-     } else
-        {
+            }else{
 
-            $item_array = array('vegetable_id' => $_POST['vegetable_id']);
+              $count =  count($_SESSION['cart']);
+              $item_array = array ('vegetable_id' => $_POST['vegetable_id']); 
+
+              $_SESSION['cart'][$count] = $item_array; 
+              //print_r($_SESSION['cart']);
+
+            }
         }
+           else {
+            $item_array = array ('vegetable_id' => $_POST['vegetable_id']);
+            $_SESSION['cart'] [0] = $item_array;
+            //print_r($_SESSION['cart']);
+
+           }
    
     }
     
- ?>
-      
+ ?> 
 
    
       <?php
@@ -337,7 +335,7 @@ require_once('preloader.php');
         <div class="container">
             <div class="row">
               
-             <?php
+             <?php 
                $result = $database->getData();
                while ($row = mysqli_fetch_assoc($result)){
                    component($row['veg_id'],$row['veg_name'],$row['veg_price'],$row['availablesta'],$row['available_quntity'],$row['contact'],$row['dateofveg'], $row['shopname'], $row['economiccenter'], $row['picture'], $row['veg_id'], $row['mailaddress']);

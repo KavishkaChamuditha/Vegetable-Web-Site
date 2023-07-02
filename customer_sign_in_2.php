@@ -29,7 +29,7 @@ if ($result->num_rows === 1) {
 else {
         // If the username/password are incorrect or don't exist.
         echo "<script>alert('Incorrect Username Or Password Please Try Again...')</script>";
-        echo "<script>window.location='sign_in_1.php'</script>";
+        echo "<script>window.location='customer_sign_in_1.php'</script>";
         
 }
 ?>

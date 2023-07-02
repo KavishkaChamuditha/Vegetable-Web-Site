@@ -40,9 +40,9 @@ require_once('preloader.php');
                         </div>
                     </div>
                     <div class="login-wrap p-4 p-md-5" style="width: 500px; margin-left: 100px;">
-                        <div class="d-flex">
-                            <div class="w-100">
-                                <h2 class="mb-4" style="font-weight: bold;">Whole Seller Sign</h2>
+                        <div >
+                            <div >
+                                <h2 style="font-weight: bold;">Farmer SignIn</h2>
                             </div>
                             <div class="w-100">
                             </div>
@@ -64,7 +64,7 @@ require_once('preloader.php');
                             <div class="d-flex inline">
                                 <div class="form-group">
                                     <button type="submit" class="form-control btn signupbtn submit px-3">Sign
-                                        Up</button>
+                                        In</button>
                                 </div>
                                 <div class="form-group">
                                     <button type="cancel" class="form-control btn signinbtn submit px-3">Cancle</button>

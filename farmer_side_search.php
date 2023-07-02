@@ -141,7 +141,7 @@ $rs = $mysqli->query($sql);
         <?php
         if ($rs && $rs->num_rows > 0) {
             while ($row = $rs->fetch_assoc()) {
-                farmercomponnets($row['buyveg_id'],$row['buyveg_name'],$row['catoA'],$row['catoB'],$row['catoC'],$row['dateofveg'],$row['availablequntity'],$row['needquntity'],$row['vegstatus'], $row['contact'], $row['shopname'], $row['economiccenter'], $row['picture']);
+                farmercomponnets($row['buyveg_id'],$row['buyveg_name'],$row['catoA'],$row['catoB'],$row['catoC'],$row['dateofveg'],$row['availablequntity'],$row['needquntity'],$row['vegstatus'], $row['contact'], $row['shopname'], $row['economiccenter'], $row['picture'],  $row['mailaddress']);
             }
         } else {
         ?>

@@ -64,7 +64,7 @@ require_once('preloader.php');
                             <div class="d-flex inline">
                                 <div class="form-group">
                                     <button type="submit" class="form-control btn signupbtn submit px-3">Sign
-                                        Up</button>
+                                        In</button>
                                 </div>
                                 <div class="form-group">
                                     <button type="cancel" class="form-control btn signinbtn submit px-3">Cancle</button>
