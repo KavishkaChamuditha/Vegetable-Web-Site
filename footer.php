@@ -53,10 +53,10 @@
                     <a href="sellvegetablescus.php" class="text-reset" style="text-decoration:none; ">Buy</a>
                 </p>
                 <p>
-                    <a href="buyvegetablesfrmfarmrs.php" class="text-reset" style="text-decoration:none; ">Give</a>
+                    <a href="buyvegetablesfrmfarmrs.php" class="text-reset" style="text-decoration:none; ">Sell</a>
                 </p>
                 <p>
-                    <a href="sellvegetablescus.php" class="text-reset" style="text-decoration:none; ">Order NoW</a>
+                    <a href="sellvegetablescus.php" class="text-reset" style="text-decoration:none; ">Order Now</a>
                 </p>
         
             </div>
@@ -76,7 +76,7 @@
             </div>
             <!-- Grid column -->
         </div>
-        <!-- Grid row -->
+        <!-- Grid row --> 
     </div>
 </section>
 <!-- Section: Links  -->

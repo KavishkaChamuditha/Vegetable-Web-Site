@@ -1,6 +1,6 @@
 <?php   
 function component($veg_id, $veg_name, $veg_price, $availablesta, $available_quntity, $contact, $dateofveg, $shopname, $economiccenter, $picture, $vegtableid, $mailaddress) 
-{ 
+{  
     $element = '
     <div class="col-lg-3 col-mg-4 cardmar">
     <form method="post" enctype="multipart/form-data">

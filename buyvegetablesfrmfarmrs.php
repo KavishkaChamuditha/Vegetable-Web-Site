@@ -182,14 +182,14 @@ require_once('preloader.php');
                 ?>
 
                 </a>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu"> 
                     <div class="dropdown-container">
                         <a href="farmer_accout.php" class="dropdown-item"><i class="fa fa-user iconmargin"></i>Profile</a>
-                        <a href="farmer_signup_1.php" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i>Create an account</a>
+                        <a href="farmer_signup_1.php" class="dropdown-item"><i class="fas fa-user-plus iconmargin"></i>Create an account</a>
                         <a href="farmrer_user_edit.php" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
-                        <a href="farmer_login_1.php" class="dropdown-item"><i class="fa-thin fa-right-to-bracket"></i>Sign In</a>
-                        <a href="farmer_login_1.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
-                    </div>                   
+                        <a href="farmer_login_1.php" class="dropdown-item"><i class="fas fa-sign-in-alt iconmargin"></i>Sign In</a>
+                        <a href="farmer_login_1.php" class="dropdown-item"><i class="fas fa-sign-out-alt iconmargin"></i>Sign Out</a>
+                    </div>                    
                 </div>
             </div>
 
@@ -202,13 +202,13 @@ require_once('preloader.php');
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="img-cover" src="images/cover image.png" class="d-block w-100" alt="...">
+                <img class="img-cover" src="images/farmer_img (3).jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img class="img-cover" src="images/2.jpg" class="d-block w-100" alt="...">
+                <img class="img-cover" src="images/farmer_img (2).jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img class="img-cover" src="images/1.jpg" class="d-block w-100" alt="...">
+                <img class="img-cover" src="images/farmer_img (1).jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

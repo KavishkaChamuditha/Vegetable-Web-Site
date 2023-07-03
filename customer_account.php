@@ -157,7 +157,7 @@ require_once('preloader.php');
                   <input type="email" id="disabledTextInput" class="form-control form-control-lg signinstyle" value="<?php echo $_SESSION['mailaddress']; ?>" disabled/>
                   <label class="form-label" for="typeEmailX">Email</label>
                 </div>
-
+ 
                 <div class="form-outline form-white mb-4">
                   <input type="cus_password" id="disabledTextInput" class="form-control form-control-lg signinstyle" value="<?php echo $_SESSION['cus_password']; ?>" disabled/>
                   <label class="form-label" for="typePasswordX">Password</label>
@@ -165,7 +165,7 @@ require_once('preloader.php');
 
                 <div class="form-outline form-white mb-4">
                   <input type="email" id="disabledTextInput" class="form-control form-control-lg signinstyle" value="<?php echo $_SESSION['id_num']; ?>" disabled/>
-                  <label class="form-label" for="typeEmailX">Email</label>
+                  <label class="form-label" for="typeEmailX">ID Number</label>
                 </div>
 
           </form>

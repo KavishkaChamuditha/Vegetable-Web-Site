@@ -199,9 +199,7 @@
             </g>
         </svg>
         <div class="preloader__text">
-            <p class="preloader__msg text-dark text-center text-bold" 
-            style="font-size: 40px; margin-left: -75px; text-style: bold;"
-            >Welcome</p>
+            
             <!-- <p class="preloader__msg preloader__msg--last">This is taking long. Something’s wrong.</p> -->
         </div>
     </div>

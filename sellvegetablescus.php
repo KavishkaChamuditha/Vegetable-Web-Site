@@ -40,7 +40,11 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-... (integrity value)" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
 </head>
 
 <body>
@@ -244,9 +248,10 @@ require_once('preloader.php');
     <div class="dropdown-menu">
         <div class="dropdown-container">
             <a href="customer_account.php" class="dropdown-item"><i class="fa fa-user iconmargin"></i>Profile</a>
-            <a href="customer_signup_1.php" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i>Create an Account</a>
+            <a href="customer_signup_1.php" class="dropdown-item"><i class="fas fa-user-plus iconmargin"></i>Create an Account</a>
             <a href="customer_account_edit_1.php" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
-            <a href="logout.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
+            <a href="customer_account_edit_1.php" class="dropdown-item"><i class="fas fa-sign-in-alt iconmargin"></i>Sign In</a>
+            <a href="logout.php" class="dropdown-item"><i class="fas fa-sign-out-alt iconmargin"></i>Sign Out</a>
         </div>
     </div>
 </div>
@@ -333,7 +338,7 @@ require_once('preloader.php');
             </div>
         </form>
     </div>
-</div>
+</div> 
 
             </div>
         </div>
@@ -341,8 +346,9 @@ require_once('preloader.php');
         <h1 class="text-center" style="margin-top:90px; font-family: 'Roboto', sans-serif;">Place Your Order Now</h1>
 
         <div class="container margincrd" id="buynow"> 
-            <div class="row">
-              
+            <div class="row" data-aos="fade-up"
+     data-aos-anchor-placement="center-center">
+    
              <?php 
                $result = $database->getData();
                while ($row = mysqli_fetch_assoc($result)){
@@ -358,7 +364,9 @@ require_once('preloader.php');
                require_once('footer.php');
         ?>
         <!-- footer code stop from here -->
-
+        <script>
+  AOS.init();
+</script>
 </body>
 
 </html>

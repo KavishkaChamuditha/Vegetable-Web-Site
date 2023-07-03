@@ -56,6 +56,9 @@
                     <li class="active">
                         <a href="wholeseller_account_edit.php">Edit Account</a>
                     </li>
+                    <li class="active">
+                        <a href="logout.php">Log Out</a>
+                    </li>
                 </ul>
 
                 <div class="footer">
