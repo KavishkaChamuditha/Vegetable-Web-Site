@@ -26,12 +26,19 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-... (integrity value)" crossorigin="anonymous">
 
 </head>
 
@@ -149,6 +156,9 @@ require_once('preloader.php');
                     <li class="nav-item">
                          <a class="nav-link" href="#searchveg">Search </a>
                     </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="about_us.php">About Us </a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
             </ul>
@@ -168,22 +178,22 @@ require_once('preloader.php');
                         echo $_SESSION['farmername'];
                     } else {
                         echo "My Account" ;
-                    }
+                     }
                 ?>
 
                 </a>
                 <div class="dropdown-menu">
                     <div class="dropdown-container">
-                        <a href="farmer_accout.php" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i>Profile</a>
+                        <a href="farmer_accout.php" class="dropdown-item"><i class="fa fa-user iconmargin"></i>Profile</a>
                         <a href="farmer_signup_1.php" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i>Create an account</a>
                         <a href="farmrer_user_edit.php" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
-                        <a href="farmer_login_1.php" class="dropdown-item"><i class="material-icons iconmargin"></i>Sign In</a>
+                        <a href="farmer_login_1.php" class="dropdown-item"><i class="fa-thin fa-right-to-bracket"></i>Sign In</a>
                         <a href="farmer_login_1.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
                     </div>                   
                 </div>
             </div>
 
-            </div>
+            </div> 
         </div>
     </nav>
     <!-- nav bar code stop from here -->
@@ -321,99 +331,9 @@ require_once('preloader.php');
                 </div>
             </div> -->
 
-
-
-    <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted ">
-
-        <!-- Section: Links  -->
-        <section class="backgroundcolo">
-            <div class="container text-center text-md-start mt-5 ">
-                <!-- Grid row -->
-                <div class="row mt-3">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4 margintext">
-                            <i class="fas fa-gem me-3"></i>Company name
-                        </h6>
-                        <p>
-                            Here you can use rows and columns to organize your footer content. Lorem ipsum
-                            dolor sit amet, consectetur adipisicing elit.
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4 margintext">
-                            Products
-                        </h6>
-                        <p>
-                            <a href="#!" class="text-reset">Angular</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">React</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Vue</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Laravel</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4 margintext">
-                            Useful links
-                        </h6>
-                        <p>
-                            <a href="#!" class="text-reset">Pricing</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Settings</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Orders</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Help</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4 margintext">Contact</h6>
-                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                        <p>
-                            <i class="fas fa-envelope me-3"></i>
-                            info@example.com
-                        </p>
-                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-                    </div>
-                    <!-- Grid column -->
-                </div>
-                <!-- Grid row -->
-            </div>
-        </section>
-        <!-- Section: Links  -->
-
-        <!-- Copyright -->
-        <div class="text-center p-4 text-light" style="background-color: #186600;">
-            © 2021 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
-
+               <?php 
+                require_once('footer.php');
+               ?>
 
 
 </body>

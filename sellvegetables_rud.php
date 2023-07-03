@@ -1,6 +1,13 @@
 <?php 
     session_start();
     require("db_connection.php");
+    
+    // validating the user
+  if($_SESSION['seller_id']==''){
+    // redirect to invalid log in
+    header("location:wholeseller_signin_1.php");
+  }
+
 ?>
 
 <!DOCTYPE html>

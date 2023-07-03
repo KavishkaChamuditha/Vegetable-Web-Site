@@ -24,7 +24,7 @@
 
 </head>
 
-<body> 
+<body>  
     
 <?php
 $showLoadingScreen = true;

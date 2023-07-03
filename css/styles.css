@@ -330,20 +330,39 @@ input[type="date"] {
 
 /* available vegetables codes start from here  */
 
+.secsearch{
+  width: 365px;
+}
 
 /* responsive codes start from here */
 @media (max-width: 768px) {
 
     .card-search{
-        width: 350px;
-        height: 440px;
+        margin-left: 30px !important;
+        width: 300px;
+        height: 290px;
     }
 
     .searcharea{
         margin-left: 18px !important;
         margin-top: 10px !important;
+        
     }
-    
+
+    .searchbar{
+      width: 220px !important;
+      margin-left: 30px;
+    }
+
+    .haedingcus{
+      font-size: 20px;
+      margin-left: 70px !important;
+    }
+
+    .margincrd{
+      margin-left: 40px !important;
+    }
+
     /* .cardmar{
        margin-left: 30px !important;
     } */
@@ -352,6 +371,9 @@ input[type="date"] {
 /* Tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
     /* CSS for medium-sized screens goes here */
+    .card-search{
+      margin-left: 200px;
+    }
   }
   
   /* Desktops */

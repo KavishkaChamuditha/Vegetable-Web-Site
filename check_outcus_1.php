@@ -1,5 +1,12 @@
 <?php
     session_start();
+
+        // validating the user
+    if($_SESSION['cus_id']==''){
+      // redirect to invalid log in
+      header("location:customer_sign_in_1.php");
+    }
+
     require('db_connection.php');
     require('cardscodebank.php');
     require('create_db.php');

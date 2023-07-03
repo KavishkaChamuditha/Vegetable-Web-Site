@@ -11,6 +11,8 @@
 <html lang="en">
 
 <head>
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,11 +39,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-... (integrity value)" crossorigin="anonymous">
 </head>
 
 <body>
         
-<?php 
+<?php  
 if (isset($_POST['add_cart']))
  {
 
@@ -93,6 +97,10 @@ require_once('preloader.php');
 .img-cover {
     width: 100%;
 }
+/* 
+.nav-item{
+    margin-left: 200px;
+}  */
 
 .navbar {
     background-color: #186600;
@@ -182,16 +190,16 @@ require_once('preloader.php');
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="sellvegetablescus.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#searchveg">Search</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#buynow">Buy Now</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Disabled</a>
+                    <a class="nav-link" href="about_us.php">About Us</a>
                 </li>
             </ul>
            
@@ -235,10 +243,10 @@ require_once('preloader.php');
     </a>
     <div class="dropdown-menu">
         <div class="dropdown-container">
-            <a href="customer_account.php" class="dropdown-item"><i class="fa fa-user-o iconmargin"></i>Profile</a>
+            <a href="customer_account.php" class="dropdown-item"><i class="fa fa-user iconmargin"></i>Profile</a>
             <a href="customer_signup_1.php" class="dropdown-item"><i class="fa fa-calendar-o iconmargin"></i>Create an Account</a>
             <a href="customer_account_edit_1.php" class="dropdown-item"><i class="fa fa-sliders iconmargin"></i>Edit Account</a>
-            <a href="customer_sign_in_1.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
+            <a href="logout.php" class="dropdown-item"><i class="material-icons iconmargin">&#xE8AC;</i>Sign Out</a>
         </div>
     </div>
 </div>
@@ -296,17 +304,17 @@ require_once('preloader.php');
         font-size: 18px;
     }
 
-</style>
+</style> 
 <div class="container">
 <div class="row">
-    <div class="col-md-6 mx-auto">
+    <div class="col-md-6 mx-auto" id="searchveg">
     <div class="card card-search">
         <form class="product-margin" action="search_product_customerside.php" method="post" enctype="multipart/form-data">
             <div class="input-group">
                 <h1 class="" style="margin-left:230px;">Search Vegetables</h1>
                 <div class="row">
                     <div class="col-md-6">
-                        <select class="form-control" name="searchBy">
+                        <select class="form-control searchbar" name="searchBy">
                             <option value="veg_name">Vegetable Name</option>
                             <option value="economiccenter">Economic Center</option>
                             <option value="shopname">Shop Name</option>
@@ -314,7 +322,7 @@ require_once('preloader.php');
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Keywords" name="keywords">
+                        <input type="text" class="form-control searchbar secsearch" placeholder="Keywords" name="keywords">
                     </div>
                 </div>
                 <div class="input-group-append">
@@ -332,7 +340,7 @@ require_once('preloader.php');
 
         <h1 class="text-center" style="margin-top:90px; font-family: 'Roboto', sans-serif;">Place Your Order Now</h1>
 
-        <div class="container">
+        <div class="container margincrd" id="buynow"> 
             <div class="row">
               
              <?php 
@@ -345,97 +353,11 @@ require_once('preloader.php');
             </div> <!-- container stop from here -->
         </div><!-- row stop from here -->
  
-
-        <!-- Footer -->
-        <footer class="text-center text-lg-start bg-light text-muted ">
-
-            <!-- Section: Links  -->
-            <section class="backgroundcolo">
-                <div class="container text-center text-md-start mt-5 ">
-                    <!-- Grid row -->
-                    <div class="row mt-3">
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                            <!-- Content -->
-                            <h6 class="text-uppercase fw-bold mb-4 margintext">
-                                <i class="fas fa-gem me-3"></i>Company name
-                            </h6>
-                            <p>
-                                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4 margintext">
-                                Products
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Angular</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">React</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Vue</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Laravel</a>
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4 margintext">
-                                Useful links
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Pricing</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Settings</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Orders</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Help</a>
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4 margintext">Contact</h6>
-                            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                            <p>
-                                <i class="fas fa-envelope me-3"></i>
-                                info@example.com
-                            </p>
-                            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-                        </div>
-                        <!-- Grid column -->
-                    </div>
-                    <!-- Grid row -->
-                </div>
-            </section>
-            <!-- Section: Links  -->
-
-            <!-- Copyright -->
-            <div class="text-center p-4 text-light" style="background-color: #186600;">
-                © 2021 Copyright:
-                <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
+        <!-- footer code start from here -->
+        <?php
+               require_once('footer.php');
+        ?>
+        <!-- footer code stop from here -->
 
 </body>
 

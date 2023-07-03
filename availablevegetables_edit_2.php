@@ -6,6 +6,12 @@
 
     $database = new CreateDb("vegetable_website", "sellingvegetables");
 
+    // validating the user
+    if($_SESSION['seller_id']==''){
+        // redirect to invalid log in
+        header("location:wholeseller_signin_1.php");
+      }
+    
 
 ?>
 

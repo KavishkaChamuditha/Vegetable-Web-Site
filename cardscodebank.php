@@ -92,7 +92,7 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
             <p class="marginpadeta">Date: ' . $dateofveg . '</p>
             <p class="marginpadeta">Contact:' . $contact . '</p>
 
-            <button type="submit" name="checkout" class="btn btn-light text-light btncard" formaction="checkoutfarmer_1.php">Place Order</button>
+            <button type="submit" name="checkout" class="btn btn-light text-light btncard" formaction="checkoutfarmer_1.php">Available</button>
             <input type="hidden" name="buyveg_id" value=" ' .$buyveg_id. '">
 
         </div>

@@ -5,7 +5,11 @@
     require_once ('create_db.php');
 
     $database = new CreateDb("vegetable_website", "sellingvegetables");
-
+    
+    if($_SESSION['cus_id']==''){
+      // redirect to invalid log in
+      header("location:customer_sign_in_1.php");
+    }
 ?>
 
 <html lang="en">

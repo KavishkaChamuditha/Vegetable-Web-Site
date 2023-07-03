@@ -1,3 +1,16 @@
+<?php 
+
+    session_start();
+    
+    // validating the user
+  if($_SESSION['seller_id']==''){
+    // redirect to invalid log in
+    header("location:wholeseller_signin_1.php");
+  }
+
+
+?>
+ 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
