@@ -3,12 +3,12 @@
 require("db_connection.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $sellername = $_POST['sellername'];
-    $mailaddress = $_POST['mailaddress'];
-    $sellerpaswrd = $_POST['sellerpaswrd'];
-    $shopname = $_POST['shopname'];
+    $sellername     = $_POST['sellername'];
+    $mailaddress    = $_POST['mailaddress'];
+    $sellerpaswrd   = crypt( $_POST['sellerpaswrd'],"x07h");
+    $shopname       = $_POST['shopname'];
     $economiccenter = $_POST['economiccenter'];
-    $idnumber = $_POST['idnumber'];
+    $idnumber       = $_POST['idnumber'];
 
     // Check if the user already exists
     $query = "SELECT * FROM tblwholeseller WHERE mailaddress = '$mailaddress'";
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script>alert('User with the same email address already exists. Please try again.')</script>";
         echo "<script>window.location='wholeseller_signup_1.php'</script>";
         exit;
-    }
+    } 
 
     // Building the SQL command to insert the user details
     $sql = "INSERT INTO tblwholeseller (sellername, mailaddress, sellerpaswrd, shopname, economiccenter, idnumber) VALUES (";
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql .= "'$mailaddress',";
     $sql .= "'$sellerpaswrd',";
     $sql .= "'$shopname',";
-    $sql .= "'$economiccenter',";
+    $sql .= "'$economiccenter',"; 
     $sql .= "'$idnumber'";
     $sql .= ")";
 

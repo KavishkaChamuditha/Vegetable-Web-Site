@@ -2,9 +2,8 @@
 function component($veg_id, $veg_name, $veg_price, $availablesta, $available_quntity, $contact, $dateofveg, $shopname, $economiccenter, $picture, $vegtableid, $mailaddress) 
 { 
     $element = '
-   
     <div class="col-lg-3 col-mg-4 cardmar">
-    <form method="post" enctype="multipart/form-data" >
+    <form method="post" enctype="multipart/form-data">
         <div class="card card-prop">
         <input type="hidden" name="mailaddress" value="'. $mailaddress .'">
             <div class="d-flex align-items-center" style="margin-top: 20px; margin-left: -5px;">';
@@ -17,14 +16,22 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
     }
     $element .= '
                 <h3 class="marginpa fw-bold">'.$shopname.'</h3>
-            </div> 
+            </div>';
 
+    if (isset($_SESSION['cus_id'])) {
+        $element .= '
         <div id="mySidenav" class="sidenav">
-            <button type="submit" name="add_cart" id="blog" class="cartstyle"><i class="fa fa-shopping-cart"
-                    style="font-size:20px"></i> </button>
+            <button type="submit" name="add_cart" id="blog" class="cartstyle"><i class="fa fa-shopping-cart" style="font-size:20px"></i></button>
             <input type="hidden" name="vegetable_id" value="' . $vegtableid . '">
-        </div>
+        </div>';
+    } else {
+        $element .= '
+        <div id="mySidenav" class="sidenav">
+            <a href="customer_sign_in_1.php"><button type="button" class="cartstyle"><i class="fa fa-shopping-cart" style="font-size:20px"></i></button></a>
+        </div>';
+    }
 
+    $element .= '
             <img src="sellvegetables/large/'. $picture .'" alt="">
             <p class="marginpa fw-bold">' . $veg_name . '</p>
             <p class="marginpadeta">'.$economiccenter.'</p>
@@ -35,15 +42,17 @@ function component($veg_id, $veg_name, $veg_price, $availablesta, $available_qun
            
             <a class="btn btn-light text-light btncard" href="check_outcus_1.php?veg_id=' . $veg_id . '">Buy Now</a>
             
-
-        </div>
-      
+        </div>     
     </div>
     </form> ';
 
     echo $element;
 }
 ?>
+
+
+
+
 
 
 <?php 

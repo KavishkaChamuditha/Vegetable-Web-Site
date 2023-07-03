@@ -3,10 +3,10 @@
 require("db_connection.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $cus_name = $_POST['cus_name'];
-    $mailaddress = $_POST['mailaddress'];
-    $cus_password = $_POST['cus_password'];
-    $id_num = $_POST['id_num'];
+    $cus_name       = $_POST['cus_name'];
+    $mailaddress    = $_POST['mailaddress'];
+    $cus_password   = crypt( $_POST['cus_password'],"x07h");
+    $id_num         = $_POST['id_num'];
 
     $query = "SELECT * FROM tblcustomer WHERE mailaddress = '$mailaddress'";
     $result = $mysqli->query($query);
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // User already exists, redirect to signup page
         echo "<script>alert('User with the same email address already exists. Please try again.')</script>";
         echo "<script>window.location='customer_signup_1.php'</script>";
-        exit;
+        exit; 
     }
 
     // Store the form field values to variables

@@ -45,7 +45,7 @@
 
 <body>
         
-<?php  
+<?php   
 if (isset($_POST['add_cart']))
  {
 

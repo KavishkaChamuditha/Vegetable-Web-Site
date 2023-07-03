@@ -5,7 +5,7 @@ require("db_connection.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $farmername      = $_POST['farmername'];
     $farmailaddress  = $_POST['farmailaddress'];
-    $farpassword     = $_POST['farpassword'];
+    $farpassword     = crypt( $_POST['farpassword'],"x07h");
     $farmeridnumber  = $_POST['farmeridnumber'];
 
     // Check if the user already exists

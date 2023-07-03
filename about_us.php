@@ -1,9 +1,14 @@
+<?php
+    session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spice.Lk</title>
+    <title>Vegetable Selling</title>
 
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -11,7 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/styles.css">
    
-        <!--===============================================================================================-->
+        <!--========= ======================================================================================-->
         	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
         <!--===============================================================================================-->
         	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -165,21 +170,8 @@ require_once('preloader.php');
                     <a class="nav-link" href="#">About Us</a>
                 </li>
             </ul>
-           
+            
             <a href="place_order_1.php" type="submit" name="submit" id="submit" value="ADD NOW"> <i class="fa fa-shopping-cart" style="font-size:28px;color:white; margin-right: 20px;"> </i> </a>
-
-                <?php
-
-                if(isset($_SESSION['cart']))
-                {                 
-                    $count = count($_SESSION['cart']);
-                    echo" <span id=\"wishlist_count\" class=\"text-warning bg-light\" style=\"font-size:28px; padding: 0 0.9rem 0.1rem 0.9rem;  border-radius:3rem; \" >$count</span>";
-                }else
-                {
-                    echo" <span id=\"cart_count\" class=\"text-warning bg-light\" style=\"font-size:28px; padding: 0 0.9rem 0.1rem 0.9rem; border-radius:3rem; margin-right:-20px;\">0</span>";
-                }
-
-                ?>
 
                 <div class="nav-item dropdown" style="">
                     <a href="#" class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
