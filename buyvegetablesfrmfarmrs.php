@@ -254,7 +254,7 @@ require_once('preloader.php');
     <div class="card card-search">
         <form class="product-margin" action="farmer_side_search.php" method="post" enctype="multipart/form-data">
             <div class="input-group">
-                <h1 class="" style="margin-left:230px;">Search Vegetables</h1>
+                <h1 class="" style="margin-left:10px;">Search Vegetables</h1>
                 <div class="row">
                     <div class="col-md-6">
                         <select class="form-control" name="searchBy">

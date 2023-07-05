@@ -271,7 +271,7 @@ require_once('preloader.php');
         <div class="carousel-item">
             <img class="img-cover" src="images/2.jpg" class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item"> 
             <img class="img-cover" src="images/1.jpg" class="d-block w-100" alt="...">
         </div>
     </div>
@@ -310,13 +310,13 @@ require_once('preloader.php');
     }
 
 </style> 
-<div class="container">
+<div class="container"> 
 <div class="row">
     <div class="col-md-6 mx-auto" id="searchveg">
     <div class="card card-search">
         <form class="product-margin" action="search_product_customerside.php" method="post" enctype="multipart/form-data">
             <div class="input-group">
-                <h1 class="" style="margin-left:230px;">Search Vegetables</h1>
+                <h1 class="" style="margin-left:10px;">Search Vegetables</h1>
                 <div class="row">
                     <div class="col-md-6">
                         <select class="form-control searchbar" name="searchBy">
@@ -343,11 +343,10 @@ require_once('preloader.php');
             </div>
         </div>
 
-        <h1 class="text-center" style="margin-top:90px; font-family: 'Roboto', sans-serif;">Place Your Order Now</h1>
+        <h1 class="text-center veg" style="margin-top:90px; font-family: 'Roboto', sans-serif;">Place Your Order Now</h1>
 
         <div class="container margincrd" id="buynow"> 
-            <div class="row" data-aos="fade-up"
-     data-aos-anchor-placement="center-center">
+            <div class="row">
     
              <?php 
                $result = $database->getData();
@@ -358,12 +357,11 @@ require_once('preloader.php');
 
             </div> <!-- container stop from here -->
         </div><!-- row stop from here -->
- 
-        <!-- footer code start from here -->
-        <?php
-               require_once('footer.php');
+               
+        <?php 
+            require("footer.php");
         ?>
-        <!-- footer code stop from here -->
+
         <script>
   AOS.init();
 </script>
