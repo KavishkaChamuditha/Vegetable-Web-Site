@@ -45,7 +45,7 @@ require_once('preloader.php');
                     <div class="login-wrap p-4 p-md-5" style="width: 500px; margin-left: 180px;">
                         <div class="d-flex">
                             <div class="w-100">
-                                <h2 class="mb-4" style="font-weight: bold;">Customer Sign</h2>
+                                <h2 class="mb-4" style="font-weight: bold;">Customer Sign up</h2>
                             </div>
                             <div class="w-100">
                             </div>
@@ -108,4 +108,4 @@ require_once('preloader.php');
 
 </body>
 
-</html>
+</html> 

@@ -114,7 +114,7 @@
                     <img src="sellvegetables/large/<?php echo $picture;?>" style="width:400px; margin-top:30px;">
                 </div>
 
-                <input type="submit" class="btn btn-danger"  name="submit" id="submit" value="Confirm Delete">
+                <input type="submit" class="btn btn-info"  name="submit" id="submit" value="Confirm Edit">
                 <input type="reset"  class="btn btn-warning" name="reset"  id="reset" value="Clear">
 
             </form>

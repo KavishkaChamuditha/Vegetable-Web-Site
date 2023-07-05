@@ -58,7 +58,7 @@
 <div id="content" class="p-4 p-md-5 pt-5">
     <div class="card sellproductcard">
         <div class="card-body ">
-            <h1 class="text-dark font-weight-bold">Edit Vegetable</h1>
+            <h1 class="text-dark font-weight-bold">Delete Vegetable</h1>
 
             <form action="sellvegetables_delete_3.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="veg_id" value="<?php echo $row ['veg_id']; ?>">

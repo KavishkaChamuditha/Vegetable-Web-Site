@@ -280,7 +280,7 @@ require_once('preloader.php');
 </div>
 </div>
 
-    <h1 class="text-center" style="margin-top:90px; font-family: 'Roboto', sans-serif;">Place Your Order Now</h1>
+    <h1 class="text-center" style="margin-top:90px; font-family: 'Roboto', sans-serif;">Place Your Availability Now</h1>
 
     <div class="container">
         <div class="row">

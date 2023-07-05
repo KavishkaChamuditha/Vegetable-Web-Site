@@ -175,7 +175,7 @@ if (isset($_SESSION['cart'])) {
               </div>
             </div>
             <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            <button class="btn btn-md btn-block text-light" type="submit" style="background-color:green; border-radius:20px 0px 20px 0px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">Continue to checkout</button>
           </form>
         </div>
       </div>

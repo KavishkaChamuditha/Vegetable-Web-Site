@@ -74,7 +74,7 @@ require_once('preloader.php');
                         </form>
                         <div class="d-flex justify-content-center">
                         <a class="" style="margin-left: 80px;">
-                            <p class="text-center">Not a Member?<a data-toggle="tab" href="#signup">Sign Up</a>
+                            <p class="text-center">Not a Member?<a data-toggle="tab" href="customer_signup_1.php">Sign Up</a>
                             </p> 
                          </div>
                     </div>
